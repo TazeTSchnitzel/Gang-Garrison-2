@@ -77,7 +77,6 @@ while(true) {
             }
             if(getCharacterObject(player.team, class) != -1)
             {
-                player.class = class;
                 if(player.object != -1)
                 {
                     with(player.object)
@@ -92,11 +91,10 @@ while(true) {
                             else
                             {
                                 var assistant;
-                                assistant = -1;
-                                if (lastDamageDealer.object.healer != -1)
-                                    assistant = lastDamageDealer.object.healer;
-                                else
-                                    assistant = secondToLastDamageDealer;
+                                assistant = secondToLastDamageDealer;
+                                if (lastDamageDealer.object != -1)
+                                    if (lastDamageDealer.object.healer != -1)
+                                        assistant = lastDamageDealer.object.healer;
                                 sendEventPlayerDeath(player, lastDamageDealer, assistant, FINISHED_OFF);
                                 doEventPlayerDeath(player, lastDamageDealer, assistant, FINISHED_OFF);
                             }
@@ -107,6 +105,7 @@ while(true) {
                 }
                 else if(player.alarm[5]<=0)
                     player.alarm[5] = 1;
+                player.class = class;
                 ServerPlayerChangeclass(playerId, player.class, global.sendBuffer);
             }
             break;
@@ -146,11 +145,10 @@ while(true) {
                             else
                             {
                                 var assistant;
-                                assistant = -1;
-                                if (lastDamageDealer.object.healer != -1)
-                                    assistant = lastDamageDealer.object.healer;
-                                else
-                                    assistant = secondToLastDamageDealer;
+                                assistant = secondToLastDamageDealer;
+                                if (lastDamageDealer.object != -1)
+                                    if (lastDamageDealer.object.healer != -1)
+                                        assistant = lastDamageDealer.object.healer;
                                 sendEventPlayerDeath(player, lastDamageDealer, assistant, FINISHED_OFF);
                                 doEventPlayerDeath(player, lastDamageDealer, assistant, FINISHED_OFF);
                             }
