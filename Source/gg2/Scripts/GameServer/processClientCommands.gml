@@ -113,6 +113,20 @@ while(true) {
         case PLAYER_CHANGETEAM:
             var newTeam, balance, redSuperiority;
             newTeam = read_ubyte(socket);
+            if (global.TTSClassLimits[player.class] != -1){
+                var pclass, pteam, classonteam;
+                pclass = player.class;
+                pteam = newTeam;
+                classonteam = 0;
+                with (Player) {
+                    if (team == pteam and self.class == pclass) {
+                        classonteam += 1;
+                    }
+                }
+                if (classonteam >= global.TTSClassLimits[player.class]) {
+                    break;
+                }
+            }
             
             redSuperiority = 0   //calculate which team is bigger
             with(Player)
