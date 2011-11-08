@@ -1,18 +1,10 @@
 // argument0 - plugin id
 
-var file;
-
-file_find_first(global.SMOKE_plugindirpath+argument0+"\*", 0);
-while (1) {
-    file = file_find_next();
-    if (file != "") {
-        file_delete(file);
-    }else{
-        break;
-    }
+SMOKE_deleteall(global.SMOKE_plugindirpath+argument0+"\*", 0);
+SMOKE_deleteall(global.SMOKE_plugindirpath+argument0+"\data\*", 0);
+if (SMOKE_ds_list_remove(global.SMOKE_pluginlist, argument0)) {
+    SMOKE_saveconfig();
 }
-if (ds_list_find_index(global.SMOKE_pluginlist, argument0) != -1) {
-    ds_list_delete(global.SMOKE_pluginlist,
-        ds_list_find_index(global.SMOKE_pluginlist, argument0));
+if (SMOKE_ds_list_remove(global.SMOKE_enabledpluginlist, argument0)) {
     SMOKE_saveconfig();
 }
