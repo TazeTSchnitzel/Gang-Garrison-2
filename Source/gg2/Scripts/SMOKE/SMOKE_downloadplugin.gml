@@ -19,7 +19,11 @@ if (string_copy(SMOKE_http_string("smoke.ajf.me", "/api/plugin/"+pluginid+"/gete
     if (argument1==false) {
         SMOKE_enableplugin(pluginid);
     }
-    show_message("Plugin downloaded");
+    if (argument1==false){
+        show_message("Plugin updated");
+    }else{
+        show_message("Plugin downloaded");
+    }
 }else{
     show_message("Error: Plugin with ID "+pluginid+" does not exist");
     exit;
