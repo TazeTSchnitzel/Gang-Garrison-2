@@ -16,4 +16,6 @@
   <resource name="SMOKE_removeplugin" type="RESOURCE"/>
   <resource name="SMOKE_enableplugin" type="RESOURCE"/>
   <resource name="SMOKE_disableplugin" type="RESOURCE"/>
+  <resource name="SMOKE_ds_list_remove" type="RESOURCE"/>
+  <resource name="SMOKE_deleteall" type="RESOURCE"/>
 </resources>
