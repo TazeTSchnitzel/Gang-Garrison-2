@@ -1,6 +1,7 @@
 // argument0 - host e.g. "smoke.ajf.me"
 // argument1 - resource e.g. "/api/test"
 // argument2 - filename e.g. "test.html"
+// argument3 - show status while downloading
 
 var sock, file, buf, crlf;
 crlf = chr(13)+chr(10);
@@ -20,6 +21,15 @@ while (!tcp_eof(sock)) {
     //tcp_receive(sock,1);
     tcp_receive_available(sock);
     write_buffer(buf,sock);
+    if (argument3) {
+        io_handle();
+        draw_set_color(c_black);
+        draw_rectangle(view_xview[0], view_hview[0]/2-15, view_wview[0], view_hview[0]/2+15, false);
+        draw_set_color(c_white);
+        draw_set_halign(fa_center);
+        draw_text(view_wview[0]/2, view_hview[0]/2, "Downloading - " + string(buffer_size(buf)) + "B");
+        screen_refresh();
+    }
 }
 write_buffer_to_file(buf, argument2);
 

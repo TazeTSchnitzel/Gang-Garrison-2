@@ -10,10 +10,8 @@ if (string_copy(SMOKE_http_string("smoke.ajf.me", "/api/plugin/"+pluginid+"/gete
     if (!directory_exists(global.SMOKE_plugindirpath+pluginid)){
         directory_create(global.SMOKE_plugindirpath+pluginid);
     }
-    SMOKE_http_file("smoke.ajf.me", "/api/plugin/"+pluginid+"/getmetadata", global.SMOKE_plugindirpath+pluginid+"\metadata.ini");
-    show_message("Plugin Metadata downloaded");
-    SMOKE_http_file("smoke.ajf.me", "/api/plugin/"+pluginid+"/getcontent", global.SMOKE_plugindirpath+pluginid+"\plugin.gml");
-    show_message("Plugin GML downloaded");
+    SMOKE_http_file("smoke.ajf.me", "/api/plugin/"+pluginid+"/getmetadata", global.SMOKE_plugindirpath+pluginid+"\metadata.ini", true);
+    SMOKE_http_file("smoke.ajf.me", "/api/plugin/"+pluginid+"/getcontent", global.SMOKE_plugindirpath+pluginid+"\plugin.gml", true);
     if (ds_list_find_index(global.SMOKE_pluginlist, pluginid) == -1) {
         ds_list_add(global.SMOKE_pluginlist, pluginid);
         SMOKE_saveconfig();
@@ -21,6 +19,7 @@ if (string_copy(SMOKE_http_string("smoke.ajf.me", "/api/plugin/"+pluginid+"/gete
     if (argument1==false) {
         SMOKE_enableplugin(pluginid);
     }
+    show_message("Plugin downloaded");
 }else{
     show_message("Error: Plugin with ID "+pluginid+" does not exist");
     exit;
