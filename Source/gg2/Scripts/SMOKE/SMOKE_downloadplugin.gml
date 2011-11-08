@@ -6,7 +6,7 @@ var plugininfo;
 var restart;
 pluginid = string(argument0);
 
-if (SMOKE_http_string("smoke.ajf.me", "/api/plugin/"+pluginid+"/getinfo")!="error") {
+if (string_copy(SMOKE_http_string("smoke.ajf.me", "/api/plugin/"+pluginid+"/getexists"), 0, 4)=="true") {
     if (!directory_exists(global.SMOKE_plugindirpath+pluginid)){
         directory_create(global.SMOKE_plugindirpath+pluginid);
     }
@@ -22,6 +22,6 @@ if (SMOKE_http_string("smoke.ajf.me", "/api/plugin/"+pluginid+"/getinfo")!="erro
         SMOKE_enableplugin(pluginid);
     }
 }else{
-    show_message("Error when downloading plugin: Error retrieving info");
+    show_message("Error: Plugin with ID "+pluginid+" does not exist");
     exit;
 }
