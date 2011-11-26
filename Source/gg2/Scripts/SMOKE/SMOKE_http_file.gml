@@ -3,34 +3,12 @@
 // argument2 - filename e.g. "test.html"
 // argument3 - show status while downloading
 
-var sock, file, buf, crlf;
-crlf = chr(13)+chr(10);
-sock = tcp_connect(argument0, 80);
-//sock = tcp_connect("localhost", 5000);
-
-if (socket_connecting(sock) == false) {
+var buf, str;
+buf = SMOKE_http(argument0, argument1, argument3);
+if (buf != -1) {
+    write_buffer_to_file(buf, argument2);
+    buffer_destroy(buf);
+    return true;
+}else{
     return false;
 }
-
-write_string(sock, "GET http://" + argument0 + argument1 + crlf + crlf);
-//write_string(sock, "GET " + argument1 + crlf + crlf);
-socket_send(sock);
-
-buf = buffer_create()
-while (!tcp_eof(sock)) {
-    //tcp_receive(sock,1);
-    tcp_receive_available(sock);
-    write_buffer(buf,sock);
-    if (argument3) {
-        io_handle();
-        draw_set_color(c_black);
-        draw_rectangle(view_xview[0], view_hview[0]/2-15, view_wview[0], view_hview[0]/2+15, false);
-        draw_set_color(c_white);
-        draw_set_halign(fa_center);
-        draw_text(view_wview[0]/2, view_hview[0]/2, "Downloading - " + string(buffer_size(buf)) + "B");
-        screen_refresh();
-    }
-}
-write_buffer_to_file(buf, argument2);
-
-return true;

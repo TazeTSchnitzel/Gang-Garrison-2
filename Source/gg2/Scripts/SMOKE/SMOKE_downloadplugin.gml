@@ -11,7 +11,8 @@ if (string_copy(SMOKE_http_string("smoke.ajf.me", "/api/plugin/"+pluginid+"/gete
         directory_create(global.SMOKE_plugindirpath+pluginid);
     }
     SMOKE_http_file("smoke.ajf.me", "/api/plugin/"+pluginid+"/getmetadata", global.SMOKE_plugindirpath+pluginid+"\metadata.ini", true);
-    SMOKE_http_file("smoke.ajf.me", "/api/plugin/"+pluginid+"/getcontent", global.SMOKE_plugindirpath+pluginid+"\plugin.gml", true);
+    SMOKE_http_file("smoke.ajf.me", "/api/plugin/"+pluginid+"/getcontent", global.SMOKE_plugindirpath+pluginid+"\plugin.zip", true);
+    SMOKE_extractzip(global.SMOKE_plugindirpath+pluginid+"\plugin.zip", global.SMOKE_plugindirpath+pluginid+"\", true);
     if (ds_list_find_index(global.SMOKE_pluginlist, pluginid) == -1) {
         ds_list_add(global.SMOKE_pluginlist, pluginid);
         SMOKE_saveconfig();

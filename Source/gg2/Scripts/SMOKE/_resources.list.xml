@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
+  <resource name="SMOKE_http" type="RESOURCE"/>
   <resource name="SMOKE_http_file" type="RESOURCE"/>
   <resource name="SMOKE_http_string" type="RESOURCE"/>
   <resource name="SMOKE_init" type="RESOURCE"/>
@@ -18,4 +19,5 @@
   <resource name="SMOKE_disableplugin" type="RESOURCE"/>
   <resource name="SMOKE_ds_list_remove" type="RESOURCE"/>
   <resource name="SMOKE_deleteall" type="RESOURCE"/>
+  <resource name="SMOKE_extractzip" type="RESOURCE"/>
 </resources>
