@@ -4,7 +4,7 @@
 
 var args;
 
-args = 'e "'+argument0+'" -o"'+argument1+'"';
+args = 'x "'+argument0+'" -o"'+argument1+'"';
 
 if (argument2) {
     args = args + ' -aoa';
