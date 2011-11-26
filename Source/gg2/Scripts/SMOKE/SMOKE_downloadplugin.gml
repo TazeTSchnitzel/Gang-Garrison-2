@@ -20,7 +20,7 @@ if (string_copy(SMOKE_http_string("smoke.ajf.me", "/api/plugin/"+pluginid+"/gete
     if (argument1==false) {
         SMOKE_enableplugin(pluginid);
     }
-    if (argument1==false){
+    if (argument1){
         show_message("Plugin updated");
     }else{
         show_message("Plugin downloaded");
