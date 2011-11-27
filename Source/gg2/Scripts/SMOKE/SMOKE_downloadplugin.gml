@@ -18,7 +18,9 @@ if (string_copy(SMOKE_http_string("smoke.ajf.me", "/api/plugin/"+pluginid+"/gete
         SMOKE_saveconfig();
     }
     if (argument1==false) {
-        SMOKE_enableplugin(pluginid);
+        if (SMOKE_enableplugin(pluginid)) {
+            exit;
+        }
     }
     if (argument1){
         show_message("Plugin updated");

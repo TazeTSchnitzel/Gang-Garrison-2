@@ -1,4 +1,5 @@
 // argument0 - plugin ID
+// return value - restart required
 
 var restart;
 
@@ -13,7 +14,9 @@ if (restart==1) {
     if (show_message_ext("This plugin requires restarting GG2 to run it. Do you want to restart GG2 now?", "Yes", "", "No") == 1) {
         execute_program(parameter_string(0), "", false);
         game_end();
+        return true;
     }
 }else{
     SMOKE_runplugin(argument0, true);
 }
+return false;
