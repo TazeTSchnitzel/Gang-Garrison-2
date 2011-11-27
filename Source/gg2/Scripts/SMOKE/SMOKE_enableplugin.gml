@@ -5,7 +5,7 @@ var restart;
 SMOKE_tempiniopen(global.SMOKE_plugindirpath+argument0+"\metadata.ini");
 restart = ini_read_real("plugin", "restart", 1);
 ini_close();
-if (SMOKE_versioncheck(argument0) == false) exit;
+if (SMOKE_versioncheck(argument0) == false) return false;
 if (ds_list_find_index(global.SMOKE_enabledpluginlist, argument0) == -1) {
     ds_list_add(global.SMOKE_enabledpluginlist, argument0);
     SMOKE_saveconfig();
@@ -18,3 +18,4 @@ if (restart==1) {
 }else{
     SMOKE_runplugin(argument0, true);
 }
+return true;

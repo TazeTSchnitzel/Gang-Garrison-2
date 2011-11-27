@@ -9,8 +9,7 @@ if (string_copy(num, 0, 6) == "plugin") {
     splash_show_web("about:blank", 1);
     pluginid = string_copy(num, 10, string_length(num)-9);
     if (string_copy(num, 7, 3) == "en_") {
-        SMOKE_enableplugin(pluginid);
-        show_message("Enabled plugin");
+        if (SMOKE_enableplugin(pluginid)) show_message("Enabled plugin");
     }else if (string_copy(num, 7, 3) == "ds_") {
         SMOKE_disableplugin(pluginid);
         show_message("Disabled plugin");
