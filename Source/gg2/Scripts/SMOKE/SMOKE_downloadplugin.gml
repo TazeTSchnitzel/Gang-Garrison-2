@@ -17,15 +17,13 @@ if (string_copy(SMOKE_http_string("smoke.ajf.me", "/api/plugin/"+pluginid+"/gete
         ds_list_add(global.SMOKE_pluginlist, pluginid);
         SMOKE_saveconfig();
     }
-    if (argument1==false) {
-        if (SMOKE_enableplugin(pluginid)) {
-            exit;
-        }
-    }
     if (argument1){
         show_message("Plugin updated");
     }else{
         show_message("Plugin downloaded");
+    }
+    if (argument1==false) {
+        SMOKE_enableplugin(pluginid);
     }
 }else{
     show_message("Error: Plugin with ID "+pluginid+" does not exist");
