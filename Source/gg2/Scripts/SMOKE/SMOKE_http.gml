@@ -4,14 +4,20 @@
 
 var sock, file, buf, crlf;
 crlf = chr(13)+chr(10);
-sock = tcp_connect(argument0, 80);
+if (global.SMOKE_localdebug)
+    sock = tcp_connect("localhost", 5000)
+else
+    sock = tcp_connect(argument0, 80);
 
 if (socket_connecting(sock) == false) {
     socket_destroy(sock);
     return -1;
 }
 
-write_string(sock, "GET http://" + argument0 + argument1 + crlf + crlf);
+if (global.SMOKE_localdebug)
+    write_string(sock, "GET " + argument1 + crlf + crlf)
+else
+    write_string(sock, "GET http://" + argument0 + argument1 + crlf + crlf);
 socket_send(sock);
 
 buf = buffer_create()
