@@ -20,4 +20,5 @@
   <resource name="SMOKE_ds_list_remove" type="RESOURCE"/>
   <resource name="SMOKE_deleteall" type="RESOURCE"/>
   <resource name="SMOKE_extractzip" type="RESOURCE"/>
+  <resource name="SMOKE_versioncheck" type="RESOURCE"/>
 </resources>
