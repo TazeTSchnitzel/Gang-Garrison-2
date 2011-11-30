@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <include>
   <filename>7za.exe</filename>
-  <filepath>Z:\home\alexander\Desktop\Gang Garrison 2\Gang Garrison v2.4.0\GEM\7za.exe</filepath>
+  <filepath>D:\Projects\2011\SMOKE\7za920\7za.exe</filepath>
   <original>true</original>
   <originalSize>587776</originalSize>
-  <hasContent>false</hasContent>
+  <hasContent>true</hasContent>
   <exportTo>WORKING_DIRECTORY</exportTo>
   <otherExportDirectory/>
   <overwriteExisting>true</overwriteExisting>
