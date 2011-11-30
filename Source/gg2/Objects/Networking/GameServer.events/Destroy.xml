@@ -35,11 +35,6 @@ with(JoiningPlayer)
     
 with(PlayerControl)
     instance_destroy();
-    
-with ChatBox
-{
-    instance_destroy();
-}
 
 room_goto_fix(Menu);
 </argument>
