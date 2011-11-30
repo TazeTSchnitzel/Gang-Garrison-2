@@ -9,7 +9,7 @@ while string_length(input) > 84
 
 ds_list_add(global.consoleLog, input);
 
-while ds_list_size(global.consoleLog) > 36
+while ds_list_size(global.consoleLog) > 100
 {
     ds_list_delete(global.consoleLog, 0)
 }

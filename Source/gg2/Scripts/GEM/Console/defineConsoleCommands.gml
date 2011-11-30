@@ -136,10 +136,8 @@ else
 
 
 Console_addCommand("clearScreen", "
-with Console
-{
-    clearScreenTimer = 36// Makes text zoom up instead of just disappearing
-}
+ds_list_destroy(global.consoleLog)
+global.consoleLog = ds_list_create();
 ", "
 Console_print('Syntax: clearScreen')
 Console_print('Use: Clears the console')");

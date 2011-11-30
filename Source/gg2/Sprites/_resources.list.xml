@@ -13,4 +13,5 @@
   <resource name="DevMessagesCheckerS" type="RESOURCE"/>
   <resource name="ChatBoxS" type="RESOURCE"/>
   <resource name="ReplayButtonS" type="RESOURCE"/>
+  <resource name="GEMS" type="RESOURCE"/>
 </resources>
