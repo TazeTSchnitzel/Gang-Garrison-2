@@ -2,7 +2,7 @@
 <resources>
   <resource name="consoleInit" type="RESOURCE"/>
   <resource name="defineConsoleCommands" type="RESOURCE"/>
-  <resource name="print" type="RESOURCE"/>
-  <resource name="parseInput" type="RESOURCE"/>
-  <resource name="out" type="RESOURCE"/>
+  <resource name="Console_addCommand" type="RESOURCE"/>
+  <resource name="Console_print" type="RESOURCE"/>
+  <resource name="Console_parseInput" type="RESOURCE"/>
 </resources>

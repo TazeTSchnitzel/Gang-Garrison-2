@@ -3,12 +3,9 @@ All built-in console commands are defined here, big strings approaching.
 */
 
 
-global.commandDict = ds_map_create();
-global.documentationDict = ds_map_create();
-
-ds_map_add(global.commandDict, "kick", "
+Console_addCommand("kick", "
 var player;
-player = findPlayer(input[1]);
+player = ds_list_find_value(global.players, real(floor(input[1])));
 if player != -1 and player != ds_list_find_value(global.players, 0)
 {
     with player
@@ -16,21 +13,22 @@ if player != -1 and player != ds_list_find_value(global.players, 0)
         socket_destroy_abortive(socket);
         socket = -1;
     }
-    print(player.name+' has been kicked successfully.');
+    Console_print(player.name+' has been kicked successfully.');
 }
 else
 {
-    print('Could not find a player with that ID.');
-}")
-ds_map_add(global.documentationDict, "kick", "
-print('Syntax: kick playerID')
-print('Use: Kicks the designed player from the game, disconnecting him but not banning him.')
-print('Warning: Attempting to kick the host will have no effect.')");
+    Console_print('Could not find a player with that ID.');
+}", "
+Console_print('Syntax: kick playerID')
+Console_print('Use: Kicks the designed player from the game, disconnecting him but not banning him.')
+Console_print('Warning: Attempting to kick the host will have no effect.')"
+);
 
 
-ds_map_add(global.commandDict, "ban", "
+
+Console_addCommand("ban", "
 var player, ip;
-player = findPlayer(input[1]);
+player = ds_list_find_value(global.players, real(floor(input[1])));
 if player != -1 and player != ds_list_find_value(global.players, 0)
 {
     with player
@@ -39,22 +37,22 @@ if player != -1 and player != ds_list_find_value(global.players, 0)
         ds_list_add(global.banlist, ip);
         socket_destroy_abortive(socket);
         socket = -1;
-        print(player.name+' has been banned successfully.');
+        Console_print(player.name+' has been banned successfully.');
     }
 }
 else
 {
-    print('Could not find a player with that ID.');
-}")
-ds_map_add(global.documentationDict, "ban", "
-print('Syntax: ban playerID')
-print('Use: Bans the designed player from the game, disconnecting him and making it impossible for him to join later.')
-print('Warning: Attempting to ban the host will have no effect.')
-print('If you have not enabled persistent banning, all bans will be reset when gg2 is restarted.')
+    Console_print('Could not find a player with that ID.');
+}", "
+Console_print('Syntax: ban playerID')
+Console_print('Use: Bans the designed player from the game, disconnecting him and making it impossible for him to join later.')
+Console_print('Warning: Attempting to ban the host will have no effect.')
+Console_print('If you have not enabled persistent banning, all bans will be reset when gg2 is restarted.')
 ");
 
 
-ds_map_add(global.commandDict, "listID", "
+
+Console_addCommand("listPlayers", "
 var redteam, blueteam, specteam, player;
 redteam = ds_list_create();
 blueteam = ds_list_create();
@@ -79,72 +77,73 @@ with Player
 for (i=0; i<ds_list_size(redteam); i+=1)
 {
     player = ds_list_find_value(redteam, i);
-    print('/:/r'+player.name+':    ID='+string(player.ID)+'; IP='+string(socket_remote_ip(player.socket)));
+    Console_print('/:/r'+player.name+':    ID='+string(ds_list_find_index(global.players, player))+'; IP='+string(socket_remote_ip(player.socket)));
 }
 for (i=0; i<ds_list_size(blueteam); i+=1)
 {
     player = ds_list_find_value(blueteam, i);
-    print('/:/b'+player.name+':    ID='+string(player.ID)+'; IP='+string(socket_remote_ip(player.socket)));
+    Console_print('/:/b'+player.name+':    ID='+string(ds_list_find_index(global.players, player))+'; IP='+string(socket_remote_ip(player.socket)));
 }
 for (i=0; i<ds_list_size(specteam); i+=1)
 {
     player = ds_list_find_value(specteam, i);
-    print('/:/g'+player.name+':    ID='+string(player.ID)+'; IP='+string(socket_remote_ip(player.socket)));
-}");
-ds_map_add(global.documentationDict, "listID", "
-print('Syntax: listID')
-print('Use: Prints a color-coded list of the IDs of all the players in the game, as well as their IPs.')
-print('These IDs are necessary for anything requiring a specific player, like kicking.')");
+    Console_print('/:/g'+player.name+':    ID='+string(ds_list_find_index(global.players, player))+'; IP='+string(socket_remote_ip(player.socket)));
+}", "
+Console_print('Syntax: listPlayers')
+Console_print('Use: Prints a color-coded list of the IDs of all the players in the game, as well as their IPs.')
+Console_print('These IDs are necessary for anything requiring a specific player, like kicking.')");
 
 
-ds_map_add(global.commandDict, "help", "
+Console_addCommand("help", "
 if input[1] == ''
 {
     var key;
     // User didn't ask any specific command, just give the general command list.
-    print('----------------------------------------------------------------------------------');
-    print('OHU'+string(GAME_VERSION_STRING)+' console;');
-    print('');
-    print('Usage: Type in the wanted command followed by its arguments in this syntax:');
-    print('command arg1 arg2 arg3')
-    print('');
-    print('Some commands require Player IDs, the command listID can show them to you.')
-    print('');
-    print('The current command list:');
-    key = ds_map_find_first(global.commandDict);
-    print(key);
-    for (i=0; i<ds_map_size(global.commandDict)-2; i+=1)
+    Console_print('----------------------------------------------------------------------------------');
+    Console_print('GEM'+string(GAME_VERSION_STRING)+' console;');
+    Console_print('');
+    Console_print('Usage: Type in the wanted command followed by its arguments in this syntax:');
+    Console_print('command arg1 arg2 arg3')
+    Console_print('');
+    Console_print('Some commands require Player IDs, the command listPlayers can show them to you.')
+    Console_print('');
+    Console_print('The current command list:');
+    key = ds_map_find_first(global.commandMap);
+    Console_print(key);
+    for (i=0; i<ds_map_size(global.commandMap)-2; i+=1)
     {
-        key = ds_map_find_next(global.commandDict, key);
-        print(key);
+        key = ds_map_find_next(global.commandMap, key);
+        Console_print(key);
     }
-    print('')
-    print('For more details on each command, enter |help commandName|.')
-    print('Additional questions or requests should go to the OHU thread.')
-    print('----------------------------------------------------------------------------------');
+    Console_print('')
+    Console_print('For more details on each command, enter |help commandName|.')
+    Console_print('Additional questions or requests should go to the GEM thread.')
+    Console_print('');
+    Console_print('Made by AJF and Orpheon.');
+    Console_print('----------------------------------------------------------------------------------');
 }
 else
 {
-    if ds_map_exists(global.documentationDict, input[1])
+    if ds_map_exists(global.documentationMap, input[1])
     {
-        execute_string(ds_map_find_value(global.documentationDict, input[1]));
+        execute_string(ds_map_find_value(global.documentationMap, input[1]));
     }
     else
     {
-        print('No documentation could be found for that command.');
+        Console_print('No documentation could be found for that command.');
     }
-}");
+}", "");
 
 
-ds_map_add(global.commandDict, "clearScreen", "
+Console_addCommand("clearScreen", "
 ds_list_destroy(global.consoleLog)
-global.consoleLog = ds_list_create();");
-ds_map_add(global.commandDict, "clearScreen", "
-print('Syntax: clearScreen')
-print('Use: Clears the console')");
+global.consoleLog = ds_list_create();
+", "
+Console_print('Syntax: clearScreen')
+Console_print('Use: Clears the console')");
 
 
-ds_map_add(global.commandDict, "setClasslimit", "
+Console_addCommand("setClasslimit", "
 var chosenClass, noClassChosen;
 noClassChosen = 0
 switch string_lower(input[1])
@@ -234,7 +233,7 @@ switch string_lower(input[1])
         break;
         
     default:
-        print('Could not find a class with that name.');
+        Console_print('Could not find a class with that name.');
         exit;
 }
 
@@ -296,159 +295,80 @@ if !noClassChosen
         }
     }
 }
-print('Current classlimits:')
+Console_print('Current classlimits:')
 
-if global.classlimits[CLASS_SCOUT] >= global.playerLimit print(' Scout: Off');
-else print(' Scout: '+string(global.classlimits[CLASS_SCOUT]));
+if global.classlimits[CLASS_SCOUT] >= global.playerLimit Console_print(' Scout: Off');
+else Console_print(' Scout: '+string(global.classlimits[CLASS_SCOUT]));
 
-if global.classlimits[CLASS_PYRO] >= global.playerLimit print(' Pyro: Off');
-else print(' Pyro: '+string(global.classlimits[CLASS_PYRO]));
+if global.classlimits[CLASS_PYRO] >= global.playerLimit Console_print(' Pyro: Off');
+else Console_print(' Pyro: '+string(global.classlimits[CLASS_PYRO]));
 
-if global.classlimits[CLASS_SOLDIER] >= global.playerLimit print(' Soldier: Off');
-else print(' Soldier: '+string(global.classlimits[CLASS_SOLDIER]));
+if global.classlimits[CLASS_SOLDIER] >= global.playerLimit Console_print(' Soldier: Off');
+else Console_print(' Soldier: '+string(global.classlimits[CLASS_SOLDIER]));
 
-if global.classlimits[CLASS_HEAVY] >= global.playerLimit print(' Heavy: Off');
-else print(' Heavy: '+string(global.classlimits[CLASS_HEAVY]));
+if global.classlimits[CLASS_HEAVY] >= global.playerLimit Console_print(' Heavy: Off');
+else Console_print(' Heavy: '+string(global.classlimits[CLASS_HEAVY]));
 
-if global.classlimits[CLASS_DEMOMAN] >= global.playerLimit print(' Demoman: Off');
-else print(' Demoman: '+string(global.classlimits[CLASS_DEMOMAN]));
+if global.classlimits[CLASS_DEMOMAN] >= global.playerLimit Console_print(' Demoman: Off');
+else Console_print(' Demoman: '+string(global.classlimits[CLASS_DEMOMAN]));
 
-if global.classlimits[CLASS_MEDIC] >= global.playerLimit print(' Medic: Off');
-else print(' Medic: '+string(global.classlimits[CLASS_MEDIC]));
+if global.classlimits[CLASS_MEDIC] >= global.playerLimit Console_print(' Medic: Off');
+else Console_print(' Medic: '+string(global.classlimits[CLASS_MEDIC]));
 
-if global.classlimits[CLASS_ENGINEER] >= global.playerLimit print(' Engineer: Off');
-else print(' Engineer: '+string(global.classlimits[CLASS_ENGINEER]));
+if global.classlimits[CLASS_ENGINEER] >= global.playerLimit Console_print(' Engineer: Off');
+else Console_print(' Engineer: '+string(global.classlimits[CLASS_ENGINEER]));
 
-if global.classlimits[CLASS_SPY] >= global.playerLimit print(' Spy: Off');
-else print(' Spy: '+string(global.classlimits[CLASS_SPY]));
+if global.classlimits[CLASS_SPY] >= global.playerLimit Console_print(' Spy: Off');
+else Console_print(' Spy: '+string(global.classlimits[CLASS_SPY]));
 
-if global.classlimits[CLASS_SNIPER] >= global.playerLimit print(' Sniper: Off');
-else print(' Sniper: '+string(global.classlimits[CLASS_SNIPER]));
+if global.classlimits[CLASS_SNIPER] >= global.playerLimit Console_print(' Sniper: Off');
+else Console_print(' Sniper: '+string(global.classlimits[CLASS_SNIPER]));
 
-if global.classlimits[CLASS_QUOTE] >= global.playerLimit print(' Quote: Off');
-else print(' Quote: '+string(global.classlimits[CLASS_QUOTE]));
-");
-ds_map_add(global.documentationDict, "setClasslimit", "
-print('Syntax: setClasslimit className newClasslimit');
-print('className can be typed with the tf2 or the gg2 name, but only in singular.');
-print('Use: Change current classlimits of a class');");
+if global.classlimits[CLASS_QUOTE] >= global.playerLimit Console_print(' Quote: Off');
+else Console_print(' Quote: '+string(global.classlimits[CLASS_QUOTE]));
+","
+Console_print('Syntax: setClasslimit className newClasslimit');
+Console_print('className can be typed with the tf2 or the gg2 name, but only in singular.');
+Console_print('Use: Change current classlimits of a class');");
 
 
-ds_map_add(global.commandDict, "startRecording", "
+Console_addCommand("startRecording", "
 if global.recordingEnabled
 {
-    print('You are already recording.');
+    Console_print('You are already recording.');
     exit;
 }
 else
 {
     global.recordingEnabled = 1;
     global.justEnabledRecording = 1;
-    print('Started recording...')
-}");
-ds_map_add(global.documentationDict, "startRecording", "
-print('Syntax: startRecording');
-print('Use: Begins to record the current game into a replay. To stop recording, call');
-print('stopRecording');
+    Console_print('Started recording...')
+}", "
+Console_print('Syntax: startRecording');
+Console_print('Use: Begins to record the current game into a replay. To stop recording, call');
+Console_print('stopRecording');
 ");
 
 
-ds_map_add(global.commandDict, "stopRecording", "
+Console_addCommand("stopRecording", "
 if !global.recordingEnabled
 {
-    print('You are not recording.');
+    Console_print('You are not recording.');
     exit;
 }
 else
 {
-    print('Saving...')
+    Console_print('Saving...')
     endRecording();
-    print('Replay saved successfully');
-}");
-ds_map_add(global.documentationDict, "stopRecording", "
-print('Syntax: stopRecording');
-print('Use: Stops any recording going on and saves the replay.');
-");
-
-
-ds_map_add(global.commandDict, "setChatMode", "
-switch string_lower(input[1])
-{
-    case 'off':
-    case 'disabled':
-        global.chatMode = 0;
-        print('Chat has been disabled');
-        break;
-        
-    case 'team':
-        global.chatMode = 1;
-        print('Chat has been enabled, but only for team chat');
-        break;
-
-    case 'global':
-    case 'all':
-    case 'crossteam':
-        global.chatMode = 2;
-        print('Global chat has been enabled.');
-        break;
-}");
-ds_map_add(global.documentationDict, "setChatMode", "
-print('Syntax: setChatMode mode');
-print('Mode can be: off, team or all');
-print('Use: Changes the chat settings. |off| disables all chat, |team| enables team only chat');
-print(' and |all| enables both team and global chat');");
-
-
-ds_map_add(global.commandDict, "mute", "
-var player;
-player = findPlayer(input[1]);
-if player != -1 and player != ds_list_find_value(global.players, 0)
-{
-    with player
-    {
-        muted = 1;
-    }
-    print(player.name+' cannot chat anymore.');
+    Console_print('Replay saved successfully');
 }
-else
-{
-    print('Could not find a player with that ID.');
-}");
-ds_map_add(global.documentationDict, "mute", "
-print('Syntax: mute playerID');
-print('Use: Bans the designated player from the chat until you unban him or he leaves.');
+", "
+Console_print('Syntax: stopRecording');
+Console_print('Use: Stops any recording going on and saves the replay.');
 ");
 
 
-ds_map_add(global.commandDict, "unmute", "
-var player;
-player = findPlayer(input[1]);
-if player != -1 and player != ds_list_find_value(global.players, 0)
-{
-    if player.muted == 0
-    {
-        print(player.name+' is not muted');
-    }
-    else
-    {
-        with player
-        {
-            muted = 0;
-        }
-        print(player.name+' can chat again.');
-    }
-}
-else
-{
-    print('Could not find a player with that ID.');
-}");
-ds_map_add(global.documentationDict, "unmute", "
-print('Syntax: unmute playerID');
-print('Use: Allows a player banned from chat to re-enter it.');
-");
-
-
-ds_map_add(global.commandDict, "endMap", "
+Console_addCommand("endMap", "
 if input[1] != ''
 {
     // User entered a map
@@ -456,30 +376,27 @@ if input[1] != ''
     global.mapchanging = 0
 }
 global.winners = TEAM_SPECTATOR;
-");
-ds_map_add(global.documentationDict, "endMap", "
-print('Syntax: endMap optionalMapName')
-print('Use: Ends the map with a stalemate, and if you have entered a map name will change to that map.')
-print('If you havent, it will simply go to the next map in the rotation.');
-print('Warning: Please be careful to enter a correct map name, entering a wrong one will crash the server!');
+", "
+Console_print('Syntax: endMap optionalMapName')
+Console_print('Use: Ends the map with a stalemate, and if you have entered a map name will change to that map.')
+Console_print('If you havent, it will simply go to the next map in the rotation.');
+Console_print('Warning: Please be careful to enter a correct map name, entering a wrong one will crash the server!');
 ");
 
 
-ds_map_add(global.commandDict, "shuffleMaps", "
+Console_addCommand("shuffleMaps", "
 ds_list_shuffle(global.map_rotation);
-print('Shuffled map rotation');
-");
-ds_map_add(global.documentationDict, "shuffleMaps", "
-print('Syntax: shuffleMaps');
-print('Use: Randomizes the map rotation');
+Console_print('Shuffled map rotation');
+", "
+Console_print('Syntax: shuffleMaps');
+Console_print('Use: Randomizes the map rotation');
 ");
 
 
-ds_map_add(global.commandDict, "changeNextMap", "
+Console_addCommand("changeNextMap", "
 global.nextMap = input[1]
-");
-ds_map_add(global.documentationDict, "changeNextMap", "
-print('Syntax: changeNextMap mapName')
-print('Sets the designated map as the next map.');
-print('Warning: Please be careful to enter a correct map name, entering a wrong one will crash the server!');
+", "
+Console_print('Syntax: changeNextMap mapName')
+Console_print('Sets the designated map as the next map.');
+Console_print('Warning: Please be careful to enter a correct map name, entering a wrong one will crash the server!');
 ");

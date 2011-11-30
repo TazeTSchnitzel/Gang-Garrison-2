@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
-  <resource name="OHUinit" type="RESOURCE"/>
+  <resource name="GEMinit" type="RESOURCE"/>
   <resource name="Console" type="GROUP"/>
   <resource name="ClassLimits" type="GROUP"/>
   <resource name="Replays" type="GROUP"/>

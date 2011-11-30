@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<event category="CREATE" id="0">
+<event category="STEP" id="0">
   <actions>
     <action id="603" library="1">
       <!--action name: Code-->
@@ -13,10 +13,15 @@
       <not>false</not>
       <appliesTo>.self</appliesTo>
       <arguments>
-        <argument kind="STRING">typingChar = ""
-keyboard_string = ""
-alarm[0] = 8
-clearScreenTimer = -1
+        <argument kind="STRING">if clearScreenTimer &gt; 0// Don't just delete everything, make it zoom upwards.
+{
+    Console_print('')
+    Console_print('')
+    Console_print('')
+    Console_print('')
+    Console_print('')
+    clearScreenTimer -= 5
+}
 </argument>
       </arguments>
     </action>

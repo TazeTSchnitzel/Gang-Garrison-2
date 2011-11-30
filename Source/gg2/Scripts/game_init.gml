@@ -355,15 +355,13 @@ global.launchMap = "";
     ini_close()
     
     calculateMonthAndDay();
-
-    SMOKE_init();
+    
+    GEMinit();
     
     if(global.dedicatedMode == 1) {
         AudioControlToggleMute();
         room_goto_fix(Menu);
     }
-    
-    OHUinit()
     
     var pluginArray, plugin, first, PluginObject;
     first = true;

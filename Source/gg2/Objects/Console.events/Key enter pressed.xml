@@ -13,10 +13,15 @@
       <not>false</not>
       <appliesTo>.self</appliesTo>
       <arguments>
-        <argument kind="STRING">if keyboard_string != ""
+        <argument kind="STRING">if clearScreenTimer &gt; 0
 {
-    print("/:/o"+keyboard_string);
-    parseInput(keyboard_string);
+    exit;
+}
+
+if keyboard_string != ""
+{
+    Console_print("/:/o"+keyboard_string);
+    Console_parseInput(keyboard_string);
 }
 
 keyboard_string = ""

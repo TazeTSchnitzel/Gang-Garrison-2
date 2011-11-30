@@ -27,15 +27,15 @@ while numOfCommands <= 10// Fill up until 10 arguments, that way there are no er
 
 // Second step: Find out what command it is and execute it.
 
-if ds_map_exists(global.commandDict, input[0])
+if ds_map_exists(global.commandMap, input[0])
 {
-    execute_string(ds_map_find_value(global.commandDict, input[0]));
+    execute_string(ds_map_find_value(global.commandMap, input[0]));
 }
 else
 {
-    print("Unknown command; type help for a list of them.")
-    print(input[0])
-    print(input[1])
+    Console_print("Unknown command; type help for a list of them.")
+    Console_print(input[0])
+    Console_print(input[1])
 }
 
-print('');
+Console_print('');
