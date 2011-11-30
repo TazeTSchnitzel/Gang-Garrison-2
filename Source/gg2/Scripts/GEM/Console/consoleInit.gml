@@ -1,6 +1,7 @@
 global.consoleLog = ds_list_create()
 global.commandMap = ds_map_create();
 global.documentationMap = ds_map_create();
+global.consoleOpen = 0;
 
 Console_print("Welcome to GEM"+string(GAME_VERSION_STRING)+"!")
 Console_print("If you need help on a specific command, just type 'help command'.")
