@@ -18,6 +18,11 @@ acceptJoiningPlayer();
 with(JoiningPlayer)
     serviceJoiningPlayer();
 
+if global.recordingEnabled and global.justEnabledRecording
+{
+    beginRecording();
+}
+
 // Service all players
 var i;
 for(i=0; i<ds_list_size(global.players); i+=1)
@@ -62,7 +67,16 @@ if(global.winners != -1 and !global.mapchanging)
         global.currentMapArea = 1;
         if(global.currentMapIndex == ds_list_size(global.map_rotation)) 
             global.currentMapIndex = 0;
-        global.nextMap = ds_list_find_value(global.map_rotation, global.currentMapIndex);
+            
+        if global.suggestedMap != ""
+        {
+            global.nextMap = global.suggestedMap;
+            global.suggestedMap = "";
+        }
+        else
+        {
+            global.nextMap = ds_list_find_value(global.map_rotation, global.currentMapIndex);
+        }
     }
     global.mapchanging = true;
     impendingMapChange = 300; // in 300 frames (ten seconds), we'll do a map change
@@ -144,6 +158,14 @@ for(i=1; i<ds_list_size(global.players); i+=1)
     player = ds_list_find_value(global.players, i);
     write_buffer(player.socket, global.eventBuffer);
     write_buffer(player.socket, global.sendBuffer);
+    
     socket_send(player.socket);
 }
+if global.recordingEnabled
+{
+    write_ubyte(global.replayBuffer, buffer_size(global.eventBuffer)+buffer_size(global.sendBuffer));
+    write_buffer(global.replayBuffer, global.eventBuffer);
+    write_buffer(global.replayBuffer, global.sendBuffer);
+}
+
 buffer_clear(global.eventBuffer);

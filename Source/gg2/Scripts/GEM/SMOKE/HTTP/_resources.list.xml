@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+  <resource name="SMOKE_http" type="RESOURCE"/>
+  <resource name="SMOKE_http_file" type="RESOURCE"/>
+  <resource name="SMOKE_http_string" type="RESOURCE"/>
+</resources>

@@ -14,7 +14,7 @@
       <appliesTo>.self</appliesTo>
       <arguments>
         <argument kind="STRING">{
-    room_goto_fix(Credits);
+    SMOKE_manageplugins();
 }
 </argument>
       </arguments>

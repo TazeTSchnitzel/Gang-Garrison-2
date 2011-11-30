@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+  <resource name="SMOKE_updateplugins" type="RESOURCE"/>
+  <resource name="SMOKE_manageplugins" type="RESOURCE"/>
+  <resource name="SMOKE_clippycheck" type="RESOURCE"/>
+  <resource name="SMOKE_downloadplugin" type="RESOURCE"/>
+  <resource name="SMOKE_runplugin" type="RESOURCE"/>
+  <resource name="SMOKE_removeplugin" type="RESOURCE"/>
+  <resource name="SMOKE_enableplugin" type="RESOURCE"/>
+  <resource name="SMOKE_disableplugin" type="RESOURCE"/>
+</resources>

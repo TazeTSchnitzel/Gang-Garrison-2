@@ -9,9 +9,9 @@
   <resource name="deserialize" type="RESOURCE"/>
   <resource name="getCharacterObject" type="RESOURCE"/>
   <resource name="room_goto_fix" type="RESOURCE"/>
+  <resource name="Networking" type="GROUP"/>
   <resource name="Message Builders" type="GROUP"/>
   <resource name="Sound" type="GROUP"/>
-  <resource name="Networking" type="GROUP"/>
   <resource name="CustomMaps" type="GROUP"/>
   <resource name="Client" type="GROUP"/>
   <resource name="GameServer" type="GROUP"/>
@@ -45,4 +45,5 @@
   <resource name="toggleZoom" type="RESOURCE"/>
   <resource name="md5" type="RESOURCE"/>
   <resource name="ds_list_sorted_insert" type="RESOURCE"/>
+  <resource name="GEM" type="GROUP"/>
 </resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+  <resource name="SMOKE_init" type="RESOURCE"/>
+  <resource name="HTTP" type="GROUP"/>
+  <resource name="Plugins" type="GROUP"/>
+  <resource name="SMOKE_csvToList" type="RESOURCE"/>
+  <resource name="SMOKE_listToCsv" type="RESOURCE"/>
+  <resource name="SMOKE_deleteAllFiles" type="RESOURCE"/>
+  <resource name="SMOKE_extractzip" type="RESOURCE"/>
+  <resource name="SMOKE_versioncheck" type="RESOURCE"/>
+</resources>

@@ -10,6 +10,22 @@ if(tcp_eof(global.serverSocket)) {
     exit;
 }
 
+if global.isPlayingReplay
+{
+    var length;
+    
+    for(a=0; a<global.replaySpeed; a+=1)
+    {
+        length = read_ubyte(global.replayBuffer);
+        for(i=0; i<length; i+=1)
+        {
+            write_ubyte(global.replaySocket, read_ubyte(global.replayBuffer));
+        }
+        global.replayTime += 1
+    }
+    socket_send(global.replaySocket);
+}
+
 if(downloadingMap)
 {
     while(tcp_receive(global.serverSocket, min(1024, downloadMapBytes-buffer_size(downloadMapBuffer))))
@@ -72,6 +88,7 @@ do {
                     roomchange=true;
                 }
             }
+            
             ClientPlayerJoin(global.serverSocket);
             if(global.haxxyKey != "")
                 write_byte(global.serverSocket, I_AM_A_HAXXY_WINNER);
@@ -98,16 +115,23 @@ do {
                   
         case INPUTSTATE:
             deserializeState(INPUTSTATE);
-            break;             
-        
+            break;
+            
         case PLAYER_JOIN:
             player = instance_create(0,0,Player);
             player.name = receivestring(global.serverSocket, 1);
                   
             ds_list_add(global.players, player);
-            if(ds_list_size(global.players)-1 == global.playerID) {
-                global.myself = player;
-                instance_create(0,0,PlayerControl);
+            
+            if(ds_list_size(global.players)-1 == global.playerID){
+                    global.myself = player;
+                    instance_create(0,0,PlayerControl);
+            }
+            else if global.isPlayingReplay and global.myself != -1
+            {
+                ds_list_delete(global.players, ds_list_find_index(global.players, global.myself));
+                ds_list_add(global.players, global.myself);
+                global.playerID = ds_list_size(global.players)-1
             }
             break;
             
@@ -362,6 +386,8 @@ do {
             break;
 
         case CHANGE_MAP:
+            ds_list_clear(global.chatLog);
+            ds_list_clear(global.chatFadeTimers);
             roomchange=true;
             global.mapchanging = false;
             global.currentMap = receivestring(global.serverSocket, 1);
@@ -440,6 +466,12 @@ do {
             socket_send(global.serverSocket);
             break;
             
+        case REPLAY_END:
+            show_message("This replay is finished.#Exiting to menu")
+            global.isPlayingReplay = 0;
+            instance_destroy();
+            break;// Is this necessary?
+
         case MESSAGE_STRING:
             var message, notice;
             message = receivestring(global.serverSocket, 1);

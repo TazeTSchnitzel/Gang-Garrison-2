@@ -9,6 +9,10 @@
     global.currentMapIndex = 0;
     global.currentMapArea = 1;
     
+    if global.recordingEnabled
+    {
+        global.justEnabledRecording = 1
+    }
     var i;
     serverId = buffer_create();
     for(i=0;i<16;i+=1)

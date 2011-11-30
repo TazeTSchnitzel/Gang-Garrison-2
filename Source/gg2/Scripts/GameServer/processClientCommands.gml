@@ -96,6 +96,7 @@ while(commandLimitRemaining > 0) {
                 }
                 else if(player.alarm[5]<=0)
                     player.alarm[5] = 1;
+                class = getClasslimit(player.team, class);
                 player.class = class;
                 ServerPlayerChangeclass(playerId, player.class, global.sendBuffer);
             }
@@ -148,11 +149,21 @@ while(commandLimitRemaining > 0) {
                     }
                     else if(player.alarm[5]<=0)
                         player.alarm[5] = 1;
+
+                    var class;
+                    class = getClasslimit(newTeam, player.class)
+                    if class != player.class
+                    {
+                        player.class = class
+                        ServerPlayerChangeclass(playerId, player.class, global.sendBuffer)
+                    }
+
                     player.team = newTeam;
+                    
                     ServerPlayerChangeteam(playerId, player.team, global.sendBuffer);
                 }
             }
-            break;                   
+            break;
             
         case CHAT_BUBBLE:
             var bubbleImage;
@@ -180,7 +191,7 @@ while(commandLimitRemaining > 0) {
                     write_ubyte(global.sendBuffer, playerId);
                 }
             }
-            break;                                       
+            break;
 
         case DESTROY_SENTRY:
             if(player.sentry != -1) {
@@ -198,7 +209,7 @@ while(commandLimitRemaining > 0) {
                 with player.object event_user(5);  
             }
             break;     
-              
+
         case OMNOMNOMNOM:
             if(player.object != -1) {
                 if(player.humiliated == 0
@@ -221,7 +232,7 @@ while(commandLimitRemaining > 0) {
                 }
             }
             break;
-             
+
         case TOGGLE_ZOOM:
             if player.object != -1 {
                 if player.class == CLASS_SNIPER {
@@ -255,6 +266,7 @@ while(commandLimitRemaining > 0) {
                     {
                         name = "I <3 Bacon";
                     }
+                    
                     write_ubyte(global.sendBuffer, PLAYER_CHANGENAME);
                     write_ubyte(global.sendBuffer, playerId);
                     write_ubyte(global.sendBuffer, string_length(name));
@@ -275,7 +287,7 @@ while(commandLimitRemaining > 0) {
                 }
             }
             break;
-        
+
         case I_AM_A_HAXXY_WINNER:
             write_ubyte(socket, HAXXY_CHALLENGE_CODE);
             player.challenge = "";
