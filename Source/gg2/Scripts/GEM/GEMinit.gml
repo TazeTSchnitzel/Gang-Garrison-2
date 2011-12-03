@@ -1,5 +1,3 @@
-SMOKE_init();
-
 ini_open("gg2.ini");
 
 global.permBan = ini_read_real("Server", "Permanent Ban enabled", 0);
@@ -74,6 +72,7 @@ if global.permBan
         file_text_close(text)
     }
 }
-
 consoleInit()
 defineConsoleCommands()
+
+SMOKE_init();
