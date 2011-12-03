@@ -1,6 +1,6 @@
 var text, name;
 
-write_ubyte(global.replayBuffer, 1)// Length of the coming message
+write_ushort(global.replayBuffer, 1)// Length of the coming message
 write_ubyte(global.replayBuffer, REPLAY_END)
 
 name = get_save_filename(".gg2", "Replay.gg2")

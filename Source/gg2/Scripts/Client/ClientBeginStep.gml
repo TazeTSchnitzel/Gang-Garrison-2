@@ -16,7 +16,7 @@ if global.isPlayingReplay
     
     for(a=0; a<global.replaySpeed; a+=1)
     {
-        length = read_ubyte(global.replayBuffer);
+        length = read_ushort(global.replayBuffer);
         for(i=0; i<length; i+=1)
         {
             write_ubyte(global.replaySocket, read_ubyte(global.replayBuffer));

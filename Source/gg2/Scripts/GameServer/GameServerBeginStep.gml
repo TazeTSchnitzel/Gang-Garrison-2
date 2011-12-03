@@ -163,7 +163,7 @@ for(i=1; i<ds_list_size(global.players); i+=1)
 }
 if global.recordingEnabled
 {
-    write_ubyte(global.replayBuffer, buffer_size(global.eventBuffer)+buffer_size(global.sendBuffer));
+    write_ushort(global.replayBuffer, buffer_size(global.eventBuffer)+buffer_size(global.sendBuffer));
     write_buffer(global.replayBuffer, global.eventBuffer);
     write_buffer(global.replayBuffer, global.sendBuffer);
 }

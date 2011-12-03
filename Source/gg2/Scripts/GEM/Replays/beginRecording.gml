@@ -14,7 +14,7 @@ ServerJoinUpdate(tempBuffer);
 write_ubyte(tempBuffer, PLAYER_JOIN);
 write_ubyte(tempBuffer, 0);// Length of name
 
-write_ubyte(global.replayBuffer, buffer_size(tempBuffer));
+write_ushort(global.replayBuffer, buffer_size(tempBuffer));
 write_buffer(global.replayBuffer, tempBuffer);
         
 global.justEnabledRecording = 0
