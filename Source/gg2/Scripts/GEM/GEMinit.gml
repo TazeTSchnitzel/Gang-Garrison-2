@@ -12,7 +12,6 @@ global.classlimits[CLASS_SPY] = ini_read_real("Classlimits", "Spy", 9999);
 global.classlimits[CLASS_SNIPER] = ini_read_real("Classlimits", "Sniper", 9999);
 global.classlimits[CLASS_QUOTE] = ini_read_real("Classlimits", "Quote", 9999);
 
-
 ini_write_real("Server", "Permanent Ban enabled", global.permBan);
 ini_write_real("Classlimits", "Scout", global.classlimits[CLASS_SCOUT]);
 ini_write_real("Classlimits", "Pyro", global.classlimits[CLASS_PYRO]);
@@ -25,7 +24,38 @@ ini_write_real("Classlimits", "Spy", global.classlimits[CLASS_SPY]);
 ini_write_real("Classlimits", "Sniper", global.classlimits[CLASS_SNIPER]);
 ini_write_real("Classlimits", "Quote", global.classlimits[CLASS_QUOTE]);
 
+
+// Bots
+global.botNumber = ini_read_real("Bots", "Number (in total)", 0)
+global.botMode = ini_read_real("Bots", "Fight mode", 0)
+global.botNamePrefix = ini_read_string("Bots", "Bot Name Prefix", "")
+global.botLearningMode = ini_read_real("Bots", "Bot learning", 1)
+global.botClasses[CLASS_SCOUT] = ini_read_real("Bots", "Runners enabled", 1)
+global.botClasses[CLASS_PYRO] = ini_read_real("Bots", "Firebugs enabled", 1)
+global.botClasses[CLASS_SOLDIER] = ini_read_real("Bots", "Rocketmen enabled", 1)
+global.botClasses[CLASS_HEAVY] = ini_read_real("Bots", "Overweights enabled", 1)
+global.botClasses[CLASS_MEDIC] = ini_read_real("Bots", "Healers enabled", 1)
+global.botClasses[CLASS_ENGINEER] = ini_read_real("Bots", "Constructors enabled", 1)
+global.botClasses[CLASS_SNIPER] = ini_read_real("Bots", "Riflemen enabled", 1)   
+global.botDebugMode = ini_read_real("Bots", "Debug Mode enabled", 0)
+
+ini_write_real("Bots", "Number (in total)", global.botNumber)
+ini_write_real("Bots", "Fight mode", global.botMode)
+ini_write_real("Bots", "Bot Learning", global.botLearningMode)
+ini_write_string("Bots", "Bot Name Prefix", global.botNamePrefix)
+ini_write_real("Bots", "Runners enabled", global.botClasses[CLASS_SCOUT])
+ini_write_real("Bots", "Firebugs enabled", global.botClasses[CLASS_PYRO])
+ini_write_real("Bots", "Rocketmen enabled", global.botClasses[CLASS_SOLDIER])
+ini_write_real("Bots", "Overweights enabled", global.botClasses[CLASS_HEAVY])
+ini_write_real("Bots", "Healers enabled", global.botClasses[CLASS_MEDIC])
+ini_write_real("Bots", "Constructors enabled", global.botClasses[CLASS_ENGINEER])
+ini_write_real("Bots", "Riflemen enabled", global.botClasses[CLASS_SNIPER])
+ini_write_real("Bots", "Bot Debug Mode enabled", global.botDebugMode)
+
 ini_close();
+
+global.botNameCounter = 1
+global.changedNodeMap = 0
 
 global.banlist = ds_list_create()
 global.banlistNames = ds_list_create()

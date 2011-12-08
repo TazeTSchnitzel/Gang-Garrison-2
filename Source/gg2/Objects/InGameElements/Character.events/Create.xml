@@ -21,6 +21,16 @@
     jumpStrength = 8;
     capStrength = 1;
     
+    // Node stuff
+    lastNode = -1
+    distanceTraveledSinceNode = 0
+    lastNodeCommand = 0
+    if !instance_exists(Node) and global.botLearningMode
+    {
+        GenerateNodes()
+        global.botChangeMap = 1
+    }
+    
     // 
     flamecount = 0;
     invisible = false;

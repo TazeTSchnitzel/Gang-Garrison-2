@@ -65,7 +65,6 @@
     global.haxxyKey = ini_read_string("Haxxy", "SecretHaxxyKey", "");
     global.mapdownloadLimitBps = ini_read_real("Server", "Total bandwidth limit for map downloads in bytes per second", 50000);
     global.recordingEnabled = ini_read_real("Server", "Recording Enabled", 0);
-    global.chatMode = ini_read_real("Server", "Chat enabled (0=no, 1=only team chat, 2=all)", 1)
     global.currentMapArea=1;
     global.totalMapAreas=1;
     global.setupTimer=1800;
@@ -98,7 +97,6 @@
     ini_write_real("Server", "Time Limit", global.timeLimitMins);
     ini_write_string("Server", "Password", global.serverPassword);
     ini_write_real("Server", "Recording Enabled", global.recordingEnabled);
-    ini_write_real("Server", "Chat enabled (0=no, 1=only team chat, 2=all)", global.chatMode)
     ini_write_string("Haxxy", "SecretHaxxyKey", global.haxxyKey);
     
     //screw the 0 index we will start with 1

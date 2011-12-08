@@ -45,6 +45,8 @@
         exit;
     }
     
+    CreateBot();
+    
     var loopbackStartTime;
     loopbackStartTime = current_time;
     do {

@@ -114,6 +114,13 @@ while(commandLimitRemaining > 0) {
                 else if(team == TEAM_BLUE)
                     redSuperiority -= 1;
             }
+            with(BotPlayer)
+            {
+                if(team == TEAM_RED)
+                    redSuperiority += 1;
+                else if(team == TEAM_BLUE)
+                    redSuperiority -= 1;
+            }
             if(redSuperiority > 0)
                 balance = TEAM_RED;
             else if(redSuperiority < 0)

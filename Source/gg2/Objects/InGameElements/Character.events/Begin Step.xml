@@ -36,6 +36,11 @@ if (burnDuration &lt;= 0 || burnIntensity &lt;= 0)
     afterburnSource = -1;
 }
 
+if lastNode != -1
+{
+    distanceTraveled += hspeed
+}
+
 // Handle input
 if(!taunting and !omnomnomnom)
 {
