@@ -127,9 +127,32 @@ while(commandLimitRemaining > 0) {
                 balance = TEAM_BLUE;
             else
                 balance = -1;
-            
+                
             if(balance != newTeam)
             {
+                if global.botMode == 2// Human VS Bots: Dynamic
+                {
+                    switch (global.botChosenTeam)
+                    {
+                        case TEAM_RED:
+                            newTeam = TEAM_BLUE;
+                            CreateBot()
+                            break;
+
+                        case TEAM_BLUE:
+                            newTeam = TEAM_RED;
+                            CreateBot()
+                            break;
+
+                        case TEAM_SPECTATOR:
+                            with BotPlayer// Destroy one bot
+                            {
+                                destroy = 1;
+                                break;
+                            }
+                    }
+                }
+            
                 if(getCharacterObject(newTeam, player.class) != -1 or newTeam==TEAM_SPECTATOR)
                 {  
                     if(player.object != -1)

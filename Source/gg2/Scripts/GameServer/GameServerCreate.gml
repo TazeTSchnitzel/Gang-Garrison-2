@@ -45,7 +45,34 @@
         exit;
     }
     
-    CreateBot();
+    switch global.botMode
+    {
+        case 0:// Mixed VS Mixed; fixed number of bots
+            for (a=0; a<global.botNumber; a+=1)
+            {
+                CreateBot();
+            }
+            break;
+            
+        case 1:
+            global.botChosenTeam = choose(TEAM_RED, TEAM_BLUE);
+            for (a=0; a<global.botNumber; a+=1)
+            {
+                CreateBot();
+            }
+            break;
+            
+        case 2:
+            global.botChosenTeam = choose(TEAM_RED, TEAM_BLUE);
+            break;
+            
+        case 3:
+            while ds_list_size(global.players) < global.playerLimit
+            {
+                CreateBot();
+            }
+            break;
+    }
     
     var loopbackStartTime;
     loopbackStartTime = current_time;

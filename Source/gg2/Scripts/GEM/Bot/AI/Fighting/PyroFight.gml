@@ -41,10 +41,10 @@ with Rocket
         distance = sqrt(power(hs, 2)+power(vs, 2));
 
         factor = 13/distance // 13=rocket_speed;
-        
+
         hs *= factor // normalize the rocket-me vector, multiply it with 13 to make it the same length as the rocket speed, and compare the hspeed and vspeed.
         vs *= factor
-        
+
         if distance > 42 and abs(hs-hspeed) < 5 and abs(vs-vspeed) < 5 //42=flamethrower_length; And I couldn't come up with something better to test whether the rocket is going to hit you.
         {
         // airblast

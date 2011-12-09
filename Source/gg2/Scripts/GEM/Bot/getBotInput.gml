@@ -14,7 +14,7 @@ if pressed
     jump = 0
     pressed = 0
 }
-else if jump
+else
 {
     pressed = 1
 }

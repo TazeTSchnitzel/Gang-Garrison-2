@@ -127,7 +127,7 @@ case STATE_EXPECT_COMMAND:
 
 case STATE_EXPECT_NAME:
     var noOfPlayers, player;
-    noOfPlayers = ds_list_size(global.players);
+    noOfPlayers = ds_list_size(global.players)-instance_number(BotPlayer);
     if(global.dedicatedMode)
         noOfPlayers -= 1;
         
@@ -135,6 +135,15 @@ case STATE_EXPECT_NAME:
     {
         write_ubyte(socket, SERVER_FULL);
         break;
+    }
+    
+    if global.botMode == 3// Mixed VS Mixed: Fill Server
+    {
+        with BotPlayer// Destroy one bot
+        {
+            destroy = 1
+            break;
+        }
     }
     
     ServerJoinUpdate(socket);

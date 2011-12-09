@@ -10,7 +10,8 @@ target = argument1
 
 if source == target
 {
-    return ds_list_create()
+    ds_priority_destroy(unvisited);
+    return ds_list_create();
 }
 
 // Network is the list of all nodes you can get to from source.
@@ -22,7 +23,7 @@ for (i=0; i<ds_list_size(source.network); i+=1)
     
         ds_list_clear(history)
     
-        dist = point_distance(x, y, source.x, source.y)+power(map_width(), 2)*power(map_height(), 2)
+        dist = -1
     }
 }
 node = source
@@ -43,14 +44,14 @@ while true
     for (i=0; i<ds_list_size(node.connections); i+=1)
     {
         newNode = ds_list_find_value(node.connections, i)
-        
-        if node.dist+ds_list_find_value(node.distance, i) < newNode.dist
+
+        if node.dist+ds_list_find_value(node.distance, i) < newNode.dist or newNode.dist < 0
         {
 //            show_message(node.dist)
 //            show_message(ds_list_size(node.history))
             ds_list_clear(newNode.history)
             ds_list_copy(newNode.history, node.history)
-            
+
             newNode.dist = node.dist+ds_list_find_value(node.distance, i)
             ds_priority_change_priority(unvisited, newNode, newNode.dist)
         }

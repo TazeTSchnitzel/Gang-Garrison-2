@@ -31,12 +31,10 @@ if global.botClasses[CLASS_MEDIC]
     ds_list_add(classList, CLASS_MEDIC)
 }
 
-return CLASS_ENGINEER
-
 if ds_list_empty(classList)
 {
     class = choose(CLASS_SCOUT, CLASS_PYRO, CLASS_SOLDIER, CLASS_HEAVY, CLASS_ENGINEER, CLASS_SNIPER, CLASS_MEDIC)
-    if global.botNameCounter == 1 show_message("No Class Free#Choosing randomly")
+    if global.botNameCounter == 1 show_message("No Class Free.#Choosing randomly.")
     return class
 }
 

@@ -45,7 +45,7 @@ if(collision_line(object.x,object.y,Target_x,Target_y,Obstacle,true,true)<0
         if collision_line(object.x, object.y, Target_x, Target_y, ds_list_find_value(list_of_char, i,), true, true)
         {
             doesnt_collide = false
-            i = 100000//You'll never have that many players.
+            break;
         }
     }
     
