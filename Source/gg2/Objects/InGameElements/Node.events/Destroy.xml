@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="DESTROY" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">var a;
+
+with Node
+{
+    if id == other.id continue;// Ignore yourself
+    
+    a = ds_list_find_index(connections, other.id)
+    if a &gt;= 0
+    {
+        ds_list_delete(connections, a)
+        ds_list_delete(distance, a)
+        ds_list_delete(commands, a)
+        ds_list_delete(network, ds_list_find_index(network, other.id))
+    }
+}
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>
