@@ -6,7 +6,5 @@
   <resource name="Replays" type="GROUP"/>
   <resource name="SMOKE" type="GROUP"/>
   <resource name="Bot" type="GROUP"/>
-  <resource name="findPlayer" type="RESOURCE"/>
   <resource name="getColorCode" type="RESOURCE"/>
-  <resource name="getID" type="RESOURCE"/>
 </resources>
