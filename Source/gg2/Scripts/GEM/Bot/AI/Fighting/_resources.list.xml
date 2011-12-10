@@ -6,5 +6,4 @@
   <resource name="HeavyFight" type="RESOURCE"/>
   <resource name="EngineerFight" type="RESOURCE"/>
   <resource name="SniperFight" type="RESOURCE"/>
-  <resource name="MedicAI" type="RESOURCE"/>
 </resources>

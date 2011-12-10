@@ -25,6 +25,15 @@ with(Character) {
     }
 }
 
+with BotPlayer
+{
+    if target == other.point
+    {
+        target = -1
+        ds_list_clear(directionList)
+    }
+}
+
 var capperList;
 capperList = "";
 

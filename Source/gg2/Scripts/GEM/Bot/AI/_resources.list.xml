@@ -6,4 +6,5 @@
   <resource name="Fighting" type="GROUP"/>
   <resource name="Aiming" type="GROUP"/>
   <resource name="Nodes" type="GROUP"/>
+  <resource name="MedicAI" type="RESOURCE"/>
 </resources>

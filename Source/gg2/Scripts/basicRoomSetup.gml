@@ -53,6 +53,8 @@ if(global.ingameMusic) {
 }
 instance_create(map_width()/2,map_height()/2,Spectator);
 
+LoadBotNodes()
+
 global.redCaps = 0;
 global.blueCaps = 0;
 global.winners = -1;

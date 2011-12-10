@@ -24,3 +24,8 @@ bot.alarm[5] = 1
 ServerPlayerJoin(bot, global.sendBuffer)
 ServerPlayerChangeteam(ds_list_size(global.players)-1, bot.team, global.sendBuffer)
 ServerPlayerChangeclass(ds_list_size(global.players)-1, bot.class, global.sendBuffer)
+
+write_ubyte(global.sendBuffer, PLAYER_CHANGENAME);
+write_ubyte(global.sendBuffer, ds_list_size(global.players)-1);
+write_ubyte(global.sendBuffer, string_length(bot.name));
+write_string(global.sendBuffer, bot.name);

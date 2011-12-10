@@ -4,9 +4,20 @@
 if (ds_list_empty(directionList) or task != 'objective') and target_in_sight
 {
     dir = sign(nearestEnemy.hspeed)
+    
+    if object.ubered
+    {
+        dir = sign(nearestEnemy.x-object.x)
+
+        if abs(nearestEnemy.x-object.x) < 41
+        {
+            dir = 1
+        }
+    }
+    
     if dir == 0
     {
-        dir = 1
+        dir = sign(nearestEnemy.x-object.x)
     }
 }
 

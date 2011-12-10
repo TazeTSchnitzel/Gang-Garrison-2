@@ -8,7 +8,7 @@ if (ds_list_empty(directionList) or task != 'objective') and target_in_sight
 
 if dir == 0
 {
-    dir = 1
+    dir = sign(nearestEnemy.x-object.x)
 }
 
 if(collision_line(object.x,object.y,predictedEnemy_x,predictedEnemy_y,Obstacle,true,true)<0

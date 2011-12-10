@@ -15,7 +15,9 @@ with object
 // Don't scope, because it makes jumping stupid.
 if object.zoomed
 {
-    RMB = 1
+    write_ubyte(global.sendBuffer, TOGGLE_ZOOM);
+    write_ubyte(global.sendBuffer, ds_list_find_index(global.players, id));
+    toggleZoom(object);
 }
 
 // Did this because I was to lazy to erase all the "Target_x" and the "Target_y", normally they contain the predicted position for the enemy, but sniper is instant.

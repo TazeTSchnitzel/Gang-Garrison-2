@@ -54,8 +54,27 @@ ini_write_real("Bots", "Debug Mode enabled", global.botDebugMode)
 
 ini_close();
 
-global.botNameCounter = 1
-global.changedNodeMap = 0
+global.botNameCounter = 1// This makes the number in the bot's name increase by one each time
+global.changedNodeMap = 0// Indicates whether an improvement to the nodemap was done, so that if yes it can save the new one.
+global.botClassCounter = 0// These two are for wished class compositions:
+global.botClassList = ds_list_create()
+
+// Example of wished class composition (can only be hard-coded atm):
+/*ds_list_add(global.botClassList, CLASS_SCOUT)// Red
+ds_list_add(global.botClassList, CLASS_SCOUT)// Blue
+ds_list_add(global.botClassList, CLASS_SOLDIER)// Red
+ds_list_add(global.botClassList, CLASS_SOLDIER)// Blue etc...
+ds_list_add(global.botClassList, CLASS_PYRO)
+ds_list_add(global.botClassList, CLASS_PYRO)
+ds_list_add(global.botClassList, CLASS_MEDIC)
+ds_list_add(global.botClassList, CLASS_MEDIC)
+ds_list_add(global.botClassList, CLASS_HEAVY)
+ds_list_add(global.botClassList, CLASS_HEAVY)
+ds_list_add(global.botClassList, CLASS_ENGINEER)
+ds_list_add(global.botClassList, CLASS_ENGINEER)
+ds_list_add(global.botClassList, CLASS_SNIPER)
+ds_list_add(global.botClassList, CLASS_SNIPER)*/
+
 
 global.banlist = ds_list_create()
 global.banlistNames = ds_list_create()

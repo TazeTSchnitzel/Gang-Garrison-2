@@ -33,6 +33,8 @@ task = choose("roam", "roam", "roam", "objective", "hunt")
 // tasks possible: hunt (search enemies and kill them); roam (just wander around killing everyone you meet); and objective (capture the flag/point ignoring any enemies)
 // roam has priority over everything else.
 
+task = 'roam'
+
 if class == CLASS_MEDIC
 {
     task = 'roam'

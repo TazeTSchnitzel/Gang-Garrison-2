@@ -57,13 +57,13 @@
     
     with BotPlayer
     {
-        if target == id
+        if target == other.id
         {
             target = -1
             ds_list_clear(directionList)
         }
         
-        if patient == id
+        if patient == other.id
         {
             patient = -1
         }

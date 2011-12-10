@@ -104,7 +104,8 @@ if mouse_check_button(mb_left) &amp;&amp; newteam !=-1 {
 if(afk == true){
     team = TEAM_SPECTATOR;
     event_user(1);
-}</argument>
+}
+</argument>
       </arguments>
     </action>
   </actions>

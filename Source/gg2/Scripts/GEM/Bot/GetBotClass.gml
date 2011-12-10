@@ -1,5 +1,13 @@
 var classList, foundClass, class;
 
+if !ds_list_empty(global.botClassList)
+{
+    // Someone wants a very precise class composition
+    class = ds_list_find_value(global.botClassList, global.botClassCounter)
+    global.botClassCounter = (global.botClassCounter+1) mod (ds_list_size(global.botClassList)*2)
+    return class
+}
+
 classList = ds_list_create()
 
 if global.botClasses[CLASS_SCOUT]
