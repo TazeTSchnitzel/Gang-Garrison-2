@@ -54,6 +54,20 @@
     if(variable_local_exists("jumpFlameParticleType")) {
             part_type_destroy(jumpFlameParticleType);
     }
+    
+    with BotPlayer
+    {
+        if target == id
+        {
+            target = -1
+            ds_list_clear(directionList)
+        }
+        
+        if patient == id
+        {
+            patient = -1
+        }
+    }
 }
 </argument>
       </arguments>

@@ -50,7 +50,7 @@ ini_write_real("Bots", "Overweights enabled", global.botClasses[CLASS_HEAVY])
 ini_write_real("Bots", "Healers enabled", global.botClasses[CLASS_MEDIC])
 ini_write_real("Bots", "Constructors enabled", global.botClasses[CLASS_ENGINEER])
 ini_write_real("Bots", "Riflemen enabled", global.botClasses[CLASS_SNIPER])
-ini_write_real("Bots", "Bot Debug Mode enabled", global.botDebugMode)
+ini_write_real("Bots", "Debug Mode enabled", global.botDebugMode)
 
 ini_close();
 

@@ -131,25 +131,29 @@ while(commandLimitRemaining > 0) {
             if(balance != newTeam)
             {
                 if global.botMode == 2// Human VS Bots: Dynamic
-                {
-                    switch (global.botChosenTeam)
+                {                    
+                    if newTeam == TEAM_SPECTATOR
                     {
-                        case TEAM_RED:
-                            newTeam = TEAM_BLUE;
-                            CreateBot()
+                        with BotPlayer// Destroy one bot
+                        {
+                            destroy = 1;
                             break;
-
-                        case TEAM_BLUE:
-                            newTeam = TEAM_RED;
-                            CreateBot()
-                            break;
-
-                        case TEAM_SPECTATOR:
-                            with BotPlayer// Destroy one bot
-                            {
-                                destroy = 1;
+                        }
+                    }
+                    else
+                    {
+                        switch (global.botChosenTeam)
+                        {
+                            case TEAM_RED:
+                                newTeam = TEAM_BLUE;
+                                CreateBot()
                                 break;
-                            }
+
+                            case TEAM_BLUE:
+                                newTeam = TEAM_RED;
+                                CreateBot()
+                                break;
+                        }
                     }
                 }
             
