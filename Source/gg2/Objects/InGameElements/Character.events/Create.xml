@@ -25,11 +25,11 @@
     lastNode = -1
     distanceTraveledSinceNode = 0
     lastNodeCommand = 0
-    /*if !instance_exists(Node) and global.botLearningMode and global.botDebugMode
+    if !instance_exists(Node) and global.botLearningMode and global.botDebugMode
     {
         GenerateNodes()
         global.botChangeMap = 1
-    }*/
+    }
     
     // 
     flamecount = 0;
