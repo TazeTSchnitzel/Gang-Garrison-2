@@ -13,13 +13,9 @@
       <not>false</not>
       <appliesTo>.self</appliesTo>
       <arguments>
-        <argument kind="STRING">// Force dedicated mode to off so you can go to main menu instead of just restarting server
-global.dedicatedMode = 0;
-with(Client)
-    instance_destroy();
-    
-with(GameServer)
-    instance_destroy();
+        <argument kind="STRING">{
+    SMOKE_manageplugins();
+}
 </argument>
       </arguments>
     </action>
