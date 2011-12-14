@@ -50,7 +50,7 @@ item[6] = "Respawn Time (secs):";
 item[7] = "Auto Balance:";
 item[8] = "Announce to Lobby:";
 item[9] = "Recording:";
-item[10] = "Bots"
+item[10] = "Bot Options"
 item[11] = "Start Game";
 item[12] = "Back";
     
