@@ -60,9 +60,13 @@ if(tcp_eof(socket)) {
                 changeslength = string_length(versioncheck)-versionend;
                 changes=string_copy(versioncheck,versionend+1,changeslength);
                 if real(version) &gt; VERSION {
-                    update=show_message_ext("Updates have been made to Gang Garrison 2!##"+changes,"Update","Cancel","");
+                    update=show_message_ext("Updates have been made to GEM!##"+changes,"Update","Cancel","");
                     if (update == 1){
-                        execute_shell("gg2updater.exe","");
+                        //execute_shell("gg2updater.exe","");
+                        //game_end();
+                        SMOKE_http_file("ajf.me", "/stuff/gem/update.zip", "update.zip", true);
+                        SMOKE_extractzip("update.zip", ".", true);
+                        execute_program("GEM_"+version+".exe", "", false);
                         game_end();
                     }
                 }

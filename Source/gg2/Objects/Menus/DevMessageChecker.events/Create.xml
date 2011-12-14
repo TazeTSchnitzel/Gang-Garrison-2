@@ -14,8 +14,8 @@
       <appliesTo>.self</appliesTo>
       <arguments>
         <argument kind="STRING">var host, path;
-host = "www.ganggarrison.com";
-path = "/devmessages.txt";
+host = "ajf.me";
+path = "/stuff/gem/devmessages.txt";
 
 socket = noone;
 
