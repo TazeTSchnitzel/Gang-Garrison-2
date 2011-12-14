@@ -22,8 +22,8 @@ else
 
 write_ushort(lobbyBuffer, 7); // Number of Key/Value pairs that follow
 writeKeyValue(lobbyBuffer, "name", global.serverName);
-writeKeyValue(lobbyBuffer, "game", "Orpheon's Hosting Utilities");
-writeKeyValue(lobbyBuffer, "game_short", "OHU");
+writeKeyValue(lobbyBuffer, "game", "General Enhancement Mod");
+writeKeyValue(lobbyBuffer, "game_short", "GEM");
 writeKeyValue(lobbyBuffer, "game_ver", GAME_VERSION_STRING);
 writeKeyValue(lobbyBuffer, "game_url", "http://www.ganggarrison.com/forums/index.php?topic=30719");
 writeKeyValue(lobbyBuffer, "map", global.currentMap);
