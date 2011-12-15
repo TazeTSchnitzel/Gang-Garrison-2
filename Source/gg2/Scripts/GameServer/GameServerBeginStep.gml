@@ -50,6 +50,11 @@ acceptJoiningPlayer();
 with(JoiningPlayer)
     serviceJoiningPlayer();
 
+if global.userCreatedBot[0]// User wants a bot
+{
+    CreateBot();// then create one
+}
+
 if global.recordingEnabled and global.justEnabledRecording
 {
     beginRecording();

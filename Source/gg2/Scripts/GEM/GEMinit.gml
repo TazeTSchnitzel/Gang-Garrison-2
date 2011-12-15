@@ -58,6 +58,7 @@ global.botNameCounter = 1// This makes the number in the bot's name increase by 
 global.changedNodeMap = 0// Indicates whether an improvement to the nodemap was done, so that if yes it can save the new one.
 global.botClassCounter = 0// These two are for wished class compositions:
 global.botClassList = ds_list_create()
+global.userCreatedBot[0] = 0// This is for people wishing for a specific bot
 
 // Example of wished class composition (can only be hard-coded atm):
 /*ds_list_add(global.botClassList, CLASS_SCOUT)// Red

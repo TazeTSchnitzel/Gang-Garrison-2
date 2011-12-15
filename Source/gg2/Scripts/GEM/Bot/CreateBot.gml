@@ -5,9 +5,18 @@ with bot
 {
     BotInit()
 }
-        
-bot.team = GetBotTeam(bot)
-bot.class = GetBotClass(bot)
+
+if global.userCreatedBot[0]// User wants a specific bot. Creating it anywhere gives errors for clients. God knows why.
+{
+    bot.team = global.userCreatedBot[1];
+    bot.class = global.userCreatedBot[2];
+    global.userCreatedBot[0] = 0
+}
+else
+{
+    bot.team = GetBotTeam(bot)
+    bot.class = GetBotClass(bot)
+}
         
 if global.botNamePrefix == ""
 {
