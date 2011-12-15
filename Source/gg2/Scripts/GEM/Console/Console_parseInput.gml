@@ -34,8 +34,6 @@ if ds_map_exists(global.commandMap, input[0])
 else
 {
     Console_print("Unknown command; type help for a list of them.")
-    Console_print(input[0])
-    Console_print(input[1])
 }
 
 Console_print('');
