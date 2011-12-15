@@ -25,7 +25,7 @@ writeKeyValue(lobbyBuffer, "name", global.serverName);
 writeKeyValue(lobbyBuffer, "game", "General Enhancement Mod");
 writeKeyValue(lobbyBuffer, "game_short", "GEM");
 writeKeyValue(lobbyBuffer, "game_ver", GAME_VERSION_STRING);
-writeKeyValue(lobbyBuffer, "game_url", "http://www.ganggarrison.com/forums/index.php?topic=30719");
+writeKeyValue(lobbyBuffer, "game_url", "http://www.ganggarrison.com/forums/index.php?topic=30966");
 writeKeyValue(lobbyBuffer, "map", global.currentMap);
 write_ubyte(lobbyBuffer, string_length("protocol_id"));
 write_string(lobbyBuffer, "protocol_id");
