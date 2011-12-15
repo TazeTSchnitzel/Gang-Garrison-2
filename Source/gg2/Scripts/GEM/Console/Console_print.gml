@@ -43,7 +43,7 @@ while string_length(input) > 84// String is too long, break it in pieces and pri
 
 ds_list_add(global.consoleLog, input);
 
-while ds_list_size(global.consoleLog) > 100
+while ds_list_size(global.consoleLog) > 36
 {
     ds_list_delete(global.consoleLog, 0)
 }

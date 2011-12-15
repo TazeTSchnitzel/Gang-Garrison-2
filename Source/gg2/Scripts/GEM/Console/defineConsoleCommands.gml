@@ -20,7 +20,7 @@ if input[1] == ''
     Console_print('The current command list:');
     key = ds_map_find_first(global.commandMap);
     Console_print(key);
-    for (i=0; i<ds_map_size(global.commandMap)-2; i+=1)
+    for (i=0; i<ds_map_size(global.commandMap)-1; i+=1)
     {
         key = ds_map_find_next(global.commandMap, key);
         Console_print(key);
