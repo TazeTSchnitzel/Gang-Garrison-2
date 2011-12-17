@@ -49,19 +49,13 @@ if target_in_sight and class == CLASS_ENGINEER and object.nutsNBolts >= 100 and 
             if collision_line(sentry.x, sentry.y, object.x, object.y, Obstacle, 1, 1) >= 0
             {
                 // Destroy sentry
-                with sentry
-                {
-                    instance_destroy()
-                }
-                sentry = -1
+                write_ubyte(botSocket, DESTROY_SENTRY)
             }
         }
         else
         {
             // Build a new Sentry
-            buildSentry(id)
-            write_ubyte(global.sendBuffer, BUILD_SENTRY)
-            write_ubyte(global.sendBuffer, ds_list_find_index(global.players, id))
+            write_ubyte(botSocket, BUILD_SENTRY)
         }
     }
 }

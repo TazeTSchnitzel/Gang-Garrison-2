@@ -1,40 +1,28 @@
-bot = instance_create(0, 0, BotPlayer)
-ds_list_add(global.players, bot)
-        
-with bot
-{
-    BotInit()
-}
+// Creates a bot by sending a registration to the server;
+// argument0=team, argument1=class;
 
-if global.userCreatedBot[0]// User wants a specific bot. Creating it anywhere gives errors for clients. God knows why.
-{
-    bot.team = global.userCreatedBot[1];
-    bot.class = global.userCreatedBot[2];
-    global.userCreatedBot[0] = 0
-}
-else
-{
-    bot.team = GetBotTeam(bot)
-    bot.class = GetBotClass(bot)
-}
-        
-if global.botNamePrefix == ""
-{
-    bot.name = "Tempest Bot "+string(global.botNameCounter)
-}
-else
-{
-    bot.name = global.botNamePrefix+string(global.botNameCounter)
-}
-global.botNameCounter += 1
 
-bot.alarm[5] = 1
+var name, socket, team, class;
 
-ServerPlayerJoin(bot, global.sendBuffer)
-ServerPlayerChangeteam(ds_list_size(global.players)-1, bot.team, global.sendBuffer)
-ServerPlayerChangeclass(ds_list_size(global.players)-1, bot.class, global.sendBuffer)
+name = "TB "+string(irandom(99999999))
+socket = tcp_connect('localhost', global.hostingPort)
 
-write_ubyte(global.sendBuffer, PLAYER_CHANGENAME);
-write_ubyte(global.sendBuffer, ds_list_size(global.players)-1);
-write_ubyte(global.sendBuffer, string_length(bot.name));
-write_string(global.sendBuffer, bot.name);
+ds_map_add(global.botNameSocketMap, name, socket)
+
+write_ubyte(socket, HELLO);
+write_buffer(socket, global.protocolUuid);
+
+write_ubyte(socket, PLAYER_JOIN);
+name = string_copy(name, 0, min(string_length(name), MAX_PLAYERNAME_LENGTH));
+write_ubyte(socket, string_length(name));
+write_string(socket, name);
+
+team = argument0
+write_ubyte(socket, PLAYER_CHANGETEAM);
+write_ubyte(socket, team);
+
+class = argument1
+write_ubyte(socket, PLAYER_CHANGECLASS);
+write_ubyte(socket, class);
+
+socket_send(socket)

@@ -25,12 +25,15 @@ with(Character) {
     }
 }
 
-with BotPlayer
+with Player
 {
-    if target == other.point
+    if isBot
     {
-        target = -1
-        ds_list_clear(directionList)
+        if target == other.point
+        {
+            target = -1
+            ds_list_clear(directionList)
+        }
     }
 }
 

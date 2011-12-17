@@ -14,22 +14,28 @@ if global.myself == argument0 {
     with NoticeO notice = NOTICE_HAVEINTEL;
 }
 if(argument0.team == TEAM_RED) {
-    with BotPlayer
+    with Player
     {
-        if target.object_index == IntelligenceBlue
+        if isBot
         {
-            target = -1
-            ds_list_clear(directionList)
+            if target.object_index == IntelligenceBlue
+            {
+                target = -1
+                ds_list_clear(directionList)
+            }
         }
     }
     with(IntelligenceBlue) instance_destroy();
 } else if(argument0.team == TEAM_BLUE) {
-    with BotPlayer
+    with Player
     {
-        if target.object_index == IntelligenceRed
+        if isBot
         {
-            target = -1
-            ds_list_clear(directionList)
+            if target.object_index == IntelligenceRed
+            {
+                target = -1
+                ds_list_clear(directionList)
+            }
         }
     }
     with(IntelligenceRed) instance_destroy();

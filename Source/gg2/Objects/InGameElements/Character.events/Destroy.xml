@@ -55,17 +55,20 @@
             part_type_destroy(jumpFlameParticleType);
     }
     
-    with BotPlayer
+    with Player
     {
-        if target == other.id
+        if isBot
         {
-            target = -1
-            ds_list_clear(directionList)
-        }
+            if target == other.id
+            {
+                target = -1
+                ds_list_clear(directionList)
+            }
         
-        if patient == other.id
-        {
-            patient = -1
+            if patient == other.id
+            {
+                patient = -1
+            }
         }
     }
 }

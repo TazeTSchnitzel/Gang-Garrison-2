@@ -51,7 +51,4 @@ if bubbleHP
     keybyte |= $04
 }
 
-
-object.keyState = keybyte
-object.aimDirection = aimDirection
-object.netAimDirection = aimDirection*65536/360
+return keybyte;

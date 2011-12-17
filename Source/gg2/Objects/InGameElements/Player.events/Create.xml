@@ -20,6 +20,8 @@
     socket = -1;
     name = "";
     challenge = ""; // :drool:
+    isBot = 0;
+    botSocket = -1;
     
     //fuck your shit I'm making statistic arrays
     stats[KILLS] = 0;

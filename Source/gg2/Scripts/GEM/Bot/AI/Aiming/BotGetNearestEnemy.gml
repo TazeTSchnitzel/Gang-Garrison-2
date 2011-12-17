@@ -1,9 +1,8 @@
 // Finds the nearest enemy
 
 
-var targetQueue, testDist, playercheck, nearstEnemy, closestEnemy;
+var targetQueue, testDist, playercheck, nearestEnemy, closestEnemy;
 
-nearestEnemy = -1;
 targetQueue = ds_priority_create();
 
 // Build a queue of potential targets

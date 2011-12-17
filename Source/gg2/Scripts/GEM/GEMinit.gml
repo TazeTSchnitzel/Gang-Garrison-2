@@ -60,6 +60,8 @@ global.botClassCounter = 0// These two are for wished class compositions:
 global.botClassList = ds_list_create()
 global.userCreatedBot[0] = 0// This is for people wishing for a specific bot
 
+global.botNameSocketMap = ds_map_create();
+
 // Example of wished class composition (can only be hard-coded atm):
 /*ds_list_add(global.botClassList, CLASS_SCOUT)// Red
 ds_list_add(global.botClassList, CLASS_SCOUT)// Blue

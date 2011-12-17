@@ -127,7 +127,7 @@ case STATE_EXPECT_COMMAND:
 
 case STATE_EXPECT_NAME:
     var noOfPlayers, player;
-    noOfPlayers = ds_list_size(global.players)-instance_number(BotPlayer);
+    noOfPlayers = ds_list_size(global.players)
     if(global.dedicatedMode)
         noOfPlayers -= 1;
         
@@ -139,10 +139,13 @@ case STATE_EXPECT_NAME:
     
     if global.botMode == 3// Mixed VS Mixed: Fill Server
     {
-        with BotPlayer// Destroy one bot
+        with Player// Destroy one bot
         {
-            destroy = 1
-            break;
+            if isBot
+            {
+                socket_destroy(botSocket)
+                break;
+            }
         }
     }
     
@@ -155,6 +158,20 @@ case STATE_EXPECT_NAME:
     player.name = read_string(player.socket, expectedBytes);
     player.name = string_copy(player.name, 0, MAX_PLAYERNAME_LENGTH);
     player.name = string_replace_all(player.name, "#", " ");
+    
+    if ds_map_find_value(global.botNameSocketMap, player.name) >= 0
+    {
+        player.isBot = 1
+        player.botSocket = ds_map_find_value(global.botNameSocketMap, player.name)
+        ds_map_delete(global.botNameSocketMap, player.name)
+        player.name = "Tempest Bot "+string(global.botNameCounter)
+        global.botNameCounter += 1
+        
+        with player
+        {
+            BotInit()
+        }
+    }
     
     ds_list_add(global.players, player);
     ServerPlayerJoin(player.name, global.sendBuffer);

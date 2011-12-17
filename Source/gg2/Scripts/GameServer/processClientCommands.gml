@@ -114,13 +114,6 @@ while(commandLimitRemaining > 0) {
                 else if(team == TEAM_BLUE)
                     redSuperiority -= 1;
             }
-            with(BotPlayer)
-            {
-                if(team == TEAM_RED)
-                    redSuperiority += 1;
-                else if(team == TEAM_BLUE)
-                    redSuperiority -= 1;
-            }
             if(redSuperiority > 0)
                 balance = TEAM_RED;
             else if(redSuperiority < 0)
@@ -134,10 +127,12 @@ while(commandLimitRemaining > 0) {
                 {                    
                     if newTeam == TEAM_SPECTATOR
                     {
-                        with BotPlayer// Destroy one bot
+                        with Player
                         {
-                            destroy = 1;
-                            break;
+                            if isBot
+                            {
+                                socket_destroy(botSocket)
+                            }
                         }
                     }
                     else
@@ -146,12 +141,12 @@ while(commandLimitRemaining > 0) {
                         {
                             case TEAM_RED:
                                 newTeam = TEAM_BLUE;
-                                CreateBot()
+                                CreateBot(GetBotTeam(), GetBotClass())
                                 break;
 
                             case TEAM_BLUE:
                                 newTeam = TEAM_RED;
-                                CreateBot()
+                                CreateBot(GetBotTeam(), GetBotClass())
                                 break;
                         }
                     }

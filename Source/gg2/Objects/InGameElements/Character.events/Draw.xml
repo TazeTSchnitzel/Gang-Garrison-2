@@ -55,7 +55,7 @@ if(distance_to_point(mouse_x, mouse_y)&lt;25) {
     } else {
         draw_set_color(c_blue);
     }
-if global.botDebugMode and player.object_index == BotPlayer draw_text(xr, yr-35, player.task);
+if global.botDebugMode and player.isBot draw_text(xr, yr-35, player.task);
 else draw_text(xr, yr-35, player.name);
 }  
 
