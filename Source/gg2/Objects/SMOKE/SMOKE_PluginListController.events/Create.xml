@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="CREATE" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">virtualitem = -1;
+xbegin = 110;
+ybegin = 150;
+spacing = 32;
+width = 435; 
+items = 12;
+offset = 0;
+
+plugins = ds_list_create();
+
+var plugincsv;
+plugincsv = SMOKE_http_string("smoke.ajf.me", "/api/pluginlist", true);
+plugincsv = SMOKE_parsecsv(plugincsv);
+
+var i, plugin;
+for (i = 0; i &lt; ds_list_size(plugincsv); i+=4) {
+    plugin = instance_create(0,0,SMOKE_Plugin);
+    plugin.name = ds_list_find_value(plugincsv, i);
+    plugin.pluginid = ds_list_find_value(plugincsv, i+1);
+    plugin.downloads = ds_list_find_value(plugincsv, i+2);
+    plugin.author = ds_list_find_value(plugincsv, i+3);
+    plugin.installed = (ds_list_find_index(global.SMOKE_pluginlist, plugin.pluginid) != -1);
+    plugin.enabled = (ds_list_find_index(global.SMOKE_enabledpluginlist, plugin.pluginid) != -1);
+    ds_list_add(plugins, plugin);
+}
+ds_list_destroy(plugincsv);
+
+numPlugins = ds_list_size(plugins);
+pluginsRead = 0;
+pluginInfoLength = -1;
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

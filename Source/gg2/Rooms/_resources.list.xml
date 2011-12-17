@@ -5,6 +5,7 @@
   <resource name="Credits" type="RESOURCE"/>
   <resource name="Options" type="RESOURCE"/>
   <resource name="Lobby" type="RESOURCE"/>
+  <resource name="SMOKE_PluginList" type="RESOURCE"/>
   <resource name="Maps" type="GROUP"/>
   <resource name="DownloadRoom" type="RESOURCE"/>
 </resources>

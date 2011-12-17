@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
-  <resource name="SMOKE_ClippyChecker" type="RESOURCE"/>
+  <resource name="SMOKE_PluginListController" type="RESOURCE"/>
+  <resource name="SMOKE_PluginListSideController" type="RESOURCE"/>
+  <resource name="SMOKE_Plugin" type="RESOURCE"/>
+  <resource name="SMOKE_ScrollUp" type="RESOURCE"/>
+  <resource name="SMOKE_ScrollDown" type="RESOURCE"/>
 </resources>

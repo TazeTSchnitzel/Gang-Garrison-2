@@ -5,8 +5,6 @@
   <resource name="SMOKE_http_string" type="RESOURCE"/>
   <resource name="SMOKE_init" type="RESOURCE"/>
   <resource name="SMOKE_updateplugins" type="RESOURCE"/>
-  <resource name="SMOKE_manageplugins" type="RESOURCE"/>
-  <resource name="SMOKE_clippycheck" type="RESOURCE"/>
   <resource name="SMOKE_downloadplugin" type="RESOURCE"/>
   <resource name="SMOKE_parsecsv" type="RESOURCE"/>
   <resource name="SMOKE_parselist" type="RESOURCE"/>

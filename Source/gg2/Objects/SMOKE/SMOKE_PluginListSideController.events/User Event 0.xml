@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<event category="OTHER" id="14">
+<event category="OTHER" id="10">
   <actions>
     <action id="603" library="1">
       <!--action name: Code-->
@@ -13,8 +13,14 @@
       <not>false</not>
       <appliesTo>.self</appliesTo>
       <arguments>
-        <argument kind="STRING">{
-    room_goto_fix(SMOKE_PluginList);
+        <argument kind="STRING">if(cooleddown) {
+    with(SMOKE_PluginListController) {
+        instance_destroy();
+    }
+    
+    instance_create(0,0,SMOKE_PluginListController);
+    cooleddown = false;
+    alarm[0] = 90;
 }
 </argument>
       </arguments>

@@ -28,7 +28,7 @@
     item[0] = "Options";
     item[1] = "Return to Game";
     item[2] = "";
-    item[3] = "SMOKE Plugins";
+    item[3] = "";
     item[4] = "Disconnect";
     item[5] = "Quit Game";
     xoffset = view_xview[0];

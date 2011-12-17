@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="STEP" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">{
+    var size, namelength, plugin;
+    
+    if(mouse_x &gt; xbegin and mouse_x &lt; xbegin+width) {
+        virtualitem = round((mouse_y-ybegin)/spacing-0.5);
+        if(virtualitem&lt;0 or virtualitem&gt;items) {
+            virtualitem = -1;
+        } else {
+            virtualitem += offset;
+        }
+        if(mouse_check_button_pressed(mb_left) and virtualitem&lt;ds_list_size(plugins) and virtualitem&gt;=0){
+            plugin = ds_list_find_value(plugins, virtualitem);
+            
+            var desc, resp;
+            desc = SMOKE_http_string("smoke.ajf.me", "/api/plugin/"+plugin.pluginid+"/getdescription", true);
+            if (plugin.installed) {
+                if (plugin.enabled)
+                    resp = show_message_ext(desc,"Remove","Disable","Cancel");
+                else
+                    resp = show_message_ext(desc,"Remove","Enable","Cancel");
+                switch (resp) {
+                    case 1:
+                        SMOKE_removeplugin(plugin.pluginid);
+                        show_message("Removed plugin");
+                        break;
+                    case 2:
+                        if (plugin.enabled) {
+                            SMOKE_disableplugin(plugin.pluginid);
+                            show_message("Disabled plugin");
+                        }else{
+                            if (SMOKE_enableplugin(plugin.pluginid)) show_message("Enabled plugin");
+                        }
+                        break;
+                }
+            }else{
+                if (show_message_ext(desc,"Install","","Cancel") == 1) {
+                    SMOKE_downloadplugin(plugin.pluginid, false);
+                }
+            }
+            with (SMOKE_PluginListSideController) event_user(0);
+        }
+    } else {
+        virtualitem = -1;
+    }
+}
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<event category="OTHER" id="14">
+<event category="DESTROY" id="0">
   <actions>
     <action id="603" library="1">
       <!--action name: Code-->
@@ -13,9 +13,11 @@
       <not>false</not>
       <appliesTo>.self</appliesTo>
       <arguments>
-        <argument kind="STRING">{
-    room_goto_fix(SMOKE_PluginList);
+        <argument kind="STRING">with(SMOKE_Plugin) {
+    instance_destroy();
 }
+
+ds_list_destroy(plugins);
 </argument>
       </arguments>
     </action>
