@@ -14,7 +14,12 @@
       <appliesTo>.self</appliesTo>
       <arguments>
         <argument kind="STRING">{
-    room_goto_fix(Credits);
+    var fname;
+    
+    fname = get_open_filename("Wallmasks (*.png)|*.png", "");
+    
+    if (fname != "")
+        MapEditorLoadWM(fname);
 }
 </argument>
       </arguments>

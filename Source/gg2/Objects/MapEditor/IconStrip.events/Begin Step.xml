@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="STEP" id="1">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">{
+    var xoffset, yoffset;
+    
+    xoffset = view_xview[view_current]+x;
+    yoffset = view_yview[view_current]+y;
+    
+    var button;
+    button = -1;
+    
+    if (mouse_check_button(mb_left)) {
+        if (horizontal) {
+            if (mouse_x &gt;= xoffset and mouse_x &lt; xoffset+iconsize*striplength
+                and mouse_y &gt;= yoffset and mouse_y &lt; yoffset+iconsize) {
+                button = floor((mouse_x-xoffset)/iconsize);
+            }
+        }else{
+            if (mouse_x &gt;= xoffset and mouse_x &lt; xoffset+iconsize
+                and mouse_y &gt;= yoffset and mouse_y &lt; yoffset+iconsize*striplength) {
+                button = floor((mouse_y-yoffset)/iconsize);
+            }
+        }
+        if (button != -1 and button != clickedbutton)
+            event_user(button);
+    }
+    clickedbutton = button; 
+}
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

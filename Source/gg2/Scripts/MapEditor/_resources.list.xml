@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+  <resource name="MapEditorLoadBG" type="RESOURCE"/>
+  <resource name="MapEditorLoadWM" type="RESOURCE"/>
+  <resource name="MapEditorLoadMap" type="RESOURCE"/>
+  <resource name="MapEditorProcessLevelData" type="RESOURCE"/>
+  <resource name="MapEditorCreateEntitiesFromEntityData" type="RESOURCE"/>
+  <resource name="MapEditorClear" type="RESOURCE"/>
+</resources>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<event category="OTHER" id="15">
+<event category="KEYBOARD" id="38">
   <actions>
     <action id="603" library="1">
       <!--action name: Code-->
@@ -14,7 +14,7 @@
       <appliesTo>.self</appliesTo>
       <arguments>
         <argument kind="STRING">{
-    room_goto_fix(Credits);
+    view_yview[0] -= 32;
 }
 </argument>
       </arguments>

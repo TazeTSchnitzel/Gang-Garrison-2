@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+  <resource name="IconStrip" type="RESOURCE"/>
+  <resource name="MapEditorController" type="RESOURCE"/>
+  <resource name="EditIconStrip" type="RESOURCE"/>
+  <resource name="GeneralPlaceIconStrip" type="RESOURCE"/>
+  <resource name="CTFPlaceIconStrip" type="RESOURCE"/>
+  <resource name="VisibleWallmask" type="RESOURCE"/>
+  <resource name="MapEditorEntity" type="RESOURCE"/>
+</resources>

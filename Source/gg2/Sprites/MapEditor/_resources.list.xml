@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+  <resource name="EditIconStripS" type="RESOURCE"/>
+  <resource name="GeneralPlaceIconStripS" type="RESOURCE"/>
+  <resource name="CTFPlaceIconStripS" type="RESOURCE"/>
+</resources>
