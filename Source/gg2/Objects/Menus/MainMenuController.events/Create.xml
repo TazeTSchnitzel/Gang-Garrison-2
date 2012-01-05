@@ -20,7 +20,7 @@
     ybegin = 300;
     spacing = 30;
     width = 200; 
-    items = 6;
+    items = 7;
     
     item[0] = "Host Game";
     item[1] = "Join (lobby)";
