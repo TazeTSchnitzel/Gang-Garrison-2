@@ -16,7 +16,8 @@
         <argument kind="STRING">{
     isRefilling = false;
     alarm[5] = reloadBuffer;
-    if(readyToShoot &amp;&amp; ammoCount &gt;= 4) {
+    if(readyToShoot and ammoCount &gt;= 2.2)
+    {
         playsound(x,y,ChaingunSnd);
         var shot;
         randomize();
@@ -34,9 +35,16 @@
             }
         justShot=true;
         readyToShoot=false;
+<<<<<<< HEAD
         ammoCount-=3;
         if ammoCount &gt; 0 alarm[0]=refireTime;
         else alarm[0]=50;
+=======
+        isRefilling = false;
+        ammoCount -= 2.2;
+        alarm[0] = refireTime;
+        alarm[5] = reloadBuffer;
+>>>>>>> f941193... Tweak Heavy tweaks
     }
 }
 </argument>
