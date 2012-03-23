@@ -62,6 +62,7 @@
     global.caplimitBkup = global.caplimit;
     global.autobalance = ini_read_real("Server", "AutoBalance",1);
     global.Server_RespawntimeSec = ini_read_real("Server", "Respawn Time", 5);
+    global.Server_SetuptimeSec = ini_read_real("Server", "Setup Time", 5);
     global.haxxyKey = ini_read_string("Haxxy", "SecretHaxxyKey", "");
     global.mapdownloadLimitBps = ini_read_real("Server", "Total bandwidth limit for map downloads in bytes per second", 50000);
     global.updaterBetaChannel = ini_read_real("General", "UpdaterBetaChannel", isBetaVersion());
@@ -94,6 +95,7 @@
     ini_write_real("Server", "CapLimit", global.caplimit);
     ini_write_real("Server", "AutoBalance", global.autobalance);
     ini_write_real("Server", "Respawn Time", global.Server_RespawntimeSec);
+    ini_write_real("Server", "Setup Time", global.Server_SetuptimeSec);
     ini_write_real("Server", "Total bandwidth limit for map downloads in bytes per second", global.mapdownloadLimitBps);
     ini_write_real("Server", "Time Limit", global.timeLimitMins);
     ini_write_string("Server", "Password", global.serverPassword);

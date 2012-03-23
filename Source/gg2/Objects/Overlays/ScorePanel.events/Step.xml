@@ -22,7 +22,12 @@ if (!redIsCapping)
 if (!blueIsCapping)
     blueIsCapping = (IntelligenceRed.x != IntelligenceBaseRed.x or IntelligenceRed.y != IntelligenceBaseRed.y);
 
-if (timer &gt; 0)
+if (global.setupTimer &gt; 0) {
+    global.setupTimer -= 1;
+    with (Character) {
+        hspeed = 0;
+    }
+} else if (timer &gt; 0)
     timer -= 1;
 
 if ((global.redCaps &gt;= global.caplimit) or (global.blueCaps &gt;= global.caplimit) or (timer &lt;= 0))

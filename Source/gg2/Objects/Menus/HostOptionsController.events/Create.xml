@@ -34,7 +34,7 @@ xbegin = 40;
 ybegin = 200;
 spacing = 30;
 width = 300; 
-items = 11;
+items = 12;
 valueoffset = 200;
 editing = -1;
 canClick = false;
@@ -47,10 +47,11 @@ item[3] = "Player Limit:";
 item[4] = "Time Limit (mins):";
 item[5] = "Capture Limit:";
 item[6] = "Respawn Time (secs):";
-item[7] = "Auto Balance:";
-item[8] = "Announce to Lobby:";
-item[9] = "Start Game";
-item[10] = "Back";
+item[7] = "Setup Time (secs):";
+item[8] = "Auto Balance:";
+item[9] = "Announce to Lobby:";
+item[10] = "Start Game";
+item[11] = "Back";
     
 value[0] = global.serverName;
 value[1] = global.serverPassword;
@@ -59,21 +60,22 @@ value[3] = global.playerLimit;
 value[4] = global.timeLimitMins;
 value[5] = global.caplimit;
 value[6] = global.Server_RespawntimeSec;
+value[7] = global.Server_SetuptimeSec;
     
 if(global.autobalance) {
-    value[7] = "On";
-} else {
-    value[7] = "Off";
-}
-    
-if(global.useLobbyServer) {
     value[8] = "On";
 } else {
     value[8] = "Off";
 }
     
-value[9] = "";
+if(global.useLobbyServer) {
+    value[9] = "On";
+} else {
+    value[9] = "Off";
+}
+    
 value[10] = "";
+value[11] = "";
 </argument>
       </arguments>
     </action>

@@ -13,8 +13,28 @@
       <not>false</not>
       <appliesTo>.self</appliesTo>
       <arguments>
-        <argument kind="STRING">instance_create(x,y,MainMenuController);
-instance_destroy();</argument>
+        <argument kind="STRING">//Server respawn time calculator. Converts each second to a frame. (read: multiply by 30 :hehe:)
+if (global.Server_RespawntimeSec == 0)
+{
+    global.Server_Respawntime = 1;
+}    
+else
+{
+    global.Server_Respawntime = global.Server_RespawntimeSec * 30;    
+}
+
+//I'm lazy and did the same for setup time
+if (global.Server_SetuptimeSec == 0)
+{
+    global.setupTimer = 1;
+}    
+else
+{
+    global.setupTimer = global.Server_SetuptimeSec * 30;    
+}
+
+global.gameServer = instance_create(0,0,GameServer);
+</argument>
       </arguments>
     </action>
   </actions>

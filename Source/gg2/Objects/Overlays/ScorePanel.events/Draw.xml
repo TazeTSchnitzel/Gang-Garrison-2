@@ -148,8 +148,18 @@ if overtime == 1 {
     draw_set_halign(fa_center);
     draw_sprite_ext(TimerHudS,2+teamoffset,xoffset+xsize/2 +xshift,yoffset+30+ yshift,3,3,0 ,c_white,1);
     draw_text((xoffset+xsize/2)+xshift,yoffset+30+ yshift,"OVERTIME");
-}
-else{
+}else if global.setupTimer &gt; 0 {
+    draw_sprite_ext(TimerHudS,teamoffset,xoffset+xsize/2+xshift,yoffset+30+ yshift,3,3,0,c_white,1);
+    draw_sprite_ext(TimerS,floor(global.setupTimer/1800*12),xoffset+xsize/2+39+xshift,yoffset+30+ yshift,3,3,0,c_white,1);
+    seconds=floor(global.setupTimer/30);
+    draw_set_halign(fa_right);
+    draw_text_transformed(xoffset+xsize/2-10+xshift,yoffset+27+ yshift,"00",1.5,1.5,0);
+    draw_text_transformed(xoffset+xsize/2+xshift,yoffset+27+ yshift,":",1.5,1.5,0);
+    if seconds &gt;= 10 draw_text_transformed(xoffset+xsize/2+20+xshift,yoffset+27+ yshift,string(seconds),1.5,1.5,0);
+    else if seconds &lt; 10 draw_text_transformed(xoffset+xsize/2+20+xshift,yoffset+27+ yshift,"0"+string(seconds),1.5,1.5,0);
+    draw_set_halign(fa_center);
+    draw_text_transformed(xoffset+xsize/2-5+xshift,yoffset+38+ yshift,"Setup",1,1,0);
+}else{
     draw_set_halign(fa_right);
     draw_sprite_ext(TimerHudS,teamoffset,xoffset+xsize/2 +xshift,yoffset+30+ yshift,3,3,0,c_white,1);
     draw_sprite_ext(TimerS,floor(timer/timeLimit*12),xoffset+xsize/2+39 +xshift,yoffset+30+ yshift,3,3,0,c_white,1);

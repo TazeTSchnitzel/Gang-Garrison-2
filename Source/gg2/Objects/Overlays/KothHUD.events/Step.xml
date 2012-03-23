@@ -13,7 +13,14 @@
       <not>false</not>
       <appliesTo>.self</appliesTo>
       <arguments>
-        <argument kind="STRING">//automatically change maps if the server is empty for too long
+        <argument kind="STRING">if (global.setupTimer &gt; 0) {
+    global.setupTimer -= 1;
+    with (Character) {
+        hspeed = 0;
+    }
+    exit;
+}
+//automatically change maps if the server is empty for too long
 if (global.isHost and hostTimer &gt; 0 and !KothControlPoint.locked and KothControlPoint.capping == 0 and KothControlPoint.bluePresence == 0 and KothControlPoint.redPresence == 0)
 {
     hostTimer -= 1;
@@ -37,7 +44,6 @@ if global.isHost and KothControlPoint.locked and !global.mapchanging {
     }
 }
 if cpUnlock &gt; 0 cpUnlock -= 1;
-
 </argument>
       </arguments>
     </action>
