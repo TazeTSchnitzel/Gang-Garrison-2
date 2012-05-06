@@ -11,6 +11,7 @@
   <resource name="Sentry" type="RESOURCE"/>
   <resource name="Explosion" type="RESOURCE"/>
   <resource name="Impact" type="RESOURCE"/>
+  <resource name="WaterDrop" type="RESOURCE"/>
   <resource name="LooseSheet" type="RESOURCE"/>
   <resource name="DeadGuy" type="RESOURCE"/>
   <resource name="NoticeO" type="RESOURCE"/>

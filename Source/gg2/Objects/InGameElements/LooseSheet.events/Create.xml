@@ -19,7 +19,8 @@ image_xscale=2;
 image_yscale=2;
 alarm[0]=130;
 burning = false;
-fadeout = false;</argument>
+fadeout = false;
+</argument>
       </arguments>
     </action>
   </actions>

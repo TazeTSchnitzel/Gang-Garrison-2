@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<object id="471">
-  <sprite>BubbleS</sprite>
+<object id="804">
+  <sprite>sprite64</sprite>
   <solid>false</solid>
   <visible>true</visible>
-  <depth>-11</depth>
+  <depth>-10</depth>
   <persistent>false</persistent>
   <parent/>
   <mask/>

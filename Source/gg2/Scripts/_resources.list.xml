@@ -46,4 +46,5 @@
   <resource name="md5" type="RESOURCE"/>
   <resource name="ds_list_sorted_insert" type="RESOURCE"/>
   <resource name="isBetaVersion" type="RESOURCE"/>
+  <resource name="entity_float" type="RESOURCE"/>
 </resources>

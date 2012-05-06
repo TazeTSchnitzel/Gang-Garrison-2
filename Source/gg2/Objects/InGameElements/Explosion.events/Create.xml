@@ -13,7 +13,17 @@
       <not>false</not>
       <appliesTo>.self</appliesTo>
       <arguments>
-        <argument kind="STRING">alarm[0]=13</argument>
+        <argument kind="STRING">alarm[0]=13
+
+var bubble;
+
+if (collision_point(x,y,WaterBox,false,false)) {
+    repeat(6) {
+        bubble = instance_create(x, y, Bubble);
+        bubble.hspeed = random(6)-3;
+    }
+}
+</argument>
       </arguments>
     </action>
     <action id="542" library="1">

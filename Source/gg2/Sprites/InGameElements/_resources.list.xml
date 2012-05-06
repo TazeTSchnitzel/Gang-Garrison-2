@@ -20,4 +20,6 @@
   <resource name="SentryTurretLogS" type="RESOURCE"/>
   <resource name="DeathCamHealthBarS" type="RESOURCE"/>
   <resource name="BubblesS" type="RESOURCE"/>
+  <resource name="QuerlyBubbleS" type="RESOURCE"/>
+  <resource name="WaterDropS" type="RESOURCE"/>
 </resources>

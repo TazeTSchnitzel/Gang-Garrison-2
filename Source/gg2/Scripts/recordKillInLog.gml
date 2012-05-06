@@ -104,6 +104,12 @@
                     ds_map_add(map, "weapon", DeadKL);
                     ds_map_replace(map, "string", "finished off ");
                     break;
+                case DROWN:
+                    ds_map_add(map, "weapon", DeadKL);
+                    ds_map_replace(map, "string", string_copy(argument0.name, 1, 20) + " drowned");
+                    ds_map_replace(map, "name2", "");
+                    ds_map_replace(map, "team2", 0);
+                    break;
                 case BID_FAREWELL:
                     ds_map_add(map, "weapon", DeadKL);
                     ds_map_replace(map, "string", string_copy(argument0.name, 1, 20) + " bid farewell, cruel world!");

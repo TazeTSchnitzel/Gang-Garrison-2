@@ -13,7 +13,8 @@
       <not>false</not>
       <appliesTo>.self</appliesTo>
       <arguments>
-        <argument kind="STRING">if(other.team != team) {
+        <argument kind="STRING">if(owner != -1)
+if(other.team != team) {
 other.hp -= hitDamage;
 other.lastDamageDealer = ownerPlayer;
 other.lastDamageSource = weapon;

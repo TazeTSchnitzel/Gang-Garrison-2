@@ -13,7 +13,12 @@
       <not>false</not>
       <appliesTo>.self</appliesTo>
       <arguments>
-        <argument kind="STRING">draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, c_white, 1);
+        <argument kind="STRING">if (inwater) {
+    repeat (6)
+        draw_sprite_ext(BubbleS, image_index, x-12+random(6), y-16+random(12), image_xscale, image_yscale, image_angle, c_white, 1);   
+}else{
+    draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, c_white, 1);
+}
 </argument>
       </arguments>
     </action>

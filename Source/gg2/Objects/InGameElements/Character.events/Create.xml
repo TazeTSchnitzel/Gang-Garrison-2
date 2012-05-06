@@ -31,6 +31,10 @@
     stabbing = 0;
     onCabinet = 0;
     timeUnscathed = 0;
+    inwater = 0;
+    headunderwater = 0;
+    drownCountdown = 0;
+    wetCountdown = 0;
     
     //afterburn stuff
     burnIntensity = 0;

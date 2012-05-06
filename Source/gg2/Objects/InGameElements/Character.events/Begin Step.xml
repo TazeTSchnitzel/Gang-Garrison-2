@@ -13,7 +13,56 @@
       <not>false</not>
       <appliesTo>.self</appliesTo>
       <arguments>
-        <argument kind="STRING">// Apply afterburn
+        <argument kind="STRING">var previnwater, prevheadunderwater;
+previnwater = inwater;
+prevheadunderwater = headunderwater;
+inwater = collision_point(x,y,WaterBox,false,false);
+headunderwater = collision_point(x,y-10,WaterBox,false,false);
+
+// set drown countdown if you enter water
+if (!prevheadunderwater and headunderwater) {
+    drownCountdown = 240;
+// querly is immune to drowning
+}else if (headunderwater and player.class != CLASS_QUOTE) {
+    drownCountdown -= 1;
+    // drown
+    if (drownCountdown &lt; 0) {
+        // "hit" every second
+        if (drownCountdown mod 30 == 0) {
+            hp -= 10;
+            lastDamageSource = DROWN;
+            playsound(x,y,DeathSnd1);
+        }
+    }
+// undo 75% of drowning damage
+}else if (!headunderwater and prevheadunderwater and drownCountdown &lt; 0) {
+    hp += 0.75 * ((0-drownCountdown)/30 * 10);
+}
+
+// querly is inside bubble, draw on top of water
+// this is kind of a hack but I don't know a better way to do it
+if (player.class==CLASS_QUOTE and headunderwater) {
+    depth = -11;
+}else if (!headunderwater) {
+    depth = 0;
+}
+
+// spies uncloak in water
+if (inwater and player.class=CLASS_SPY) {
+    cloakAlpha = 1;
+}
+// spies get "wet" and drip water for a few seconds
+if (previnwater and !inwater and player.class==CLASS_SPY) {
+    wetCountdown = 180;
+}
+if (wetCountdown &gt; 0) {
+    wetCountdown -= 1;
+    if (random(16) &lt; 2) {
+        instance_create(x-4+random(4),y-random(6),WaterDrop);
+    }   
+}
+
+// Apply afterburn
 if (burnDuration &gt; 0)
 {
     burnDuration -= durationDecay;
@@ -28,13 +77,15 @@ if (burnDuration &gt; 0)
     lastDamageSource = afterburnSource;
 }
 if (alarm[0] == -1 &amp;&amp; burnIntensity &gt; 0) burnIntensity -= intensityDecay;
-if (burnDuration &lt;= 0 || burnIntensity &lt;= 0)
+if (burnDuration &lt;= 0 || burnIntensity &lt;= 0 || inwater)
 {
     burnDuration = 0;
     burnIntensity = 0;
     burnedBy = -1;
     afterburnSource = -1;
 }
+var jumpout;
+jumpout = (keyState &amp; $80 and (!inwater and previnwater) and vspeed &lt; 0);
 // Handle input
 if(!taunting and !omnomnomnom)
 {
@@ -52,9 +103,14 @@ if(!taunting and !omnomnomnom)
             tauntend=tauntlength*2-1;
         }
         image_speed=tauntspeed;
-    } 
-    
-    if(pressedKeys &amp; $80)
+    }
+    // "swim" upwards if holding down
+    if(keyState &amp; $80 and inwater and vspeed &gt; -jumpStrength*0.2) {
+        vspeed -= jumpStrength*0.2;
+    }
+    // (double)jump if pressed
+    // or doublejump if holding down and rising out of water
+    else if(pressedKeys &amp; $80 or jumpout)
     {
         if(!place_free(x,y+1) and place_free(x,y))
         {
@@ -64,7 +120,7 @@ if(!taunting and !omnomnomnom)
                 vspeed = min(vspeed-jumpStrength, -jumpStrength);
             }
         }
-        else if(canDoublejump and !doublejumpUsed and vspeed &gt; -jumpStrength)
+        else if(((canDoublejump and !doublejumpUsed) or jumpout) and vspeed &gt; -jumpStrength)
         {
             vspeed = -jumpStrength;
             playsound(x,y,JumpSnd);
@@ -113,6 +169,8 @@ default:
         controlFactor = baseControl;
     else
         controlFactor = baseControl-0.1;
+    if(inwater)
+        controlFactor *= 0.6;
     frictionFactor = baseFriction;
 }
 
@@ -184,10 +242,18 @@ if(abs(hspeed)&lt;0.195 /*and not moveStatus = 3*/) { // Overweight carrying int
     animationImage=0;
 }    
     
+// gravity
 if(place_free(x,y+1)) {
-    vspeed += 0.6;
-    if(vspeed&gt;10) {
-        vspeed=10;
+    if (inwater) {
+        vspeed += 0.36;
+        if(vspeed&gt;3) {
+            vspeed=3;
+        }
+    }else{
+        vspeed += 0.6;
+        if(vspeed&gt;10) {
+            vspeed=10;
+        }
     }
     animationImage = 1;
 } else {

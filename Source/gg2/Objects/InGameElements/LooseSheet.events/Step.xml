@@ -21,6 +21,10 @@
     vspeed /= (4/3);
 }
 
+if(collision_point(x,y,WaterBox,false,false) and burning) {
+    burning = false;
+}
+
 if(!burning) {
     image_speed = vspeed;
 } else {
@@ -29,7 +33,8 @@ if(!burning) {
 
 if(fadeout) {
     image_alpha -= (1/30);
-}</argument>
+}
+</argument>
       </arguments>
     </action>
   </actions>

@@ -4,4 +4,5 @@
   <resource name="KillBox" type="RESOURCE"/>
   <resource name="PitFall" type="RESOURCE"/>
   <resource name="FragBox" type="RESOURCE"/>
+  <resource name="WaterBox" type="RESOURCE"/>
 </resources>

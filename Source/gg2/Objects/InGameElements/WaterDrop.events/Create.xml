@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<event category="STEP" id="0">
+<event category="CREATE" id="0">
   <actions>
     <action id="603" library="1">
       <!--action name: Code-->
@@ -13,28 +13,13 @@
       <not>false</not>
       <appliesTo>.self</appliesTo>
       <arguments>
-        <argument kind="STRING">{
-    hspeed/=1.1;
-    if(abs(hspeed)&lt;0.2) {
-        hspeed=0;
-    }
-    
-    inwater = collision_point(x,y,WaterBox,false,false);
-    
-    if(place_free(x,y+1)) {
-        if(inwater) {
-            vspeed += 0.36;
-            if(vspeed&gt;3) {
-                vspeed=3;
-            }
-        }else{
-            vspeed += 0.6;
-            if(vspeed&gt;10) {
-                vspeed=10;
-            }
-        }
-    }
-}
+        <argument kind="STRING">    lifetime=60;
+    alarm[0]=lifetime;
+    stick = false;
+    ogib=-1;
+    odir=0;
+    image_index=random(image_number);
+    image_speed=0;
 </argument>
       </arguments>
     </action>
