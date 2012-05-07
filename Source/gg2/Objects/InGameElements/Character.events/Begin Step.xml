@@ -51,7 +51,10 @@ if (player.class==CLASS_QUOTE and headunderwater) {
 if (previnwater and !inwater and player.class!=CLASS_QUOTE) {
     wetCountdown = 180;
 }
-if (wetCountdown &gt; 0) {
+if (wetCountdown &gt; 0 and inwater) {
+    wetCountdown = 0;
+}
+if (wetCountdown &gt; 0 and !inwater) {
     wetCountdown -= 1;
     if (random(16) &lt; 2) {
         instance_create(x-4+random(4),y-random(6),WaterDrop);
