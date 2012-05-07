@@ -81,7 +81,7 @@ if (burnDuration &lt;= 0 || burnIntensity &lt;= 0 || inwater)
     afterburnSource = -1;
 }
 var jumpout;
-jumpout = (keyState &amp; $80 and (!inwater and previnwater) and vspeed &lt; 0);
+jumpout = (keyState &amp; $80 and (!headunderwater and prevheadunderwater) and vspeed &lt; 0);
 // Handle input
 if(!taunting and !omnomnomnom)
 {
@@ -100,8 +100,8 @@ if(!taunting and !omnomnomnom)
         }
         image_speed=tauntspeed;
     }
-    // "swim" upwards if holding down
-    if(keyState &amp; $80 and inwater and vspeed &gt; -jumpStrength*0.2) {
+    // "swim" upwards if holding down and submerged
+    if(keyState &amp; $80 and headunderwater and vspeed &gt; -jumpStrength*0.2) {
         vspeed -= jumpStrength*0.2;
     }
     // (double)jump if pressed
