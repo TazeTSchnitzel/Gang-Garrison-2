@@ -47,12 +47,8 @@ if (player.class==CLASS_QUOTE and headunderwater) {
     depth = 0;
 }
 
-// spies uncloak in water
-if (inwater and player.class=CLASS_SPY) {
-    cloakAlpha = 1;
-}
-// spies get "wet" and drip water for a few seconds
-if (previnwater and !inwater and player.class==CLASS_SPY) {
+// non-querlies get "wet" and drip water for a few seconds
+if (previnwater and !inwater and player.class!=CLASS_QUOTE) {
     wetCountdown = 180;
 }
 if (wetCountdown &gt; 0) {
