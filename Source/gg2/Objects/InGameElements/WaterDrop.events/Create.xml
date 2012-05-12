@@ -20,6 +20,7 @@
     odir=0;
     image_index=random(image_number);
     image_speed=0;
+    image_alpha=0.75;
 </argument>
       </arguments>
     </action>

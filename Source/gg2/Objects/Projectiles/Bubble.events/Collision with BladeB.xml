@@ -13,7 +13,7 @@
       <not>false</not>
       <appliesTo>.self</appliesTo>
       <arguments>
-        <argument kind="STRING">if(owner != -1)
+        <argument kind="STRING">if(owner == -1) break;
 if (ownerPlayer == other.ownerPlayer or team != other.team)
     instance_destroy();
 </argument>

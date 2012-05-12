@@ -21,7 +21,7 @@ headunderwater = collision_point(x,y-10,WaterBox,false,false);
 
 // set drown countdown if you enter water
 if (!prevheadunderwater and headunderwater) {
-    drownCountdown = 240;
+    drownCountdown = 30*8;
 // querly is immune to drowning
 }else if (headunderwater and player.class != CLASS_QUOTE) {
     drownCountdown -= 1;
@@ -36,7 +36,7 @@ if (!prevheadunderwater and headunderwater) {
     }
 // undo 75% of drowning damage
 }else if (!headunderwater and prevheadunderwater and drownCountdown &lt; 0) {
-    hp += 0.75 * ((0-drownCountdown)/30 * 10);
+    hp += floor((0-drownCountdown)/30) * 10;
 }
 
 // querly is inside bubble, draw on top of water
