@@ -96,6 +96,7 @@ while(commandLimitRemaining > 0) {
                 }
                 else if(player.alarm[5]<=0)
                     player.alarm[5] = 1;
+                class = checkClasslimits(player.team, class);
                 player.class = class;
                 ServerPlayerChangeclass(playerId, player.class, global.sendBuffer);
             }
@@ -147,7 +148,14 @@ while(commandLimitRemaining > 0) {
                         player.alarm[5] = global.Server_Respawntime;
                     }
                     else if(player.alarm[5]<=0)
-                        player.alarm[5] = 1;
+                        player.alarm[5] = 1;                    
+                    var newClass;
+                    newClass = checkClasslimits(newTeam, player.class);
+                    if newClass != player.class
+                    {
+                        player.class = newClass;
+                        ServerPlayerChangeclass(playerId, player.class, global.sendBuffer);
+                    }
                     player.team = newTeam;
                     ServerPlayerChangeteam(playerId, player.team, global.sendBuffer);
                 }
@@ -202,14 +210,22 @@ while(commandLimitRemaining > 0) {
               
         case OMNOMNOMNOM:
             if(player.object != -1) {
-                if(player.humiliated == 0
-                        && player.object.taunting==false
-                        && player.object.omnomnomnom==false
-                        && player.class==CLASS_HEAVY) {                            
+                if(!player.humiliated
+                    and !player.object.taunting
+                    and !player.object.omnomnomnom
+                    and player.object.canEat
+                    and player.class==CLASS_HEAVY)
+                {                            
                     write_ubyte(global.sendBuffer, OMNOMNOMNOM);
                     write_ubyte(global.sendBuffer, playerId);
-                    with(player.object) {
-                        omnomnomnom=true;
+                    with(player.object)
+                    {
+                        omnomnomnom = true;
+                        if(hp < 200)
+                        {
+                            canEat = false;
+                            alarm[6] = eatCooldown; //10 second cooldown
+                        }
                         if player.team == TEAM_RED {
                             omnomnomnomindex=0;
                             omnomnomnomend=31;
@@ -247,11 +263,20 @@ while(commandLimitRemaining > 0) {
             {
                 with(player)
                 {
-                    if(variable_local_exists("lastNamechange")) 
-                        if(current_time - lastNamechange < 1000)
-                            break;
+                    if(current_time - lastNamechange < 1000)
+                        break;
                     lastNamechange = current_time;
-                    name = read_string(socket, nameLength);
+                    var newname;
+                    newname = read_string(socket, nameLength);
+                    
+                    // Notify the chat
+                    var message;
+                    message = "/:/"+COLOR_WHITE+name+" is now known as "+newname;
+                    write_ubyte(global.publicChatBuffer, CHAT_PUBLIC_MESSAGE);
+                    write_ubyte(global.publicChatBuffer, string_length(message));
+                    write_string(global.publicChatBuffer, message);
+                    
+                    name = newname
                     if(string_count("#",name) > 0)
                     {
                         name = "I <3 Bacon";
@@ -260,6 +285,104 @@ while(commandLimitRemaining > 0) {
                     write_ubyte(global.sendBuffer, playerId);
                     write_ubyte(global.sendBuffer, string_length(name));
                     write_string(global.sendBuffer, name);
+                }
+            }
+            break;
+            
+        case CHAT_PRIV_MESSAGE:
+            var messageLength;
+            messageLength = socket_receivebuffer_size(socket);
+            if(messageLength > CHAT_MAX_STRING_LENGTH)
+            {
+                write_ubyte(player.socket, KICK);
+                write_ubyte(player.socket, KICK_NAME);
+                socket_destroy(player.socket);
+                player.socket = -1;
+            }
+            else
+            {
+                with(player)
+                {
+                    if(current_time - lastChatTime < 1000)
+                        break;
+                    lastChatTime = current_time;
+                    var message, teambuffer;
+                    message = read_string(socket, messageLength);
+                    if(string_count("#",message) > 0)
+                    {
+                        message = "No Hashes allowed?";
+                    }
+
+                    if team == TEAM_RED
+                    {
+                        teambuffer = global.privChatRedBuffer;
+                        message = "/:/"+COLOR_RED+name+": "+message;
+                    }
+                    else if team == TEAM_BLUE
+                    {
+                        teambuffer = global.privChatBlueBuffer;
+                        message = "/:/"+COLOR_LIGHTBLUE+name+": "+message;
+                    }
+                    else
+                    {
+                        teambuffer = global.publicChatBuffer;// Specs can only global chat
+                        message = "/:/"+COLOR_GREEN+name+": /:/"+COLOR_WHITE+message;
+                    }
+                    write_ubyte(teambuffer, CHAT_PUBLIC_MESSAGE);
+                    write_ubyte(teambuffer, string_length(message));
+                    write_string(teambuffer, message);
+
+                    // For the host, who never receives stuff
+                    if global.myself.team == team
+                    {
+                        print_to_chat(message);
+                    }
+                }
+            }
+            break;
+
+        case CHAT_PUBLIC_MESSAGE:
+            var messageLength;
+            messageLength = socket_receivebuffer_size(socket);
+            if(messageLength > CHAT_MAX_STRING_LENGTH)
+            {
+                write_ubyte(player.socket, KICK);
+                write_ubyte(player.socket, KICK_NAME);
+                socket_destroy(player.socket);
+                player.socket = -1;
+            }
+            else
+            {
+                with(player)
+                {
+                    if(current_time - lastChatTime < 1000)
+                        break;
+                    lastChatTime = current_time;
+                    var message;
+                    message = read_string(socket, messageLength);
+                    if(string_count("#",message) > 0)
+                    {
+                        message = "No Hashes allowed?";
+                    }
+
+                    if team == TEAM_RED
+                    {
+                        message = "/:/"+COLOR_RED+name+": /:/"+COLOR_WHITE+message;
+                    }
+                    else if team == TEAM_BLUE
+                    {
+                        message = "/:/"+COLOR_LIGHTBLUE+name+": /:/"+COLOR_WHITE+message;
+                    }
+                    else
+                    {
+                        message = "/:/"+COLOR_GREEN+name+": /:/"+COLOR_WHITE+message;
+                    }
+                    write_ubyte(global.publicChatBuffer, CHAT_PUBLIC_MESSAGE);
+                    write_ubyte(global.publicChatBuffer, string_length(message));
+                    write_string(global.publicChatBuffer, message);
+                    
+                    // For the host, who never receives stuff
+                    print_to_chat(message);
                 }
             }
             break;

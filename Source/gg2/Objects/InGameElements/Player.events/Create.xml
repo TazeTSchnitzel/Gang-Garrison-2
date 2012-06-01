@@ -20,8 +20,10 @@
     socket = -1;
     name = "";
     kicked = false;
+    lastNamechange = current_time;
+    lastChatTime = current_time;
     
-    //fuck your shit I'm making statistic arrays
+    //stat tracking array
     stats[KILLS] = 0;
     stats[DEATHS] = 0;
     stats[CAPS] = 0;
