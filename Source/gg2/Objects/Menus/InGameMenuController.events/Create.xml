@@ -16,7 +16,6 @@
         <argument kind="STRING">{
     cursor_sprite = CrosshairS;
     global.levelchoice = 1
-
     menu_create(40, 300, 200, 200, 30);
     menu_setdimmed();
     
@@ -27,7 +26,21 @@
     menu_addback("Return to Game", '
         instance_destroy();
     ');
-    menu_addlink("", '');
+    menu_addlink("Console", '
+        global.consoleOpen = !global.consoleOpen;
+        switch (global.consoleOpen)
+        {
+            case 0:
+                with Console
+                {
+                    instance_destroy();
+                }
+                break;
+            case 1:
+                instance_create(x, y, Console);
+                break;
+        }
+    ');
     menu_addlink("Disconnect", '
         // Force dedicated mode to off so you can go to main menu instead of just restarting server
         global.dedicatedMode = 0;
@@ -40,6 +53,10 @@
     menu_addlink("Quit Game", '
         game_end();
     ');
+    if global.consoleOpen
+    {
+        instance_create(x, y, Console)
+    }
 }
 </argument>
       </arguments>

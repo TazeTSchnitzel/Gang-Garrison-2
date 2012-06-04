@@ -363,4 +363,8 @@ global.launchMap = "";
         AudioControlToggleMute();
         room_goto_fix(Menu);
     }    
+    Console_init()
+    loadPlugins()
 }
+
+
