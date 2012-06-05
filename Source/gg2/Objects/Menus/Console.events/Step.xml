@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="STEP" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">var xo, xy;
+
+xo = view_xview[view_current];
+yo = view_yview[view_current];
+
+mx = mouse_x - xo;
+my = mouse_y - yo;
+
+// x button
+if (mouse_check_button(mb_left) and !dragging and !resizing and
+    mx &gt;= x + width - padding and mx &lt; x + width and
+    mx &gt;= y and my &lt; y + padding) {
+    mouse_clear(mb_left);
+    instance_destroy();
+}
+
+// start resize
+if (mouse_check_button(mb_left) and !dragging and !resizing and
+    mx &gt;= x + width - padding and mx &lt; x + width and
+    my &gt;= y + height - padding and my &lt; y + height) {
+    resizing = true;
+    drag_x = mx;
+    drag_y = my;
+    drag_w = width;
+    drag_h = height;
+// stop resize
+} else if (!mouse_check_button(mb_left) and resizing) {
+    resizing = false;
+// in resize
+} else if (resizing) {
+    width = drag_w + (mx - drag_x);
+    height = drag_h + (my - drag_y);
+    if (width &lt; padding * 3) {
+        width = padding * 3;
+    }
+    if (height &lt; padding * 3 + fieldheight) {
+        height = padding * 3 + fieldheight;
+    }
+// start drag
+} else if (mouse_check_button(mb_left) and !dragging and !resizing and
+    mx &gt;= x and mx &lt; x + width and
+    my &gt;= y and my &lt; y + height) {
+    dragging = true;
+    drag_x = x-mx;
+    drag_y = y-my;
+// stop drag
+} else if (!mouse_check_button(mb_left) and dragging) {
+    dragging = false;
+// in drag
+} else if (dragging) {
+    x = mx + drag_x;
+    y = my + drag_y;
+}
+
+// input
+fieldtext = keyboard_string;
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

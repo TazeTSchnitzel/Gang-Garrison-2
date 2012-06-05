@@ -24,6 +24,11 @@
         instance_destroy();
         instance_create(0,0,OptionsController);
     ');
+    menu_addlink("Console", '
+        if (!instance_exists(Console)) {
+            instance_create(100,100,Console);
+        }
+    ');
     menu_addback("Return to Game", '
         instance_destroy();
     ');

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="CREATE" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">width = 400;
+height = 300;
+padding = string_height('Console');
+fieldheight = string_height('&gt;');
+fieldtext = '';
+
+dragging = false;
+resizing = false
+drag_x = -1;
+drag_y = -1;
+drag_w = -1;
+drag_h = -1;
+
+ds_list_add(global.consoleLines, "hello!");
+ds_list_add(global.consoleLines, "world!");
+ds_list_add(global.consoleLines, "lol!");
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

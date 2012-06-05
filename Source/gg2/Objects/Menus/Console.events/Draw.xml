@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="DRAW" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">var xo, xy;
+
+xo = view_xview[view_current];
+yo = view_yview[view_current];
+
+_x = x + xo;
+_y = y + yo;
+
+// base rectangle
+draw_set_alpha(0.6);
+draw_set_color(c_gray);
+draw_rectangle(_x, _y, _x+width, _y+height, false);
+
+// base border
+draw_set_alpha(1);
+draw_set_color(c_white);
+draw_rectangle(_x, _y, _x+width, _y+height, true);
+
+// inner "padded" rectangle
+draw_set_alpha(0.3);
+draw_set_color(c_black);
+draw_rectangle(_x+padding, _y+padding, _x+width-padding, _y+height-padding, false);
+
+// inner field rectangle
+draw_rectangle(_x+padding, _y+height-padding-fieldheight, _x+width-padding, _y+height-padding, false);
+
+// x button rectangle
+draw_set_color(c_white);
+draw_rectangle(_x+width-padding, _y, _x+width, _y+padding, false);
+
+// resize corner rectangle
+draw_set_color(c_white);
+draw_rectangle(_x+width-padding, _y+height-padding, _x+width, _y+height, false);
+
+// title
+draw_set_alpha(1);
+draw_set_color(c_white);
+draw_set_font(global.gg2Font);
+draw_set_valign(fa_center);
+draw_set_halign(fa_left);
+draw_text(_x, _y+padding/2, "Console");
+
+// x button "x"
+draw_set_halign(fa_center);
+draw_text(_x+width-padding/2, _y+padding/2, "x");
+
+// resize corner "#"
+draw_set_halign(fa_center);
+draw_text(_x+width-padding/2, _y+height-padding/2, "\#");
+
+// Lines
+var i, line, linex, liney;
+
+linex = _x + padding;
+liney = _y + height - padding - fieldheight;
+draw_set_halign(fa_left);
+draw_set_valign(fa_bottom);
+
+// Last first
+for (i = ds_list_size(global.consoleLines) - 1; i &gt;= 0; i -= 1) {
+    line = ds_list_find_value(global.consoleLines, i);
+    draw_text(linex, liney, line);
+    liney -= string_height(line);
+}
+
+// Field text
+draw_text(_x + padding, _y + height - padding, '&gt;' + fieldtext);
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>
