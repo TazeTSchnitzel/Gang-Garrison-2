@@ -15,7 +15,6 @@
   // handle the leveldata
   CustomMapProcessLevelData(leveldata, tempfile);
   
-  background_replace(CustomMapB, argument0, false, false);
-  background_xscale[0] = 6;
-  background_yscale[0] = 6;
+  // make bg/layers
+  CustomMapProcessLayers(argument0);
 }
