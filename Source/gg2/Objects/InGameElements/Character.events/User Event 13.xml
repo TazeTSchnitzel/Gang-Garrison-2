@@ -29,7 +29,6 @@
         yprevious = y;
         
         hp = read_ubyte(global.deserializeBuffer);
-        currentWeapon.ammoCount = read_ubyte(global.deserializeBuffer);
         
         temp = read_ubyte(global.deserializeBuffer);
         cloak = (temp &amp; $01 != 0);

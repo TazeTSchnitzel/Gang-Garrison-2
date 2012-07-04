@@ -15,7 +15,6 @@
   <resource name="NutsNBoltsHud" type="RESOURCE"/>
   <resource name="UberHud" type="RESOURCE"/>
   <resource name="StickyCounter" type="RESOURCE"/>
-  <resource name="AmmoCounter" type="RESOURCE"/>
   <resource name="DeathCam" type="RESOURCE"/>
   <resource name="HealthHud" type="RESOURCE"/>
   <resource name="MedicRadar" type="RESOURCE"/>

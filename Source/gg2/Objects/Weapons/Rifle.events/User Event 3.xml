@@ -17,7 +17,7 @@
 shot=true;
 justShot=true;
 readyToShoot = false;
-alarm[0] = reloadTime + 20*owner.zoomed;
+alarm[0] = refireTime + 20*owner.zoomed;
 
 var hit;
 var x1,y1,xm,ym, len;

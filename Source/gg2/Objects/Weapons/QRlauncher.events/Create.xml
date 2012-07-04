@@ -16,8 +16,7 @@
         <argument kind="STRING">{
     xoffset = -15;
     yoffset = -10;
-    reloadTime = 25;
-    maxAmmo = 0;
+    refireTime = 25;
 }
 </argument>
       </arguments>

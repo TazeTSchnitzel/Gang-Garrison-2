@@ -27,14 +27,8 @@
     alarm[1] = blastReloadTime;
     readyToBlast = false;
     
-    maxAmmo = 200
-    ammoCount = maxAmmo;
     soundLoopTime = 30;
     currentTime = 0;
-    
-    reloadBuffer = 15;
-    isRefilling = false;
-    
 }
 </argument>
       </arguments>

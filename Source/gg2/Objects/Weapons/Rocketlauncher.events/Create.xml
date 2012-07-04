@@ -17,10 +17,6 @@
     xoffset = -15;
     yoffset = -10;
     refireTime = 30;
-    reloadTime = 25;
-    reloadBuffer = 30;
-    maxAmmo = 4;
-    ammoCount = maxAmmo;
     rocketrange=501;
     idle=true;
 }

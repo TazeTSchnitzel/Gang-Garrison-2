@@ -25,10 +25,6 @@
     ubering = false;
     uberCharge=0;
     uberReady=false;
-    maxAmmo = 40
-    ammoCount = maxAmmo;
-    reloadTime = 55;
-    reloadBuffer = 0;
     idle=true;
 }
 </argument>

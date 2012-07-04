@@ -13,8 +13,7 @@
       <not>false</not>
       <appliesTo>.self</appliesTo>
       <arguments>
-        <argument kind="STRING">ammoCount = max(0, ammoCount-1);
-playsound(x,y,ShotgunSnd);
+        <argument kind="STRING">playsound(x,y,ShotgunSnd);
 var shot;
 repeat(5) {
     shot = instance_create(x,y,Shot);
@@ -32,7 +31,6 @@ repeat(5) {
 justShot=true;
 readyToShoot=false;
 alarm[0]=refireTime;
-alarm[5] = reloadBuffer + reloadTime;
 </argument>
       </arguments>
     </action>

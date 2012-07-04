@@ -25,7 +25,7 @@ oid.team=owner.team;
 oid.weapon=WEAPON_QROCKETLAUNCHER;
 
 readyToShoot = false;
-alarm[0] = reloadTime;
+alarm[0] = refireTime;
 </argument>
       </arguments>
     </action>

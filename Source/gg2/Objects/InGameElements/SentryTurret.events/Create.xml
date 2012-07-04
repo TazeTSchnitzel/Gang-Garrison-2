@@ -15,7 +15,6 @@
       <arguments>
         <argument kind="STRING">xoffset=-17;
 yoffset=-10;
-reloadTime=5;
 refireTime=5
 readyToShoot=true;
 noticedTarget=true;

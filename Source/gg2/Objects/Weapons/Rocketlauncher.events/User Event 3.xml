@@ -13,8 +13,7 @@
       <not>false</not>
       <appliesTo>.self</appliesTo>
       <arguments>
-        <argument kind="STRING">ammoCount = max(0, ammoCount-1);    
-playsound(x,y,RocketSnd);
+        <argument kind="STRING">playsound(x,y,RocketSnd);
 var oid, newx, newy;
 oid = instance_create(x+lengthdir_x(20,owner.aimDirection),y+lengthdir_y(20,owner.aimDirection), Rocket);
    
@@ -34,7 +33,6 @@ if (collision_line(x,y,x+lengthdir_x(28,owner.aimDirection),y+lengthdir_y(28,own
 justShot=true;
 readyToShoot = false;
 alarm[0] = refireTime;
-alarm[5] = reloadBuffer + reloadTime;
 </argument>
       </arguments>
     </action>

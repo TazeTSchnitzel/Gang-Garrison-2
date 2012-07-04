@@ -14,8 +14,7 @@
       <appliesTo>.self</appliesTo>
       <arguments>
         <argument kind="STRING">{
-    if (readyToShoot &amp;&amp; !instance_exists(healTarget) &amp;&amp; !ubering &amp;&amp; ammoCount &gt; 0) {
-        ammoCount -= 1;
+    if (readyToShoot &amp;&amp; !instance_exists(healTarget) &amp;&amp; !ubering) {
         playsound(x,y,MedichaingunSnd);
             var shot;
         shot = instance_create(x,y + yoffset + 1,Needle);
@@ -31,7 +30,6 @@
             hspeed+=owner.hspeed;
         readyToShoot=false;
         alarm[0]=refireTime;
-        alarm[5] = reloadBuffer + reloadTime;
     }
     else if (uberReady &amp;&amp; (owner.keyState &amp; $10)) {
         if(global.isHost) {

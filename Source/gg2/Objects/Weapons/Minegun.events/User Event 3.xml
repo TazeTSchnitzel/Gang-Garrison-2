@@ -15,7 +15,6 @@
       <arguments>
         <argument kind="STRING">var oid, newx, newy;
 playsound(x,y,MinegunSnd);
-ammoCount = max(0, ammoCount-1);
 
 oid = instance_create(x+lengthdir_x(10,owner.aimDirection),y+lengthdir_y(10,owner.aimDirection), Mine);
 
@@ -29,7 +28,6 @@ lobbed += 1;
 justShot=true;
 readyToShoot = false;
 alarm[0] = refireTime;
-alarm[5] = reloadBuffer + reloadTime;
 </argument>
       </arguments>
     </action>

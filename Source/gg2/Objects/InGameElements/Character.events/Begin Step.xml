@@ -237,21 +237,13 @@ if(intel) &amp;&amp; (ubered || global.mapchanging) {
 if nutsNBolts &lt; 100 nutsNBolts += 0.1;
 else if nutsNBolts &gt; 100 nutsNBolts = 100;
 
-//ubered max out ammo and extinguish flames
+//ubered extinguish flames
 if ubered {
     if (burnIntensity &gt; 0 || burnDuration &gt; 0)
     {
         burnIntensity = 0;
         burnDuration = 0;
         burnedBy = -1;
-    }
-    if instance_exists(currentWeapon) {
-        with(currentWeapon) {
-            if(variable_local_exists("maxAmmo")) {
-                ammoCount = maxAmmo;
-            }
-            alarm[5] = -1;
-        }
     }
 }
 

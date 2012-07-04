@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
-  <resource name="Ammo" type="GROUP"/>
   <resource name="Kill Icons" type="GROUP"/>
   <resource name="PortraitAnimations" type="GROUP"/>
   <resource name="Gamemode HUDS" type="GROUP"/>
