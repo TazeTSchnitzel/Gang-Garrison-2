@@ -1,7 +1,7 @@
     // Record event in killlog
     // argument0: The type of event 1=capped point 2=defended point
     //            3=intel capped 4=intel defended 5=intel dropped
-    //            6=taken intel 7=generator destoyed  8=intel returned
+    //            6=taken intel  8=intel returned
     // argument1: The team
     // argument2: The player(s) name(s)
     // argument3: Am I involved?
@@ -34,11 +34,6 @@
             //message = " has taken the intelligence!";
             message = "picked up the intelligence!";
             icon = "capture";
-        }
-        else if argument0==7 {
-            if argument1==TEAM_RED name = "Red team";
-            else if argument1==TEAM_BLUE name = "Blue team";
-            action = " has destroyed the enemy generator!";
         }
         else if argument0==8 {
             if argument1==TEAM_RED name = "Red";

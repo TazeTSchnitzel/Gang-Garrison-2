@@ -321,19 +321,7 @@ instance_create(0,0,OrangeO);</creationCode>
       <locked>true</locked>
     </instance>
     <instance>
-      <object>IntelligenceBlue</object>
-      <position x="4240" y="1240"/>
-      <creationCode/>
-      <locked>true</locked>
-    </instance>
-    <instance>
       <object>IntelligenceBaseRed</object>
-      <position x="560" y="1240"/>
-      <creationCode/>
-      <locked>true</locked>
-    </instance>
-    <instance>
-      <object>IntelligenceRed</object>
       <position x="560" y="1240"/>
       <creationCode/>
       <locked>true</locked>
@@ -1081,6 +1069,18 @@ instance_create(0,0,OrangeO);</creationCode>
       <position x="4524" y="1088"/>
       <creationCode/>
       <locked>false</locked>
+    </instance>
+    <instance>
+      <object>IntelligenceBlue</object>
+      <position x="4240" y="1240"/>
+      <creationCode/>
+      <locked>true</locked>
+    </instance>
+    <instance>
+      <object>IntelligenceRed</object>
+      <position x="560" y="1240"/>
+      <creationCode/>
+      <locked>true</locked>
     </instance>
   </instances>
   <tiles/>

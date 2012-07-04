@@ -13,9 +13,7 @@ if(uberer.object != -1) {
         ubering = true;
         uberReady = false;
         uberer.stats[INVULNS] += 1;
-        uberer.roundStats[INVULNS] += 1;
         uberer.stats[POINTS] += 1;
-        uberer.roundStats[POINTS] += 1;
     }
 } else {
     show_message("The Uber-Event has just been called for a dead player. Please report this bug.");

@@ -255,26 +255,6 @@ if ubered {
     }
 }
 
-//give max ammo for players on the winning team
-var arenaRoundEnd;
-arenaRoundEnd = true;
-if instance_exists(ArenaHUD) { 
-    if(ArenaHUD.endCount!=0) 
-        arenaRoundEnd=true;
-    else arenaRoundEnd=false;
-}
-
-if (arenaRoundEnd and global.mapchanging and !player.humiliated) {
-    if instance_exists(currentWeapon) {
-        with(currentWeapon){
-            if(variable_local_exists("maxAmmo")) {
-                ammoCount = maxAmmo;
-            }
-            alarm[5] = -1;
-        }
-    }
-}
-
 //drop cloak and unscope if on losing team or stalemate
 if (player.humiliated)
 {
@@ -282,16 +262,6 @@ if (player.humiliated)
         toggleZoom(id);
     if (!stabbing)
         cloak = false;
-}
-
-// Determine if the character is capturing a CP, and which
-var zone;
-zone = collision_point(x,y,CaptureZone,0,0);
-
-if(zone&gt;=0 &amp;&amp; !cloak) {
-    cappingPoint = zone.cp;
-} else {
-    cappingPoint = noone;
 }
 </argument>
       </arguments>

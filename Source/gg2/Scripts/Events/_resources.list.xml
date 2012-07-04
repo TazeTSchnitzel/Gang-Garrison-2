@@ -6,8 +6,6 @@
   <resource name="sendEventGrabIntel" type="RESOURCE"/>
   <resource name="doEventScoreIntel" type="RESOURCE"/>
   <resource name="sendEventScoreIntel" type="RESOURCE"/>
-  <resource name="doEventGeneratorDestroy" type="RESOURCE"/>
-  <resource name="sendEventGeneratorDestroy" type="RESOURCE"/>
   <resource name="doEventPlayerDeath" type="RESOURCE"/>
   <resource name="sendEventPlayerDeath" type="RESOURCE"/>
   <resource name="doEventDestruction" type="RESOURCE"/>
@@ -18,11 +16,6 @@
   <resource name="sendEventUberReady" type="RESOURCE"/>
   <resource name="doEventUber" type="RESOURCE"/>
   <resource name="sendEventUber" type="RESOURCE"/>
-  <resource name="sendEventUnlockCP" type="RESOURCE"/>
-  <resource name="doEventUnlockCP" type="RESOURCE"/>
-  <resource name="doEventArenaEndRound" type="RESOURCE"/>
-  <resource name="sendEventArenaRestart" type="RESOURCE"/>
-  <resource name="doEventArenaRestart" type="RESOURCE"/>
   <resource name="sendEventFireWeapon" type="RESOURCE"/>
   <resource name="doEventFireWeapon" type="RESOURCE"/>
 </resources>

@@ -109,10 +109,7 @@
                     ds_map_replace(map, "string", string_copy(argument0.name, 1, 20) + " bid farewell, cruel world!");
                     ds_map_replace(map, "name2", "");
                     ds_map_replace(map, "team2", 0);
-                    break;
-                case GENERATOR_EXPLOSION:
-                    ds_map_add(map, "weapon", ExplodeKL);
-                    break;                
+                    break;               
                 default:
                     ds_map_add(map, "weapon", DeadKL);
                     break;            

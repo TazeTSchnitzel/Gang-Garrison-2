@@ -36,9 +36,7 @@ with (Player) {
     }
 }
 
-if(!instance_exists(ArenaHUD)) {
-    AudioControlPlaySong(sound, false);
-}
+AudioControlPlaySong(sound, false);
 </argument>
       </arguments>
     </action>

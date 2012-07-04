@@ -60,11 +60,6 @@
         draw_set_halign(fa_left);
         draw_text_transformed(view_xview[0]+412,view_yview[0]+110,global.blueCaps,3.5,3.5,0);
     }
-    else if instance_exists(ArenaHUD){
-        draw_text_transformed(view_xview[0]+384,view_yview[0]+110,ArenaHUD.redWins,3.5,3.5,0);
-        draw_set_halign(fa_left);
-        draw_text_transformed(view_xview[0]+412,view_yview[0]+110,ArenaHUD.blueWins,3.5,3.5,0);
-    }
     
     draw_set_color(c_red);   
     for(i=0; ds_priority_size(redteam) &gt; 0; i+=1) {

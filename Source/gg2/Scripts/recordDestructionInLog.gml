@@ -90,9 +90,6 @@
                     ds_map_replace(map, "name2", "");
                     ds_map_replace(map, "team2", 0);
                     break;
-                case GENERATOR_EXPLOSION:
-                    ds_map_add(map, "weapon", ExplodeKL);
-
                 default:
                     ds_map_add(map, "weapon", DeadKL);
                     break;            

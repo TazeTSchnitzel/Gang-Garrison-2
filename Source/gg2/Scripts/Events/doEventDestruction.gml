@@ -20,9 +20,7 @@ damageSource = argument3;
 //victim.deaths += 1;
 if(killer != -1 && killer != owner) {
     killer.stats[DESTRUCTION] +=1;
-    killer.roundStats[DESTRUCTION] +=1;
     killer.stats[POINTS] += 1;
-    killer.roundStats[POINTS] += 1;
     recordDestructionInLog(owner, killer, healer, damageSource);
     setChatBubble(owner, 60)
 }

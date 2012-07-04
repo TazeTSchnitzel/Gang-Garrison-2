@@ -8,9 +8,7 @@ isMe = (argument0 == global.myself);
 //recordEventInLog(3, argument0.team, argument0.name);
 recordEventInLog(3, argument0.team, argument0.name, isMe);
 argument0.stats[CAPS] += 1;
-argument0.roundStats[CAPS] += 1;
 argument0.stats[POINTS] += 2;
-argument0.roundStats[POINTS] += 2;
 if(argument0.team == TEAM_RED) {
     global.redCaps += 1;
     instance_create(IntelligenceBaseBlue.x, IntelligenceBaseBlue.y, IntelligenceBlue);

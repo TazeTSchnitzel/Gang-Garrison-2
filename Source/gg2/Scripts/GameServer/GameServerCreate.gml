@@ -20,7 +20,7 @@
     frame = 0;
     updatePlayer = 1;
     impendingMapChange = -1; // timer variable used by GameServerBeginStep, when it hits 0, the server executes a map change to global.nextMap
-    syncTimer = 0; //called in GameServerBeginsStep on CP/intel cap to update everyone with timer/caps/cp status
+    syncTimer = 0; //called in GameServerBeginsStep on intel cap to update everyone with timer/caps status
     
     // Player 0 is reserved for the Server.
     serverPlayer = instance_create(0,0,Player);

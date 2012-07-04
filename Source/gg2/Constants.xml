@@ -32,12 +32,7 @@
   <constant name="PASSWORD_REQUEST" value="25"/>
   <constant name="PASSWORD_WRONG" value="27"/>
   <constant name="CAPS_UPDATE" value="28"/>
-  <constant name="CP_CAPTURED" value="30"/>
   <constant name="PLAYER_CHANGENAME" value="31"/>
-  <constant name="GENERATOR_DESTROY" value="32"/>
-  <constant name="ARENA_ENDROUND" value="33"/>
-  <constant name="ARENA_RESTART" value="34"/>
-  <constant name="UNLOCKCP" value="35"/>
   <constant name="SERVER_KICK" value="36"/>
   <constant name="KICK" value="37"/>
   <constant name="KICK_NAME" value="38"/>
@@ -118,7 +113,6 @@
   <constant name="FINISHED_OFF_GIB" value="19"/>
   <constant name="BID_FAREWELL" value="20"/>
   <constant name="WEAPON_BUBBLE" value="21"/>
-  <constant name="GENERATOR_EXPLOSION" value="22"/>
   <constant name="WEAPON_RIFLE_CHARGED" value="23"/>
   <constant name="WEAPON_BACKSTAB" value="24"/>
   <constant name="WEAPON_FLARE" value="25"/>

@@ -34,11 +34,7 @@
   <resource name="buildSentry" type="RESOURCE"/>
   <resource name="gotoInternalMapRoom" type="RESOURCE"/>
   <resource name="ServerBalanceTeams" type="RESOURCE"/>
-  <resource name="serverArenaRestart" type="RESOURCE"/>
-  <resource name="serverArenaEndRound" type="RESOURCE"/>
-  <resource name="clientArenaEndRound" type="RESOURCE"/>
   <resource name="parseUuid" type="RESOURCE"/>
-  <resource name="pointCapture" type="RESOURCE"/>
   <resource name="calculateMonthAndDay" type="RESOURCE"/>
   <resource name="selectSpawnGroup" type="RESOURCE"/>
   <resource name="partyTime" type="RESOURCE"/>

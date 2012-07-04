@@ -18,37 +18,6 @@
         case "ctf_orange":
             room_goto_fix(Orange);
             break;
-        case "cp_dirtbowl":
-            room_goto_fix(Dirtbowl);
-            break;
-        case "cp_egypt":
-            room_goto_fix(Egypt);
-            break;
-        case "arena_montane":
-            room_goto_fix(Montane);
-            break;
-        case "arena_lumberyard":
-            room_goto_fix(Lumberyard);
-            break;
-        case "gen_destroy":
-            room_goto_fix(Destroy);
-            break;
-        case "koth_harvest":
-            room_goto_fix(Harvest);
-            break;
-        case "koth_valley":
-            room_goto_fix(Valley);
-            break;
-        case "koth_corinth":
-            room_goto_fix(Corinth);
-            break;
-        case "dkoth_atalia":
-            room_goto_fix(Atalia);
-            break;
-        case "dkoth_sixties":
-        case "dkoth_60s":
-            room_goto_fix(Sixties);
-            break;
         case "ctf_2dfort[0]":
         case "ctf_2dfort1":
         case "ctf_oldfort":

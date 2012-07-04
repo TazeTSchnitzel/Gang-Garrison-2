@@ -42,38 +42,11 @@ while(string_pos(DIVIDER, argument0) != 0) { // continue until there are no more
     case "spawnroom":
       instance_create(entityX, entityY, SpawnRoom);
     break;
-/*REMINDER: Get Leiche or Cspot to add 8 new spawn entities to Garrison Builder or 
- *get Garrison Builder source to try out for self. In GB, aesthetics are as follows:
- * 0=Runner, 1=Firebug, 2=Rocketman, 3=Overweight, 4=Detonator*/
     case "redspawn":
       instance_create(entityX, entityY, SpawnPointRed);
     break;
-    case "redspawn1":
-      instance_create(entityX, entityY, SpawnPointRed1);
-    break;
-    case "redspawn2":
-      instance_create(entityX, entityY, SpawnPointRed2);
-    break;
-    case "redspawn3":
-      instance_create(entityX, entityY, SpawnPointRed3);
-    break;
-    case "redspawn4":
-      instance_create(entityX, entityY, SpawnPointRed4);
-    break;
     case "bluespawn":
       instance_create(entityX, entityY, SpawnPointBlue);
-    break;
-    case "bluespawn1":
-      instance_create(entityX, entityY, SpawnPointBlue1);
-    break;
-    case "bluespawn2":
-      instance_create(entityX, entityY, SpawnPointBlue2);
-    break;
-    case "bluespawn3":
-      instance_create(entityX, entityY, SpawnPointBlue3);
-    break;
-    case "bluespawn4":
-      instance_create(entityX, entityY, SpawnPointBlue4);
     break;
     case "redintel":
       instance_create(entityX, entityY, IntelligenceBaseRed);
@@ -141,41 +114,11 @@ while(string_pos(DIVIDER, argument0) != 0) { // continue until there are no more
     case "leftdoor":
       instance_create(entityX, entityY, LeftDoor);
     break;
-    case "controlPoint5":
-      instance_create(entityX, entityY, ControlPoint5);
-    break;   
-    case "controlPoint4":
-      instance_create(entityX, entityY, ControlPoint4);
-    break;
-    case "controlPoint3":
-      instance_create(entityX, entityY, ControlPoint3);
-    break;
-    case "controlPoint2":
-      instance_create(entityX, entityY, ControlPoint2);
-    break;
-    case "controlPoint1":
-      instance_create(entityX, entityY, ControlPoint1);
-    break;
     case "NextAreaO":
       instance_create(entityX, entityY, NextAreaO);
     break;
     case "PreviousAreaO":
       instance_create(entityX, entityY, PreviousAreaO);
-    break;
-    case "CapturePoint":
-      instance_create(entityX, entityY, CaptureZone);
-    break;
-    case "SetupGate":
-      instance_create(entityX, entityY, ControlPointSetupGate);
-    break;
-    case "ArenaControlPoint":
-      instance_create(entityX, entityY, ArenaControlPoint);
-    break;
-    case "GeneratorRed":
-      instance_create(entityX, entityY, GeneratorRed);
-    break;
-    case "GeneratorBlue":
-      instance_create(entityX, entityY, GeneratorBlue);
     break;
     case "MoveBoxUp":
       instance_create(entityX, entityY, MoveBoxUp);
@@ -189,15 +132,6 @@ while(string_pos(DIVIDER, argument0) != 0) { // continue until there are no more
     case "MoveBoxRight":
       instance_create(entityX, entityY, MoveBoxRight);
     break;     
-    case "KothControlPoint":
-      instance_create(entityX, entityY, KothControlPoint);
-    break;
-    case "KothRedControlPoint":
-      instance_create(entityX, entityY, KothRedControlPoint);
-    break;
-    case "KothBlueControlPoint":
-      instance_create(entityX, entityY, KothBlueControlPoint);
-    break;
     
     /* 
     

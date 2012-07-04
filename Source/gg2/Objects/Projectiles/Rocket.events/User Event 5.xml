@@ -104,29 +104,6 @@
                     lastDamageSource = other.weapon;
                 }
             }
-        }        
-        
-        with (Generator) {
-            if (distance_to_object(other) &lt; other.blastRadius){
-                if(other.team != team) {
-                    alarm[0] = regenerationBuffer;
-                    isShieldRegenerating = false;
-                    //allow overkill to be applied directly to the target
-                    var hitDamage;
-                    hitDamage = other.explosionDamage*sqr((1-(distance_to_object(other)/other.blastRadius)));
-                    if (hitDamage &gt; shieldHp) {
-                        hp -= hitDamage - shieldHp;
-                        hp -= shieldHp * shieldResistance;
-                        shieldHp = 0;
-                    } else {
-                        hp -= hitDamage * shieldResistance;
-                        shieldHp -= hitDamage;
-                    }
-                    
-                    lastDamageDealer = other.ownerPlayer;
-                    lastDamageSource = other.weapon;
-                }
-            }
         }
         
         with (DeadGuy) {

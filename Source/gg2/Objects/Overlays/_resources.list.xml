@@ -6,11 +6,6 @@
   <resource name="ScoreTableController" type="RESOURCE"/>
   <resource name="HUD" type="RESOURCE"/>
   <resource name="ScorePanel" type="RESOURCE"/>
-  <resource name="ControlPointHUD" type="RESOURCE"/>
-  <resource name="ArenaHUD" type="RESOURCE"/>
-  <resource name="KothHUD" type="RESOURCE"/>
-  <resource name="DKothHUD" type="RESOURCE"/>
-  <resource name="GeneratorHUD" type="RESOURCE"/>
   <resource name="KillLog" type="RESOURCE"/>
   <resource name="BubbleMenuZ" type="RESOURCE"/>
   <resource name="RespawnTimer" type="RESOURCE"/>

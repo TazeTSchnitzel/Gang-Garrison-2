@@ -49,7 +49,6 @@
     //user HUD settings
     global.timerPos=ini_read_real("Settings","Timer Position", 0)
     global.killLogPos=ini_read_real("Settings","Kill Log Position", 0)
-    global.kothHudPos=ini_read_real("Settings","KoTH HUD Position", 0)
     global.clientPassword = "";
     // for admin menu
     customMapRotationFile = ini_read_string("Server", "MapRotation", "");
@@ -88,7 +87,6 @@
     ini_write_real("Settings", "Show Healthbar", global.showHealthBar);
     ini_write_real("Settings","Timer Position", global.timerPos)
     ini_write_real("Settings","Kill Log Position", global.killLogPos)
-    ini_write_real("Settings","KoTH HUD Position", global.kothHudPos)
     ini_write_string("Server", "MapRotation", customMapRotationFile);
     ini_write_real("Server", "Dedicated", global.dedicatedMode);
     ini_write_string("Server", "ServerName", global.serverName);
@@ -115,26 +113,6 @@
     maps[5] = ini_read_real("Maps", "ctf_waterway", 5);
     //map_orange 
     maps[6] = ini_read_real("Maps", "ctf_orange", 6);
-    //map_dirtbowl
-    maps[7] = ini_read_real("Maps", "cp_dirtbowl", 7);
-    //map_egypt
-    maps[8] = ini_read_real("Maps", "cp_egypt", 8);
-    //arena_montane
-    maps[9] = ini_read_real("Maps", "arena_montane", 9);
-    //arena_lumberyard
-    maps[10] = ini_read_real("Maps", "arena_lumberyard", 10);
-    //gen_destroy
-    maps[11] = ini_read_real("Maps", "gen_destroy", 11);
-    //koth_valley
-    maps[12] = ini_read_real("Maps", "koth_valley", 12);
-    //koth_corinth
-    maps[13] = ini_read_real("Maps", "koth_corinth", 13);
-    //koth_harvest
-    maps[14] = ini_read_real("Maps", "koth_harvest", 14);
-    //dkoth_atalia
-    maps[15] = ini_read_real("Maps", "dkoth_atalia", 15);
-    //dkoth_sixties
-    maps[16] = ini_read_real("Maps", "dkoth_sixties", 16);
     
     //Server respawn time calculator. Converts each second to a frame. (read: multiply by 30 :hehe:)
     if (global.Server_RespawntimeSec == 0)
@@ -155,16 +133,6 @@
     ini_write_real("Maps", "ctf_classicwell", maps[4]);
     ini_write_real("Maps", "ctf_waterway", maps[5]);
     ini_write_real("Maps", "ctf_orange", maps[6]);
-    ini_write_real("Maps", "cp_dirtbowl", maps[7]);
-    ini_write_real("Maps", "cp_egypt", maps[8]);
-    ini_write_real("Maps", "arena_montane", maps[9]);
-    ini_write_real("Maps", "arena_lumberyard", maps[10]);
-    ini_write_real("Maps", "gen_destroy", maps[11]);
-    ini_write_real("Maps", "koth_valley", maps[12]);
-    ini_write_real("Maps", "koth_corinth", maps[13]);
-    ini_write_real("Maps", "koth_harvest", maps[14]);
-    ini_write_real("Maps", "dkoth_atalia", maps[15]);
-    ini_write_real("Maps", "dkoth_sixties", maps[16]);
 
     ini_close();
     
@@ -255,7 +223,7 @@ global.launchMap = "";
         //Set up the map rotation stuff
         var i, sort_list;
         sort_list = ds_list_create();
-        for(i=1; i <= 16; i += 1) {
+        for(i=1; i <= 6; i += 1) {
             if(maps[i] != 0) ds_list_add(sort_list, ((100*maps[i])+i));
         }
         ds_list_sort(sort_list, 1);
@@ -281,37 +249,6 @@ global.launchMap = "";
                 case 6:
                     ds_list_add(global.map_rotation, "ctf_orange");
                 break;
-                case 7:
-                    ds_list_add(global.map_rotation, "cp_dirtbowl");
-                break;
-                case 8:
-                    ds_list_add(global.map_rotation, "cp_egypt");
-                break;
-                case 9:
-                    ds_list_add(global.map_rotation, "arena_montane");
-                break;
-                case 10:
-                    ds_list_add(global.map_rotation, "arena_lumberyard");
-                break;
-                case 11:
-                    ds_list_add(global.map_rotation, "gen_destroy");
-                break;
-                case 12:
-                    ds_list_add(global.map_rotation, "koth_valley");
-                break;
-                case 13:
-                    ds_list_add(global.map_rotation, "koth_corinth");
-                break;
-                case 14:
-                    ds_list_add(global.map_rotation, "koth_harvest");
-                break;
-                case 15:
-                    ds_list_add(global.map_rotation, "dkoth_atalia");
-                break;
-                case 16:
-                    ds_list_add(global.map_rotation, "dkoth_sixties");
-                break;
-                    
             }
         }
         ds_list_destroy(sort_list);

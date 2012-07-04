@@ -268,12 +268,6 @@ do {
             receiveCompleteMessage(global.serverSocket,1,global.tempBuffer);
             doEventReturnIntel(read_ubyte(global.tempBuffer));
             break;
-  
-        case GENERATOR_DESTROY:
-            receiveCompleteMessage(global.serverSocket,1,global.tempBuffer);
-            team = read_ubyte(global.tempBuffer);
-            doEventGeneratorDestroy(team);
-            break;
       
         case UBER_CHARGED:
             receiveCompleteMessage(global.serverSocket,1,global.tempBuffer);
@@ -339,18 +333,6 @@ do {
             show_message("You have been kicked from the server. "+kickReason+".");
             instance_destroy();
             exit;
-              
-        case ARENA_ENDROUND:
-            with ArenaHUD clientArenaEndRound();
-            break;   
-        
-        case ARENA_RESTART:
-            doEventArenaRestart();
-            break;
-            
-        case UNLOCKCP:
-            doEventUnlockCP();
-            break;
                    
         case MAP_END:
             global.nextMap=receivestring(global.serverSocket, 1);
@@ -410,19 +392,6 @@ do {
                     player.stats[DOMINATIONS] = 0;
                     player.stats[REVENGE] = 0;
                     player.stats[POINTS] = 0;
-                    player.roundStats[KILLS] = 0;
-                    player.roundStats[DEATHS] = 0;
-                    player.roundStats[CAPS] = 0;
-                    player.roundStats[ASSISTS] = 0;
-                    player.roundStats[DESTRUCTION] = 0;
-                    player.roundStats[STABS] = 0;
-                    player.roundStats[HEALING] = 0;
-                    player.roundStats[DEFENSES] = 0;
-                    player.roundStats[INVULNS] = 0;
-                    player.roundStats[BONUS] = 0;
-                    player.roundStats[DOMINATIONS] = 0;
-                    player.roundStats[REVENGE] = 0;
-                    player.roundStats[POINTS] = 0;
                     player.team = TEAM_SPECTATOR;
                 }
             }

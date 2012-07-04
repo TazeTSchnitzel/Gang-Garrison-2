@@ -34,9 +34,7 @@ if(killer)
     if(damageSource == WEAPON_KNIFE || damageSource == WEAPON_BACKSTAB)
     {
         killer.stats[STABS] += 1;
-        killer.roundStats[STABS] += 1;
         killer.stats[POINTS] += 1;
-        killer.roundStats[POINTS] +=1;
     }
     
     if (victim.object.currentWeapon.object_index == Medigun)
@@ -44,24 +42,18 @@ if(killer)
         if (victim.object.currentWeapon.uberReady)
         {
             killer.stats[BONUS] += 1;
-            killer.roundStats[BONUS] += 1;
             killer.stats[POINTS] += 1;
-            killer.roundStats[POINTS] += 1;
         }
     }
         
     if (killer != victim)
     {
         killer.stats[KILLS] += 1;
-        killer.roundStats[KILLS] += 1;
         killer.stats[POINTS] += 1;
-        killer.roundStats[POINTS] += 1;
         if(victim.object.intel)
         {
             killer.stats[DEFENSES] += 1;
-            killer.roundStats[DEFENSES] += 1;
             killer.stats[POINTS] += 1;
-            killer.roundStats[POINTS] += 1;
             recordEventInLog(4, killer.team, killer.name, global.myself == killer);
         }
     }
@@ -70,9 +62,7 @@ if(killer)
 if (assistant)
 {
     assistant.stats[ASSISTS] += 1;
-    assistant.roundStats[ASSISTS] += 1;
     assistant.stats[POINTS] += .5;
-    assistant.roundStats[POINTS] += .5;
 }
 
 //SPEC
@@ -91,7 +81,7 @@ ysize = view_hview[0];
 
 randomize();
 with(victim.object) {
-    if((damageSource == WEAPON_ROCKETLAUNCHER or damageSource == WEAPON_QROCKETLAUNCHER or damageSource == WEAPON_MINEGUN or damageSource == FRAG_BOX or damageSource == WEAPON_REFLECTED_STICKY or damageSource == WEAPON_REFLECTED_ROCKET or damageSource == FINISHED_OFF_GIB or damageSource == GENERATOR_EXPLOSION) and (player.class != CLASS_QUOTE) && (global.gibLevel>1) && distance_to_point(xoffset+xsize/2,yoffset+ysize/2) < 900) {
+    if((damageSource == WEAPON_ROCKETLAUNCHER or damageSource == WEAPON_QROCKETLAUNCHER or damageSource == WEAPON_MINEGUN or damageSource == FRAG_BOX or damageSource == WEAPON_REFLECTED_STICKY or damageSource == WEAPON_REFLECTED_ROCKET or damageSource == FINISHED_OFF_GIB) and (player.class != CLASS_QUOTE) && (global.gibLevel>1) && distance_to_point(xoffset+xsize/2,yoffset+ysize/2) < 900) {
         repeat(global.gibLevel) {
             var gib;
             gib = instance_create(x,y,Gib);
@@ -456,7 +446,7 @@ with(victim.object) {
 //*************************************
 //*         Deathcam
 //*************************************
-if( global.killCam and victim == global.myself and killer and killer != victim and !(damageSource == KILL_BOX || damageSource == FRAG_BOX || damageSource == FINISHED_OFF || damageSource == FINISHED_OFF_GIB || damageSource == GENERATOR_EXPLOSION)) {
+if( global.killCam and victim == global.myself and killer and killer != victim and !(damageSource == KILL_BOX || damageSource == FRAG_BOX || damageSource == FINISHED_OFF || damageSource == FINISHED_OFF_GIB)) {
     instance_create(0,0,DeathCam);
     DeathCam.killedby=killer;
     DeathCam.name=killer.name;

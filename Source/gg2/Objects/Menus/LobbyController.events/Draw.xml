@@ -45,7 +45,7 @@ for(i=offset; i&lt;ds_list_size(servers) and i&lt;offset+items; i+=1) {
     
     draw_set_halign(fa_left);
     if(server.private)
-        draw_sprite(ControlPointLockS,0,xbegin,ybegin+spacing*(i-offset)+5);
+        draw_sprite(LobbyLock,0,xbegin,ybegin+spacing*(i-offset)+5);
     draw_text(xbegin+10, ybegin+spacing*(i-offset),"["+server.playerstring+"]");
     draw_text(xbegin+95, ybegin+spacing*(i-offset),server.name);
     if(ds_map_exists(server.infos, "map"))

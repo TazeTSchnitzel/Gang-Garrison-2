@@ -52,19 +52,12 @@
                     healTarget.object.hp = min(healTarget.object.hp + healthGained, healTarget.object.maxHp);
                     hphealed += healthGained;
                     ownerPlayer.stats[HEALING] += healthGained;
-                    ownerPlayer.roundStats[HEALING] += healthGained;
                     
                     
                     if(ubering == false &amp;&amp; uberCharge&lt;2000){
                         uberCharge+=1;
-                        var setup;
-                        setup = false;
-                        if instance_exists(ControlPointSetupGate) {
-                            if (ControlPointSetupGate.solid)
-                                setup = true;
-                        }
-                        if(healTarget.object.hp &lt; healTarget.object.maxHp or setup) uberCharge += 0.5;
-                        if(healTarget.object.hp &lt; healTarget.object.maxHp/2 or setup) uberCharge += 1;
+                        if(healTarget.object.hp &lt; healTarget.object.maxHp) uberCharge += 0.5;
+                        if(healTarget.object.hp &lt; healTarget.object.maxHp/2) uberCharge += 1;
                         if(uberCharge &gt;= 2000) {
                             uberCharge = 2000;
                             if(global.isHost) {
@@ -80,7 +73,6 @@
                                                                
                     if hphealed &gt;= HP_PER_POINT {
                         ownerPlayer.stats[POINTS] += 1;
-                        ownerPlayer.roundStats[POINTS] += 1;
                         hphealed -= HP_PER_POINT;
                     }
 

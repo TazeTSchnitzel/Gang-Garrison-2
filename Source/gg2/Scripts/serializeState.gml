@@ -34,23 +34,8 @@
         write_ubyte(argument1, global.redCaps);
         write_ubyte(argument1, global.blueCaps);
         write_ubyte(argument1, global.Server_RespawntimeSec);
-        if instance_exists(ControlPointHUD) {
-            with ControlPointHUD event_user(12);
-        }
-        else if instance_exists(ScorePanel) {
+        if instance_exists(ScorePanel) {
             with ScorePanel event_user(12);
-        }
-        else if instance_exists(GeneratorHUD) {
-            with GeneratorHUD event_user(12);
-        }
-        else if instance_exists(ArenaHUD) {
-            with ArenaHUD event_user(12);
-        }
-        else if instance_exists(KothHUD) {
-            with KothHUD event_user(12);
-        }
-        else if instance_exists(DKothHUD) {
-            with DKothHUD event_user(12);
         }
     }
     
@@ -59,23 +44,8 @@
         write_ubyte(argument1, global.redCaps);
         write_ubyte(argument1, global.blueCaps);
         write_ubyte(argument1, global.Server_RespawntimeSec);
-        if instance_exists(ControlPointHUD) {
-            with ControlPointHUD event_user(12);
-        }
-        else if instance_exists(ScorePanel) {
+        if instance_exists(ScorePanel) {
             with ScorePanel event_user(12);
-        }
-        else if instance_exists(GeneratorHUD) {
-            with GeneratorHUD event_user(12);
-        }
-        else if instance_exists(ArenaHUD) {
-            with ArenaHUD event_user(12);
-        }
-        else if instance_exists(KothHUD) {
-            with KothHUD event_user(12);
-        }
-        else if instance_exists(DKothHUD) {
-            with DKothHUD event_user(12);
         }
     }
 }
