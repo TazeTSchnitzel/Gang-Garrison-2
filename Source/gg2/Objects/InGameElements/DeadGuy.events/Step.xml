@@ -13,27 +13,27 @@
       <not>false</not>
       <appliesTo>.self</appliesTo>
       <arguments>
-        <argument kind="STRING">{
-    hspeed/=1.1;
-    if(abs(hspeed)&lt;0.2) {
-        hspeed=0;
-    }
-    
-    inwater = collision_point(x,y,WaterBox,false,false);
-    
-    if(place_free(x,y+1)) {
-        if(inwater) {
-            vspeed += 0.36;
-            if(vspeed&gt;3) {
-                vspeed=3;
-            }
-        }else{
-            vspeed += 0.6;
-            if(vspeed&gt;10) {
-                vspeed=10;
-            }
+        <argument kind="STRING">if(abs(hspeed)&lt;0.2) {
+    hspeed=0;
+}
+
+var inwater;
+inwater = collision_point(x,y,WaterBox,false,false);
+
+if(place_free(x,y+1)) {
+    if(inwater) {
+        vspeed += 0.36;
+        if(vspeed&gt;3) {
+            vspeed=3;
+        }
+    } else {
+        vspeed += 0.6;
+        if(vspeed&gt;10) {
+            vspeed=10;
         }
     }
+} else {
+    hspeed/=1.1;
 }
 </argument>
       </arguments>

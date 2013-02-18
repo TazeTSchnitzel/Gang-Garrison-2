@@ -14,6 +14,9 @@
       <appliesTo>.self</appliesTo>
       <arguments>
         <argument kind="STRING">if(owner == -1) break;
+if(other.cloak)
+    if(other.currentWeapon.readyToStab)
+        exit;
 if (other.team != team and !other.ubered and other.hp &gt; 0)
 {
     other.hp-=hitDamage;

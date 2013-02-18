@@ -2,6 +2,7 @@
     instance_create(0,0,RoomChangeObserver);
     set_little_endian_global(true);
     if file_exists("game_errors.log") file_delete("game_errors.log");
+    if file_exists("last_plugin.log") file_delete("last_plugin.log");
     
     var customMapRotationFile;
 
@@ -16,7 +17,6 @@
     if(global.FaucetMusic != -1)
         sound_volume(global.FaucetMusic, 0.8);
         
-
     global.sendBuffer = buffer_create();
     global.eventBuffer = buffer_create();
     global.tempBuffer = buffer_create();
@@ -58,13 +58,16 @@
     global.mapRotationFile = customMapRotationFile;
     global.dedicatedMode = ini_read_real("Server", "Dedicated", 0);
     global.serverName = ini_read_string("Server", "ServerName", "My Server");
+    global.welcomeMessage = ini_read_string("Server", "WelcomeMessage", "");
     global.caplimit = max(1, min(255, ini_read_real("Server", "CapLimit", 5)));
     global.caplimitBkup = global.caplimit;
     global.autobalance = ini_read_real("Server", "AutoBalance",1);
     global.Server_RespawntimeSec = ini_read_real("Server", "Respawn Time", 5);
-    global.haxxyKey = ini_read_string("Haxxy", "SecretHaxxyKey", "");
+    global.rewardKey = unhex(ini_read_string("Haxxy", "RewardKey", ""));
+    global.rewardId = ini_read_string("Haxxy", "RewardId", "");
     global.mapdownloadLimitBps = ini_read_real("Server", "Total bandwidth limit for map downloads in bytes per second", 50000);
     global.updaterBetaChannel = ini_read_real("General", "UpdaterBetaChannel", isBetaVersion());
+    global.attemptPortForward = ini_read_real("Server", "Attempt UPnP Forwarding", 0); 
     
     global.currentMapArea=1;
     global.totalMapAreas=1;
@@ -91,14 +94,15 @@
     ini_write_string("Server", "MapRotation", customMapRotationFile);
     ini_write_real("Server", "Dedicated", global.dedicatedMode);
     ini_write_string("Server", "ServerName", global.serverName);
+    ini_write_string("Server", "WelcomeMessage", global.welcomeMessage);
     ini_write_real("Server", "CapLimit", global.caplimit);
     ini_write_real("Server", "AutoBalance", global.autobalance);
     ini_write_real("Server", "Respawn Time", global.Server_RespawntimeSec);
     ini_write_real("Server", "Total bandwidth limit for map downloads in bytes per second", global.mapdownloadLimitBps);
     ini_write_real("Server", "Time Limit", global.timeLimitMins);
     ini_write_string("Server", "Password", global.serverPassword);
-    ini_write_string("Haxxy", "SecretHaxxyKey", global.haxxyKey);
     ini_write_real("General", "UpdaterBetaChannel", global.updaterBetaChannel);
+    ini_write_real("Server", "Attempt UPnP Forwarding", global.attemptPortForward); 
     
     //screw the 0 index we will start with 1
     //map_truefort 
@@ -354,6 +358,9 @@ global.launchMap = "";
     
     calculateMonthAndDay();
 
+    if(!directory_exists(working_directory + "\Plugins")) directory_create(working_directory + "\Plugins");
+    loadplugins();
+    
     if(global.dedicatedMode == 1) {
         AudioControlToggleMute();
         room_goto_fix(Menu);
