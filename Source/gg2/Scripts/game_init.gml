@@ -47,6 +47,7 @@
     global.hostingPort = ini_read_real("Settings", "HostingPort", 8190);
     global.ingameMusic = ini_read_real("Settings", "IngameMusic", 1);
     global.playerLimit = ini_read_real("Settings", "PlayerLimit", 10);
+    global.collisionAccuracy = ini_read_real("Settings", "Collision Accuracy", 1);
     global.particles =  ini_read_real("Settings", "Particles", PARTICLES_NORMAL);
     global.gibLevel = ini_read_real("Settings", "Gib Level", 3);
     global.killCam = ini_read_real("Settings", "Kill Cam", 1);
@@ -115,6 +116,7 @@
     ini_write_real("Settings", "HostingPort", global.hostingPort);
     ini_write_real("Settings", "IngameMusic", global.ingameMusic);
     ini_write_real("Settings", "PlayerLimit", global.playerLimit);
+    ini_write_real("Settings", "Collision Accuracy", global.collisionAccuracy);
     ini_write_real("Settings", "Particles", global.particles);
     ini_write_real("Settings", "Gib Level", global.gibLevel);
     ini_write_real("Settings", "Kill Cam", global.killCam);
