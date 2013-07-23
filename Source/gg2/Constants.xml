@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <constants>
-  <constant name="VERSION" value="26000"/>
-  <constant name="GAME_VERSION_STRING" value="&quot;v2.6.0&quot;"/>
+  <constant name="VERSION" value="26300"/>
+  <constant name="GAME_VERSION_STRING" value="&quot;v2.6.3&quot;"/>
   <constant name="GAME_NAME_STRING" value="&quot;Gang Garrison 2&quot;"/>
   <constant name="GAME_URL_STRING" value="&quot;http://www.ganggarrison.com/&quot;"/>
   <constant name="PLUGIN_SOURCE" value="&quot;http://www.ganggarrison.com/plugins/&quot;"/>
@@ -15,7 +15,7 @@
   <constant name="LOBBY_SERVER_PORT" value="29944"/>
   <constant name="AUTH_SERVER_HOST" value="&quot;ganggarrison.com&quot;"/>
   <constant name="AUTH_SERVER_PORT" value="45022"/>
-  <constant name="PROTOCOL_UUID" value="&quot;91f0d312-48ef-ab0d-e299-3632c09bb1ba&quot;"/>
+  <constant name="PROTOCOL_UUID" value="&quot;fe00e374-4e05-808c-ac47-248920f03942&quot;"/>
   <constant name="GG2_LOBBY_UUID" value="&quot;1ccf16b1-436d-856f-504d-cc1af306aaa7&quot;"/>
   <constant name="HELLO" value="0"/>
   <constant name="PLAYER_JOIN" value="1"/>
@@ -73,7 +73,6 @@
   <constant name="TEAM_RED" value="0"/>
   <constant name="TEAM_BLUE" value="1"/>
   <constant name="TEAM_SPECTATOR" value="2"/>
-  <constant name="TEAM_ANY" value="3"/>
   <constant name="CLASS_SCOUT" value="0"/>
   <constant name="CLASS_SOLDIER" value="1"/>
   <constant name="CLASS_SNIPER" value="2"/>
@@ -156,4 +155,8 @@
   <constant name="MOUSE_RIGHT" value="9002"/>
   <constant name="HP_PER_POINT" value="400"/>
   <constant name="INTEL_MAX_TIMER" value="900"/>
+  <constant name="MUSIC_MENU_ONLY" value="0"/>
+  <constant name="MUSIC_BOTH" value="1"/>
+  <constant name="MUSIC_INGAME_ONLY" value="2"/>
+  <constant name="MUSIC_NONE" value="3"/>
 </constants>
