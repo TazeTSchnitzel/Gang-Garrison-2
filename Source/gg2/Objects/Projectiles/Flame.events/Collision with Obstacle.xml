@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="COLLISION" with="Obstacle">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">// Not currently stuck to wall
+if (!stuck) {
+    stuck = true;
+    flameLife = 30;
+    alarm[0] = flameLife;
+    move_outside_solid(direction-180, speed);
+}
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

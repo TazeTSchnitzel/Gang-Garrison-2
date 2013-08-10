@@ -18,6 +18,7 @@ flameLife = 15;
 burnIncrease = 1;
 durationIncrease = 30;
 afterburnFalloff = true;
+stuck = false;
 </argument>
       </arguments>
     </action>
