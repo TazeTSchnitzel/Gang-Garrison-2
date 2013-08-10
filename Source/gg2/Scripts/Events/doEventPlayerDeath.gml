@@ -92,7 +92,8 @@ with(victim.object) {
     if((damageSource == WEAPON_ROCKETLAUNCHER 
     or damageSource == WEAPON_MINEGUN or damageSource == FRAG_BOX 
     or damageSource == WEAPON_REFLECTED_STICKY or damageSource == WEAPON_REFLECTED_ROCKET 
-    or damageSource == FINISHED_OFF_GIB or damageSource == GENERATOR_EXPLOSION) 
+    or damageSource == FINISHED_OFF_GIB or damageSource == GENERATOR_EXPLOSION
+    or damageSource == WEAPON_RIFLE_CHARGED) 
     and (player.class != CLASS_QUOTE) and (global.gibLevel>1) 
     and distance_to_point(xoffset+xsize/2,yoffset+ysize/2) < 900) {
         repeat(global.gibLevel) {
