@@ -65,6 +65,8 @@ if(oldVspeed!=0 and vspeed==0 and global.isHost)
 }
 
 oldVspeed = vspeed;
+
+hspeed /= baseFriction;
 </argument>
       </arguments>
     </action>

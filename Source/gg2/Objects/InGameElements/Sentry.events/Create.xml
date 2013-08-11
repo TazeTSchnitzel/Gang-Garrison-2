@@ -35,6 +35,9 @@ idleTimer = true;
 
 //healer
 healer = -1;
+
+// warning that baseFriction cannot be equal to 0 nor 1 or div0 will occur
+baseFriction = 1.15;
 </argument>
       </arguments>
     </action>
