@@ -18,6 +18,7 @@
     other.hp -= hitDamage;
     other.lastDamageDealer = ownerPlayer;
     other.lastDamageSource = weapon;
+    other.timeUnscathed = 0;
     instance_destroy();
 }
 </argument>

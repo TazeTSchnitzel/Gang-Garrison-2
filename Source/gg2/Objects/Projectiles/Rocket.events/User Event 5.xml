@@ -106,6 +106,7 @@
                     hp -= other.explosionDamage*(1-(distance_to_object(other)/other.blastRadius));
                     lastDamageDealer = other.ownerPlayer;
                     lastDamageSource = other.weapon;
+                    timeUnscathed = 0;
                 }
             }
         }        

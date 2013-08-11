@@ -86,6 +86,7 @@
         hp -= other.explosionDamage*10/9*(1-(distance_to_object(other)/other.blastRadius)); // we want sentries to take ~11% extra damage so that two stickies will do 100 instead of 90 dmg. we don't change the base damage so scouts can't be 2-hitted.
         lastDamageDealer = other.ownerPlayer;
         lastDamageSource = WEAPON_MINEGUN;
+        timeUnscathed = 0;
         }   
     }    
      

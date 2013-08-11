@@ -15,9 +15,16 @@
       <arguments>
         <argument kind="STRING">if(!healedThisStep and instance_exists(healTarget))
 {
-    if(healTarget.object != -1)
-        healTarget.object.healer = -1;
-            
+    if (healTarget.object_index == Player)
+    {
+        if(healTarget.object != -1)
+            healTarget.object.healer = -1;
+    }
+    else if (healTarget.object_index == Sentry)
+    {
+        healTarget.healer = -1;
+    }
+
     healTarget = noone;
 }
 

@@ -22,7 +22,27 @@ xdrawpos = round(x+xoffset*image_xscale);
 ydrawpos = round(y+yoffset);
 if(instance_exists(healTarget))
 {
-    if(healTarget.object != -1)
+    if (healTarget.object_index == Player)
+    {
+        if(healTarget.object != -1)
+        {
+            var color;
+            if(healTarget.team == TEAM_RED)
+                color = c_red;
+            else
+                color = c_blue;
+                
+            draw_set_alpha(0.3);
+            draw_line_width_color(xdrawpos+lengthdir_x(24,owner.aimDirection),ydrawpos+lengthdir_y(24,owner.aimDirection),healTarget.object.x, healTarget.object.y, 5, color, color);
+            if (sprite_index != normalSprite) {
+                //cancel the fire animation
+                sprite_index = normalSprite;
+                alarm[6] = 0;
+            }
+            imageOffset = owner.team+2;
+        }
+    } 
+    else if (healTarget.object_index == Sentry)
     {
         var color;
         if(healTarget.team == TEAM_RED)
@@ -31,7 +51,7 @@ if(instance_exists(healTarget))
             color = c_blue;
             
         draw_set_alpha(0.3);
-        draw_line_width_color(xdrawpos+lengthdir_x(24,owner.aimDirection),ydrawpos+lengthdir_y(24,owner.aimDirection),healTarget.object.x, healTarget.object.y, 5, color, color);
+        draw_line_width_color(xdrawpos+lengthdir_x(24,owner.aimDirection),ydrawpos+lengthdir_y(24,owner.aimDirection),healTarget.x, healTarget.y, 5, color, color);
         if (sprite_index != normalSprite) {
             //cancel the fire animation
             sprite_index = normalSprite;
