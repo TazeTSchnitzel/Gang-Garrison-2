@@ -35,7 +35,7 @@
                             bestTargetDist = point_distance(target.x,target.y,x,y);
                             if (object_is_ancestor(target.object_index, Character)) {
                                 bestTarget = target.player;
-                            } else if (target.object_index == Player) {
+                            } else if (target.object_index == Sentry) {
                                 bestTarget = target;
                             }
                         }
