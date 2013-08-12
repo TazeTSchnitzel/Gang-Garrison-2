@@ -200,16 +200,31 @@ if(abs(hspeed)&lt;0.195 /*and not moveStatus = 3*/) { // Overweight carrying int
 
 charSetSolids();
 
-if(place_free(x,y+1)) {
-    vspeed += 0.6;
-    if(vspeed&gt;10) {
-        vspeed=10;
+if (!omnomnomnom)
+{
+    if(place_free(x,y+1)) {
+        vspeed += 0.6;
+        if(vspeed&gt;10) {
+            vspeed=10;
+        }
+        animationImage = 1;
+    } else {
+        if(place_free(x,y)) {
+            doublejumpUsed = 0;
+        }
+    }
+    if (image_yscale &lt; 1)
+        image_yscale += 0.1;
+}
+else if(place_free(x,y-1))
+{
+    vspeed -= 0.6;
+    if(vspeed&lt;-10) {
+        vspeed=-10;
     }
     animationImage = 1;
-} else {
-    if(place_free(x,y)) {
-        doublejumpUsed = 0;
-    }
+    if (image_yscale &gt; -1)
+        image_yscale -= 0.1;
 }
 
 charUnsetSolids();
