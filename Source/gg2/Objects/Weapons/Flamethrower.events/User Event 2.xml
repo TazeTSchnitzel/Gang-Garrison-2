@@ -165,6 +165,22 @@
                     }
             }
         }
+
+        with(Sentry)
+        {
+            dir = point_direction(other.x, other.y, x, y);
+            dist = point_distance(other.x, other.y, x, y);
+            angle = abs((dir-other.owner.aimDirection)+720) mod 360;
+            if collision_circle(x,y,25,other.poof,false,true) {
+                if(team != other.owner.team)
+                {
+                    motion_add(other.owner.aimDirection, other.characterBlastStrength*(1-dist/other.blastDistance));
+                    vspeed -= 2;
+                    lastDamageDealer = other.ownerPlayer;
+                    lastDamageSource = -1;
+                }
+            }
+        }
         
         with(LooseSheet)
         {
