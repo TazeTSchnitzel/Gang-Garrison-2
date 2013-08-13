@@ -213,18 +213,23 @@ if (!omnomnomnom)
             doublejumpUsed = 0;
         }
     }
-    if (image_yscale &lt; 1)
-        image_yscale += 0.1;
+    image_yscale = 1;
+    if (cosmetic_image_yscale &lt; 1)
+        cosmetic_image_yscale += 0.1;
 }
-else if(place_free(x,y-1))
+else
 {
-    vspeed -= 0.6;
-    if(vspeed&lt;-10) {
-        vspeed=-10;
+    if (place_free(x,y-1))
+    {
+        vspeed -= 0.6;
+        if(vspeed&lt;-10) {
+            vspeed=-10;
+        }
     }
     animationImage = 1;
-    if (image_yscale &gt; -1)
-        image_yscale -= 0.1;
+    image_yscale = -1;
+    if (cosmetic_image_yscale &gt; -1)
+        cosmetic_image_yscale -= 0.1;
 }
 
 charUnsetSolids();

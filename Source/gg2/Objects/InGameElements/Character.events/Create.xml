@@ -86,6 +86,9 @@
     cloak = false;
     cloakAlpha = 1;
 
+    //used for effects, not actual image_yscale to prevent bbox squishing
+    cosmetic_image_yscale = 1;
+    
     //healer
     healer = -1;
         
