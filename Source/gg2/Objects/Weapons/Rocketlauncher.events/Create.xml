@@ -16,11 +16,11 @@
         <argument kind="STRING">{
     xoffset = -15;
     yoffset = -10;
-    refireTime = 30;
+    refireTime = 45;
     event_inherited();
     
-    reloadTime = 22;
-    reloadBuffer = 30;
+    reloadTime = 33;
+    reloadBuffer = 45;
     maxAmmo = 4;
     ammoCount = maxAmmo;
     rocketrange = 501;

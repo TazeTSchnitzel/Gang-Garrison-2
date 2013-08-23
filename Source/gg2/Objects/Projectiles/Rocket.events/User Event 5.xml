@@ -45,7 +45,7 @@
                 vectorfactor = point_distance(0, 0, power(sin(degtorad(rdir)), 2), power(cos(degtorad(rdir)), 2));
                 if (1 - distance_to_object(other)/other.blastRadius &lt;= 0.25)
                     continue;
-                motion_add(rdir, min(15, other.knockback-other.knockback*(distance_to_object(other)/other.blastRadius)) * vectorfactor);
+                motion_add(rdir, min(SPEED_LIMIT, other.knockback-other.knockback*(distance_to_object(other)/other.blastRadius)) * vectorfactor);
                 if(!ubered and hp &gt; 0)
                 {
                     if (other.team != team) or (id==other.ownerPlayer.object)
@@ -107,7 +107,7 @@
                 vectorfactor = point_distance(0, 0, power(sin(degtorad(rdir)), 2), power(cos(degtorad(rdir)), 2));
                 if (1 - distance_to_object(other)/other.blastRadius &lt;= 0.25)
                     continue;
-                motion_add(rdir, min(15, other.knockback-other.knockback*(distance_to_object(other)/other.blastRadius)) * vectorfactor);
+                motion_add(rdir, min(SPEED_LIMIT, other.knockback-other.knockback*(distance_to_object(other)/other.blastRadius)) * vectorfactor);
 
                 if(hp &gt; 0) {
                     hp -= other.explosionDamage*(1-(distance_to_object(other)/other.blastRadius));
@@ -149,7 +149,7 @@
         
         with (Gib) {
             if (distance_to_object(other) &lt; other.blastRadius){
-                motion_add(point_direction(other.x,other.y,x,y),15-15*(distance_to_object(other)/other.blastRadius));
+                motion_add(point_direction(other.x,other.y,x,y),SPEED_LIMIT-SPEED_LIMIT*(distance_to_object(other)/other.blastRadius));
                 rotspeed=random(151)-75;
             }
         }

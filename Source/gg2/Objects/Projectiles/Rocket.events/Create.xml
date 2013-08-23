@@ -15,11 +15,11 @@
       <arguments>
         <argument kind="STRING">{
     hitDamage = 25;
-    explosionDamage = 30;
+    explosionDamage = 45;
     blastRadius = 65;
     characterHit = -1;
     exploded = false;
-    knockback = 8;
+    knockback = 12;
     bubbled = false;
     
     fade = false;
