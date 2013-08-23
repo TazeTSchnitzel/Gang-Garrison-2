@@ -14,7 +14,7 @@
       <appliesTo>.self</appliesTo>
       <arguments>
         <argument kind="STRING">{
-    explosionDamage = 45;
+    explosionDamage = 68;
     animationState = 1;
     alarm[1] = 29;
     stickied = false;
@@ -23,7 +23,7 @@
     exploded = false;
     bubbled = false;
     reflector = noone;
-    knockback = 10;
+    knockback = 15;
 }
 </argument>
       </arguments>

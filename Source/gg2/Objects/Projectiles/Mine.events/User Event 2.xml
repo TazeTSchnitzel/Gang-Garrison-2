@@ -30,7 +30,7 @@
             vectorfactor = point_distance(0, 0, sin(degtorad(rdir)), cos(degtorad(rdir))*0.8);
             if (1 - distance_to_object(other)/other.blastRadius &lt;= 0.25 and other.splashThreshhold) // skip if we're out of theshhold
                 continue;
-            motion_add(rdir, min(15, other.knockback-other.knockback*(distance_to_object(other)/other.blastRadius)) * vectorfactor);
+            motion_add(rdir, min(SPEED_LIMIT, other.knockback-other.knockback*(distance_to_object(other)/other.blastRadius)) * vectorfactor);
             if((other.team != team or id==other.ownerPlayer.object) and !ubered and hp &gt; 0)
             {
                 var dmg;
@@ -89,7 +89,7 @@
             vectorfactor = point_distance(0, 0, sin(degtorad(rdir)), cos(degtorad(rdir))*0.8);
             if (1 - distance_to_object(other)/other.blastRadius &lt;= 0.25 and other.splashThreshhold) // skip if we're out of theshhold
                 continue;
-            motion_add(rdir, min(15, other.knockback-other.knockback*(distance_to_object(other)/other.blastRadius)) * vectorfactor);
+            motion_add(rdir, min(SPEED_LIMIT, other.knockback-other.knockback*(distance_to_object(other)/other.blastRadius)) * vectorfactor);
             hp -= other.explosionDamage*10/9*(1-(distance_to_object(other)/other.blastRadius)); // we want sentries to take ~11% extra damage so that two stickies will do 100 instead of 90 dmg. we don't change the base damage so scouts can't be 2-hitted.
             lastDamageDealer = other.ownerPlayer;
             lastDamageSource = WEAPON_MINEGUN;
@@ -139,7 +139,7 @@
     }
     with (Gib) {
         if (distance_to_object(other) &lt; other.blastRadius){
-            motion_add(point_direction(other.x,other.y,x,y),15-15*(distance_to_object(other)/other.blastRadius));
+            motion_add(point_direction(other.x,other.y,x,y),SPEED_LIMIT-SPEED_LIMIT*(distance_to_object(other)/other.blastRadius));
             rotspeed=random(151)-75;
         }
     }
