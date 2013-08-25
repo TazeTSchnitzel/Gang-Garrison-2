@@ -12,8 +12,8 @@ if(socket >= 0) {
     if(numPlayers + 1 > global.playerLimit)
     {
         write_ubyte(socket, SERVER_FULL);
+        socket_send(socket);
         socket_destroy(socket);
-        break;
     }
     else
     {
