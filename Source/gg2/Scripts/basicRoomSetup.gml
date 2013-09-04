@@ -72,3 +72,5 @@ if(instance_exists(GameServer))
         GameServer.hostSeenMOTD = true;
     }
 }
+
+initPlanet();

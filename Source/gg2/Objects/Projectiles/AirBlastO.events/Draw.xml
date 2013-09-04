@@ -13,15 +13,7 @@
       <not>false</not>
       <appliesTo>.self</appliesTo>
       <arguments>
-        <argument kind="STRING">xviewoffset = view_xview[0];
-yviewoffset = view_yview[0];
-xviewsize = view_wview[0];
-yviewsize = view_hview[0];
-    
-if distance_to_point(xviewoffset+xviewsize/2,yviewoffset+yviewsize/2) &gt; 800 exit;
-
-draw_sprite_ext_planet(sprite_index,image_index,x,y,1,1,0,c_white,1);
-draw_sprite_ext_planet(GeneratorShieldS,floor(shieldIndex),x,y,1,1,0,c_white, shieldResistance);
+        <argument kind="STRING">draw_sprite_ext_planet(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 </argument>
       </arguments>
     </action>

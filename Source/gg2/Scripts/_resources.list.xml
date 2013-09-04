@@ -30,6 +30,7 @@
   <resource name="Plugins" type="GROUP"/>
   <resource name="Math" type="GROUP"/>
   <resource name="Physics" type="GROUP"/>
+  <resource name="Planet" type="GROUP"/>
   <resource name="recordKillInLog" type="RESOURCE"/>
   <resource name="recordDestructionInLog" type="RESOURCE"/>
   <resource name="recordEventInLog" type="RESOURCE"/>
