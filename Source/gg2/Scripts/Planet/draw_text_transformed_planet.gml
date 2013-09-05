@@ -9,35 +9,18 @@ _xscale = argument3;
 _yscale = argument4;
 _angle = argument5;
 
-var xoffset, yoffset, xsize, ysize;
+var list, drawX, drawY, scaleX, scaleY, drawAngle;
+list = planetMapPosToPlanetPos(_x, _y);
+drawX = ds_list_find_value(list, 2);
+drawY = ds_list_find_value(list, 3);
+scaleX = ds_list_find_value(list, 4);
+scaleY = ds_list_find_value(list, 5);
+drawAngle = ds_list_find_value(list, 6);
+ds_list_destroy(list);
 
-xoffset = view_xview[0];
-yoffset = view_yview[0];
-xsize = view_wview[0];
-ysize = view_hview[0];
-
-var centreX, bottomY;
-
-centreX = xoffset + xsize / 2;
-bottomY = yoffset + ysize;
-
-var actualXOffset;
-// The xview but with the player at 0 relative to the screen
-actualXOffset = xoffset + xsize / 2;
-
-var angle, radius, _x, _y, scaleX, scaleY;
-
-// Angle of text and radius on planet
-angle = -(((_x - actualXOffset) / global.planetMapWidth) * 360 - 90);
-radius = ((global.planetMapHeight - _y) / global.planetMapHeight) * global.planetCircleRadius;
-
-// Scaling for planet
-scaleX = (pi * radius * 2) / global.planetMapWidth;
-scaleY = global.planetCircleRadius / global.planetMapHeight;
-
-draw_text_transformed(centreX + lengthdir_x(radius, angle),
-    bottomY + lengthdir_y(radius, angle),
+draw_text_transformed(drawX,
+    drawY,
     _string,
     _xscale * scaleX,
     _yscale * scaleY,
-    angle - 90 + _angle);;
+    drawAngle + _angle);;

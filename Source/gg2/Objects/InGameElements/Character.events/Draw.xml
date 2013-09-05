@@ -41,11 +41,12 @@ if team == global.myself.team &amp;&amp; (player != global.myself || global.show
     draw_healthbar(xr-10, yr-30, xr+10, yr-25,hp*100/maxHp,c_black,c_red,c_green,0,true,true);
 }
 
-// Find position of player on planet
-var playerX, playerY;
-planetMapPosToPlanetPos(global.myself.object.x, global.myself.object.y);
-playerX = global.planetPosX;
-playerY = global.planetPosY;
+// Find position of player projected onto planet
+var list, playerX, playerY;
+list = planetMapPosToPlanetPos(global.myself.object.x, global.myself.object.y);
+playerX = ds_list_find_value(list, 2);
+playerY = ds_list_find_value(list, 3);
+ds_list_destroy(list);
 
 if(point_distance(mouse_x, mouse_y, playerX, playerY)&lt;25) {
     if cloak &amp;&amp; team!=global.myself.team exit;
