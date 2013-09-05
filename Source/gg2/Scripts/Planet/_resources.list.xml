@@ -2,6 +2,7 @@
 <resources>
   <resource name="initPlanet" type="RESOURCE"/>
   <resource name="drawPlanet" type="RESOURCE"/>
+  <resource name="planetMapOrigin" type="RESOURCE"/>
   <resource name="planetMapPosToPlanetPos" type="RESOURCE"/>
   <resource name="draw_sprite_ext_planet" type="RESOURCE"/>
   <resource name="draw_text_transformed_planet" type="RESOURCE"/>
