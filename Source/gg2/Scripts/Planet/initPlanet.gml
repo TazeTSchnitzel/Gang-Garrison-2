@@ -7,10 +7,11 @@ global.planetMapWidth = map_width();
 global.planetMapHeight = map_height();
 
 // This is essentially a constant
-global.planetCircleRadius = 600;
+//global.planetCircleRadius = 600;
+global.planetCircleRadius = global.planetMapHeight / 2;
 
 var cacheFilename;
-cacheFilename = working_directory + "\PlanetPrerenderCache\" + global.currentMap + "@" + global.currentMapMD5 + ".png";
+cacheFilename = working_directory + "\PlanetPrerenderCache\" + global.currentMap + "@" + global.currentMapMD5 + "@" + string(global.planetCircleRadius) + ".png";
 
 // No cached version, pre-render it
 if (!file_exists(cacheFilename))

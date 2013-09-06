@@ -20,7 +20,7 @@ offsetY = yoffset + ysize / 2;
 // Centre X (circle will rotate to X position)
 originX = xoffset + xsize / 2;
 // Move Y to camera offset
-originY = yoffset + ysize + (global.planetCircleRadius / 2) - (offsetY / global.planetMapHeight) * global.planetCircleRadius;
+originY = yoffset + ysize + global.planetCircleRadius - (ysize / 2) - (offsetY / global.planetMapHeight) * global.planetCircleRadius;
 
 var returnValue;
 returnValue = ds_list_create();
