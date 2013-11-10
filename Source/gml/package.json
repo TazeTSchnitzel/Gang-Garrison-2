@@ -1,0 +1,9 @@
+{
+  "name": "gml",
+  "version": "0.0.0",
+  "description": "Gang Garrison 2 GML interpreter",
+  "dependencies": {
+    "shelljs": "~0.1.2",
+    "jison": "~0.4.4"
+  }
+}

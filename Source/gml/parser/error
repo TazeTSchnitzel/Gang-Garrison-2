@@ -1,0 +1,1116 @@
+Building GML parser...
+Conflict in grammar: multiple actions possible when lookahead token is EOF in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is IDENTIFIER in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is NUMBER in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is HEX in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is STRING in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is ! in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is ~ in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is - in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is ( in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is VAR in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is IF in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is REPEAT in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is WHILE in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is DO in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is FOR in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is SWITCH in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is WITH in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is BEGIN in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is BREAK in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is CONTINUE in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is EXIT in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is RETURN in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is ; in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is . in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is [ in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is && in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is || in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is ^^ in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is < in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is <= in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is = in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is == in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is NOT_EQUALS in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is > in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is >= in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is | in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is & in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is ^ in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is << in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is >> in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is + in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is * in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is / in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is DIV in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is MOD in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is } in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is CASE in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is DEFAULT in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is END in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is UNTIL in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is ELSE in state 6
+- reduce by rule: expression -> function_call
+- reduce by rule: statement -> function_call
+Conflict in grammar: multiple actions possible when lookahead token is = in state 21
+- reduce by rule: expression -> variable
+- shift token (then go to state 46)
+Conflict in grammar: multiple actions possible when lookahead token is ( in state 22
+- reduce by rule: variable -> identifier
+- shift token (then go to state 56)
+Conflict in grammar: multiple actions possible when lookahead token is NOT_EQUALS in state 89
+- reduce by rule: expression -> ! expression
+- shift token (then go to state 75)
+Conflict in grammar: multiple actions possible when lookahead token is NOT_EQUALS in state 90
+- reduce by rule: expression -> ~ expression
+- shift token (then go to state 75)
+Conflict in grammar: multiple actions possible when lookahead token is NOT_EQUALS in state 91
+- reduce by rule: expression -> - expression
+- shift token (then go to state 75)
+Conflict in grammar: multiple actions possible when lookahead token is - in state 96
+- reduce by rule: assignment -> variable += expression
+- shift token (then go to state 84)
+Conflict in grammar: multiple actions possible when lookahead token is - in state 97
+- reduce by rule: assignment -> variable -= expression
+- shift token (then go to state 84)
+Conflict in grammar: multiple actions possible when lookahead token is - in state 98
+- reduce by rule: assignment -> variable *= expression
+- shift token (then go to state 84)
+Conflict in grammar: multiple actions possible when lookahead token is - in state 99
+- reduce by rule: assignment -> variable /= expression
+- shift token (then go to state 84)
+Conflict in grammar: multiple actions possible when lookahead token is - in state 100
+- reduce by rule: assignment -> variable |= expression
+- shift token (then go to state 84)
+Conflict in grammar: multiple actions possible when lookahead token is - in state 101
+- reduce by rule: assignment -> variable &= expression
+- shift token (then go to state 84)
+Conflict in grammar: multiple actions possible when lookahead token is - in state 102
+- reduce by rule: assignment -> variable ^= expression
+- shift token (then go to state 84)
+Conflict in grammar: multiple actions possible when lookahead token is NOT_EQUALS in state 118
+- reduce by rule: expression -> expression && expression
+- shift token (then go to state 75)
+Conflict in grammar: multiple actions possible when lookahead token is NOT_EQUALS in state 119
+- reduce by rule: expression -> expression || expression
+- shift token (then go to state 75)
+Conflict in grammar: multiple actions possible when lookahead token is NOT_EQUALS in state 120
+- reduce by rule: expression -> expression ^^ expression
+- shift token (then go to state 75)
+Conflict in grammar: multiple actions possible when lookahead token is NOT_EQUALS in state 121
+- reduce by rule: expression -> expression < expression
+- shift token (then go to state 75)
+Conflict in grammar: multiple actions possible when lookahead token is NOT_EQUALS in state 122
+- reduce by rule: expression -> expression <= expression
+- shift token (then go to state 75)
+Conflict in grammar: multiple actions possible when lookahead token is NOT_EQUALS in state 123
+- reduce by rule: expression -> expression = expression
+- shift token (then go to state 75)
+Conflict in grammar: multiple actions possible when lookahead token is NOT_EQUALS in state 124
+- reduce by rule: expression -> expression == expression
+- shift token (then go to state 75)
+Conflict in grammar: multiple actions possible when lookahead token is . in state 125
+- reduce by rule: expression -> expression NOT_EQUALS expression
+- shift token (then go to state 66)
+Conflict in grammar: multiple actions possible when lookahead token is [ in state 125
+- reduce by rule: expression -> expression NOT_EQUALS expression
+- shift token (then go to state 67)
+Conflict in grammar: multiple actions possible when lookahead token is && in state 125
+- reduce by rule: expression -> expression NOT_EQUALS expression
+- shift token (then go to state 68)
+Conflict in grammar: multiple actions possible when lookahead token is || in state 125
+- reduce by rule: expression -> expression NOT_EQUALS expression
+- shift token (then go to state 69)
+Conflict in grammar: multiple actions possible when lookahead token is ^^ in state 125
+- reduce by rule: expression -> expression NOT_EQUALS expression
+- shift token (then go to state 70)
+Conflict in grammar: multiple actions possible when lookahead token is < in state 125
+- reduce by rule: expression -> expression NOT_EQUALS expression
+- shift token (then go to state 71)
+Conflict in grammar: multiple actions possible when lookahead token is <= in state 125
+- reduce by rule: expression -> expression NOT_EQUALS expression
+- shift token (then go to state 72)
+Conflict in grammar: multiple actions possible when lookahead token is = in state 125
+- reduce by rule: expression -> expression NOT_EQUALS expression
+- shift token (then go to state 73)
+Conflict in grammar: multiple actions possible when lookahead token is == in state 125
+- reduce by rule: expression -> expression NOT_EQUALS expression
+- shift token (then go to state 74)
+Conflict in grammar: multiple actions possible when lookahead token is NOT_EQUALS in state 125
+- reduce by rule: expression -> expression NOT_EQUALS expression
+- shift token (then go to state 75)
+Conflict in grammar: multiple actions possible when lookahead token is > in state 125
+- reduce by rule: expression -> expression NOT_EQUALS expression
+- shift token (then go to state 76)
+Conflict in grammar: multiple actions possible when lookahead token is >= in state 125
+- reduce by rule: expression -> expression NOT_EQUALS expression
+- shift token (then go to state 77)
+Conflict in grammar: multiple actions possible when lookahead token is | in state 125
+- reduce by rule: expression -> expression NOT_EQUALS expression
+- shift token (then go to state 78)
+Conflict in grammar: multiple actions possible when lookahead token is & in state 125
+- reduce by rule: expression -> expression NOT_EQUALS expression
+- shift token (then go to state 79)
+Conflict in grammar: multiple actions possible when lookahead token is ^ in state 125
+- reduce by rule: expression -> expression NOT_EQUALS expression
+- shift token (then go to state 80)
+Conflict in grammar: multiple actions possible when lookahead token is << in state 125
+- reduce by rule: expression -> expression NOT_EQUALS expression
+- shift token (then go to state 81)
+Conflict in grammar: multiple actions possible when lookahead token is >> in state 125
+- reduce by rule: expression -> expression NOT_EQUALS expression
+- shift token (then go to state 82)
+Conflict in grammar: multiple actions possible when lookahead token is + in state 125
+- reduce by rule: expression -> expression NOT_EQUALS expression
+- shift token (then go to state 83)
+Conflict in grammar: multiple actions possible when lookahead token is - in state 125
+- reduce by rule: expression -> expression NOT_EQUALS expression
+- shift token (then go to state 84)
+Conflict in grammar: multiple actions possible when lookahead token is * in state 125
+- reduce by rule: expression -> expression NOT_EQUALS expression
+- shift token (then go to state 85)
+Conflict in grammar: multiple actions possible when lookahead token is / in state 125
+- reduce by rule: expression -> expression NOT_EQUALS expression
+- shift token (then go to state 86)
+Conflict in grammar: multiple actions possible when lookahead token is DIV in state 125
+- reduce by rule: expression -> expression NOT_EQUALS expression
+- shift token (then go to state 87)
+Conflict in grammar: multiple actions possible when lookahead token is MOD in state 125
+- reduce by rule: expression -> expression NOT_EQUALS expression
+- shift token (then go to state 88)
+Conflict in grammar: multiple actions possible when lookahead token is NOT_EQUALS in state 126
+- reduce by rule: expression -> expression > expression
+- shift token (then go to state 75)
+Conflict in grammar: multiple actions possible when lookahead token is NOT_EQUALS in state 127
+- reduce by rule: expression -> expression >= expression
+- shift token (then go to state 75)
+Conflict in grammar: multiple actions possible when lookahead token is NOT_EQUALS in state 128
+- reduce by rule: expression -> expression | expression
+- shift token (then go to state 75)
+Conflict in grammar: multiple actions possible when lookahead token is NOT_EQUALS in state 129
+- reduce by rule: expression -> expression & expression
+- shift token (then go to state 75)
+Conflict in grammar: multiple actions possible when lookahead token is NOT_EQUALS in state 130
+- reduce by rule: expression -> expression ^ expression
+- shift token (then go to state 75)
+Conflict in grammar: multiple actions possible when lookahead token is NOT_EQUALS in state 131
+- reduce by rule: expression -> expression << expression
+- shift token (then go to state 75)
+Conflict in grammar: multiple actions possible when lookahead token is NOT_EQUALS in state 132
+- reduce by rule: expression -> expression >> expression
+- shift token (then go to state 75)
+Conflict in grammar: multiple actions possible when lookahead token is NOT_EQUALS in state 133
+- reduce by rule: expression -> expression + expression
+- shift token (then go to state 75)
+Conflict in grammar: multiple actions possible when lookahead token is NOT_EQUALS in state 134
+- reduce by rule: expression -> expression - expression
+- shift token (then go to state 75)
+Conflict in grammar: multiple actions possible when lookahead token is NOT_EQUALS in state 135
+- reduce by rule: expression -> expression * expression
+- shift token (then go to state 75)
+Conflict in grammar: multiple actions possible when lookahead token is NOT_EQUALS in state 136
+- reduce by rule: expression -> expression / expression
+- shift token (then go to state 75)
+Conflict in grammar: multiple actions possible when lookahead token is NOT_EQUALS in state 137
+- reduce by rule: expression -> expression DIV expression
+- shift token (then go to state 75)
+Conflict in grammar: multiple actions possible when lookahead token is NOT_EQUALS in state 138
+- reduce by rule: expression -> expression MOD expression
+- shift token (then go to state 75)
+
+States with conflicts:
+State 6
+  statement -> function_call . #lookaheads= EOF IDENTIFIER NUMBER HEX STRING ! ~ - ( VAR IF REPEAT WHILE DO FOR SWITCH WITH BEGIN BREAK CONTINUE EXIT RETURN ; . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + * / DIV MOD } CASE DEFAULT END UNTIL ELSE
+  expression -> function_call . #lookaheads= EOF IDENTIFIER NUMBER HEX STRING ! ~ - ( VAR IF REPEAT WHILE DO FOR SWITCH WITH BEGIN BREAK CONTINUE EXIT RETURN ; . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + * / DIV MOD } CASE DEFAULT END UNTIL ELSE
+State 21
+  assignment -> variable .= expression #lookaheads= ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( - ~ ! STRING HEX NUMBER IDENTIFIER EOF END DEFAULT CASE } UNTIL ELSE )
+  assignment -> variable .++ #lookaheads= ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( - ~ ! STRING HEX NUMBER IDENTIFIER EOF END DEFAULT CASE } UNTIL ELSE )
+  assignment -> variable .-- #lookaheads= ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( - ~ ! STRING HEX NUMBER IDENTIFIER EOF END DEFAULT CASE } UNTIL ELSE )
+  assignment -> variable .+= expression #lookaheads= ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( - ~ ! STRING HEX NUMBER IDENTIFIER EOF END DEFAULT CASE } UNTIL ELSE )
+  assignment -> variable .-= expression #lookaheads= ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( - ~ ! STRING HEX NUMBER IDENTIFIER EOF END DEFAULT CASE } UNTIL ELSE )
+  assignment -> variable .*= expression #lookaheads= ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( - ~ ! STRING HEX NUMBER IDENTIFIER EOF END DEFAULT CASE } UNTIL ELSE )
+  assignment -> variable ./= expression #lookaheads= ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( - ~ ! STRING HEX NUMBER IDENTIFIER EOF END DEFAULT CASE } UNTIL ELSE )
+  assignment -> variable .|= expression #lookaheads= ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( - ~ ! STRING HEX NUMBER IDENTIFIER EOF END DEFAULT CASE } UNTIL ELSE )
+  assignment -> variable .&= expression #lookaheads= ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( - ~ ! STRING HEX NUMBER IDENTIFIER EOF END DEFAULT CASE } UNTIL ELSE )
+  assignment -> variable .^= expression #lookaheads= ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( - ~ ! STRING HEX NUMBER IDENTIFIER EOF END DEFAULT CASE } UNTIL ELSE )
+  expression -> variable . #lookaheads= . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + - * / DIV MOD
+State 22
+  function_call -> identifier .( ) #lookaheads= ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( - ~ ! STRING HEX NUMBER IDENTIFIER EOF MOD DIV / * + >> << ^ & | >= > NOT_EQUALS == = <= < ^^ || && [ . END DEFAULT CASE } optional_semicolon UNTIL : ) , ] ELSE
+  function_call -> identifier .( function_call_arguments ) #lookaheads= ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( - ~ ! STRING HEX NUMBER IDENTIFIER EOF MOD DIV / * + >> << ^ & | >= > NOT_EQUALS == = <= < ^^ || && [ . END DEFAULT CASE } optional_semicolon UNTIL : ) , ] ELSE
+  variable -> identifier . #lookaheads= = ++ -- += -= *= /= |= &= ^= MOD DIV / * - + >> << ^ & | >= > NOT_EQUALS == <= < ^^ || && [ . optional_semicolon : ; ) , ] EOF IDENTIFIER NUMBER HEX STRING ! ~ ( VAR IF REPEAT WHILE DO FOR SWITCH WITH BEGIN BREAK CONTINUE EXIT RETURN END UNTIL ELSE DEFAULT CASE }
+State 89
+  expression -> ! expression . #lookaheads= . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + - * / DIV MOD optional_semicolon ) UNTIL END ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( ~ ! STRING HEX NUMBER IDENTIFIER EOF , ] : } CASE DEFAULT ELSE
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 90
+  expression -> ~ expression . #lookaheads= . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + - * / DIV MOD optional_semicolon ) UNTIL END ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( ~ ! STRING HEX NUMBER IDENTIFIER EOF , ] : } CASE DEFAULT ELSE
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 91
+  expression -> - expression . #lookaheads= . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + - * / DIV MOD optional_semicolon ) UNTIL END ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( ~ ! STRING HEX NUMBER IDENTIFIER EOF , ] : } CASE DEFAULT ELSE
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 96
+  assignment -> variable += expression . #lookaheads= ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( - ~ ! STRING HEX NUMBER IDENTIFIER EOF END DEFAULT CASE } UNTIL ELSE )
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 97
+  assignment -> variable -= expression . #lookaheads= ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( - ~ ! STRING HEX NUMBER IDENTIFIER EOF END DEFAULT CASE } UNTIL ELSE )
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 98
+  assignment -> variable *= expression . #lookaheads= ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( - ~ ! STRING HEX NUMBER IDENTIFIER EOF END DEFAULT CASE } UNTIL ELSE )
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 99
+  assignment -> variable /= expression . #lookaheads= ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( - ~ ! STRING HEX NUMBER IDENTIFIER EOF END DEFAULT CASE } UNTIL ELSE )
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 100
+  assignment -> variable |= expression . #lookaheads= ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( - ~ ! STRING HEX NUMBER IDENTIFIER EOF END DEFAULT CASE } UNTIL ELSE )
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 101
+  assignment -> variable &= expression . #lookaheads= ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( - ~ ! STRING HEX NUMBER IDENTIFIER EOF END DEFAULT CASE } UNTIL ELSE )
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 102
+  assignment -> variable ^= expression . #lookaheads= ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( - ~ ! STRING HEX NUMBER IDENTIFIER EOF END DEFAULT CASE } UNTIL ELSE )
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 118
+  expression -> expression && expression . #lookaheads= . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + - * / DIV MOD optional_semicolon ) UNTIL END ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( ~ ! STRING HEX NUMBER IDENTIFIER EOF , ] : } CASE DEFAULT ELSE
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 119
+  expression -> expression || expression . #lookaheads= . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + - * / DIV MOD optional_semicolon ) UNTIL END ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( ~ ! STRING HEX NUMBER IDENTIFIER EOF , ] : } CASE DEFAULT ELSE
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 120
+  expression -> expression ^^ expression . #lookaheads= . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + - * / DIV MOD optional_semicolon ) UNTIL END ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( ~ ! STRING HEX NUMBER IDENTIFIER EOF , ] : } CASE DEFAULT ELSE
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 121
+  expression -> expression < expression . #lookaheads= . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + - * / DIV MOD optional_semicolon ) UNTIL END ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( ~ ! STRING HEX NUMBER IDENTIFIER EOF , ] : } CASE DEFAULT ELSE
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 122
+  expression -> expression <= expression . #lookaheads= . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + - * / DIV MOD optional_semicolon ) UNTIL END ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( ~ ! STRING HEX NUMBER IDENTIFIER EOF , ] : } CASE DEFAULT ELSE
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 123
+  expression -> expression = expression . #lookaheads= . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + - * / DIV MOD optional_semicolon ) UNTIL END ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( ~ ! STRING HEX NUMBER IDENTIFIER EOF , ] : } CASE DEFAULT ELSE
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 124
+  expression -> expression == expression . #lookaheads= . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + - * / DIV MOD optional_semicolon ) UNTIL END ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( ~ ! STRING HEX NUMBER IDENTIFIER EOF , ] : } CASE DEFAULT ELSE
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 125
+  expression -> expression NOT_EQUALS expression . #lookaheads= . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + - * / DIV MOD optional_semicolon ) UNTIL END ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( ~ ! STRING HEX NUMBER IDENTIFIER EOF , ] : } CASE DEFAULT ELSE
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 126
+  expression -> expression > expression . #lookaheads= . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + - * / DIV MOD optional_semicolon ) UNTIL END ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( ~ ! STRING HEX NUMBER IDENTIFIER EOF , ] : } CASE DEFAULT ELSE
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 127
+  expression -> expression >= expression . #lookaheads= . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + - * / DIV MOD optional_semicolon ) UNTIL END ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( ~ ! STRING HEX NUMBER IDENTIFIER EOF , ] : } CASE DEFAULT ELSE
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 128
+  expression -> expression | expression . #lookaheads= . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + - * / DIV MOD optional_semicolon ) UNTIL END ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( ~ ! STRING HEX NUMBER IDENTIFIER EOF , ] : } CASE DEFAULT ELSE
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 129
+  expression -> expression & expression . #lookaheads= . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + - * / DIV MOD optional_semicolon ) UNTIL END ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( ~ ! STRING HEX NUMBER IDENTIFIER EOF , ] : } CASE DEFAULT ELSE
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 130
+  expression -> expression ^ expression . #lookaheads= . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + - * / DIV MOD optional_semicolon ) UNTIL END ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( ~ ! STRING HEX NUMBER IDENTIFIER EOF , ] : } CASE DEFAULT ELSE
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 131
+  expression -> expression << expression . #lookaheads= . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + - * / DIV MOD optional_semicolon ) UNTIL END ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( ~ ! STRING HEX NUMBER IDENTIFIER EOF , ] : } CASE DEFAULT ELSE
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 132
+  expression -> expression >> expression . #lookaheads= . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + - * / DIV MOD optional_semicolon ) UNTIL END ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( ~ ! STRING HEX NUMBER IDENTIFIER EOF , ] : } CASE DEFAULT ELSE
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 133
+  expression -> expression + expression . #lookaheads= . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + - * / DIV MOD optional_semicolon ) UNTIL END ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( ~ ! STRING HEX NUMBER IDENTIFIER EOF , ] : } CASE DEFAULT ELSE
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 134
+  expression -> expression - expression . #lookaheads= . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + - * / DIV MOD optional_semicolon ) UNTIL END ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( ~ ! STRING HEX NUMBER IDENTIFIER EOF , ] : } CASE DEFAULT ELSE
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 135
+  expression -> expression * expression . #lookaheads= . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + - * / DIV MOD optional_semicolon ) UNTIL END ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( ~ ! STRING HEX NUMBER IDENTIFIER EOF , ] : } CASE DEFAULT ELSE
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 136
+  expression -> expression / expression . #lookaheads= . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + - * / DIV MOD optional_semicolon ) UNTIL END ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( ~ ! STRING HEX NUMBER IDENTIFIER EOF , ] : } CASE DEFAULT ELSE
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 137
+  expression -> expression DIV expression . #lookaheads= . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + - * / DIV MOD optional_semicolon ) UNTIL END ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( ~ ! STRING HEX NUMBER IDENTIFIER EOF , ] : } CASE DEFAULT ELSE
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+State 138
+  expression -> expression MOD expression . #lookaheads= . [ && || ^^ < <= = == NOT_EQUALS > >= | & ^ << >> + - * / DIV MOD optional_semicolon ) UNTIL END ; RETURN EXIT CONTINUE BREAK BEGIN WITH SWITCH FOR DO WHILE REPEAT IF VAR ( ~ ! STRING HEX NUMBER IDENTIFIER EOF , ] : } CASE DEFAULT ELSE
+  expression -> expression .&& expression
+  expression -> expression .|| expression
+  expression -> expression .^^ expression
+  expression -> expression .< expression
+  expression -> expression .<= expression
+  expression -> expression .= expression
+  expression -> expression .== expression
+  expression -> expression .NOT_EQUALS expression
+  expression -> expression .> expression
+  expression -> expression .>= expression
+  expression -> expression .| expression
+  expression -> expression .& expression
+  expression -> expression .^ expression
+  expression -> expression .<< expression
+  expression -> expression .>> expression
+  expression -> expression .+ expression
+  expression -> expression .- expression
+  expression -> expression .* expression
+  expression -> expression ./ expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  variable -> expression .. identifier
+  variable -> expression .[ indexes ]
+Done!
