@@ -50,6 +50,7 @@
 "}"                     return 'END';
 
 /* operators */
+"="                     return '=';
 "++"                    return '++';
 "--"                    return '--';
 "+="                    return '+=';
@@ -67,11 +68,9 @@
 "<="                    return '<=';
 "<"                     return '<';
 "=="                    return '==';
-"<>"                    return 'NOT_EQUALS';
-"!="                    return 'NOT_EQUALS';
+"!="                    return '!=';
 ">="                    return '>=';
 ">"                     return '>';
-"="                     return '=';
 "|"                     return '|';
 "&"                     return '&';
 "^"                     return '^';
@@ -95,7 +94,7 @@
 %left 'IF'
 %left 'ELSE'
 %left '&&' '||' '^^'
-%left '<' '<=' '==' '=' '!=' '>' '>='
+%left '<' '<=' '==' '!=' '>' '>='
 %left '|' '&' '^'
 %left '<<' '>>'
 %left '+' '-'
@@ -126,35 +125,35 @@ statements_unwrapped
     ;
 
 statement
-    : assignment
+    : assignment ';'
         { $$ = $1; }
-    | function_call
+    | function_call ';'
         { $$ = $1; }
-    | var_statement
+    | var_statement ';'
         { $$ = $1; }
-    | if_statement
+    | if_statement ';'
         { $$ = $1; }
-    | repeat_statement
+    | repeat_statement ';'
         { $$ = $1; }
-    | while_statement
+    | while_statement ';'
         { $$ = $1; }
-    | do_until_statement
+    | do_until_statement ';'
         { $$ = $1; }
-    | for_statement
+    | for_statement ';'
         { $$ = $1; }
-    | switch_statement
+    | switch_statement ';'
         { $$ = $1; }
-    | with_statement
+    | with_statement ';'
         { $$ = $1; }
     | BEGIN statements END
         { $$ = $2; }
-    | BREAK
+    | BREAK ';'
         { $$ = yy.makeBreakStmt(); }
-    | CONTINUE
+    | CONTINUE ';'
         { $$ = yy.makeContinueStmt(); }
-    | EXIT
+    | EXIT ';'
         { $$ = yy.makeExitStmt(); }
-    | RETURN expression optional_semicolon
+    | RETURN expression ';'
         { $$ = yy.makeReturnStmt($2); }
     | ';'
         { $$ = yy.makeNopStmt(); }
@@ -267,12 +266,10 @@ expression
         { $$ = yy.makeBinaryOp($2, $1, $3); }
     | expression '<=' expression
         { $$ = yy.makeBinaryOp($2, $1, $3); }
-    | expression '=' expression
-        { $$ = yy.makeBinaryOp('==', $1, $3); }
     | expression '==' expression
         { $$ = yy.makeBinaryOp($2, $1, $3); }
-    | expression NOT_EQUALS expression
-        { $$ = yy.makeBinaryOp('!=', $1, $3); }
+    | expression '!=' expression
+        { $$ = yy.makeBinaryOp($2, $1, $3); }
     | expression '>' expression
         { $$ = yy.makeBinaryOp($2, $1, $3); }
     | expression '>=' expression
