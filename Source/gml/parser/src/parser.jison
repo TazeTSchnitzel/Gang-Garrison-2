@@ -109,7 +109,7 @@
 
 top
     : statements EOF
-        { return yy.makeStmtList($1); }
+        { return $1; }
     ;
 
 statements
@@ -329,15 +329,10 @@ variable
         { $$ = $1; }
     | expression '.' identifier
         { $$ = yy.makeBinaryOp($2, $1, $3); }
-    | expression '[' indexes ']'
-        { $$ = yy.makeIndex($1, $3); }
-    ;
-
-indexes
-    : expression ',' indexes
-        { $$ = [$1].concat($3); }
-    | expression
-        { $$ = [$1]; }
+    | expression '[' expression ']'
+        { $$ = yy.makeIndex($1, [$3]); }
+    | expression '[' expression ',' expression ']'
+        { $$ = yy.makeIndex($1, [$3, $5]); }
     ;
 
 /*
