@@ -15,31 +15,39 @@ cacheFilename = working_directory + "\PlanetPrerenderCache\" + global.currentMap
 
 // No cached version, pre-render it
 if (!file_exists(cacheFilename))
-{
-    // Before pre-rendering, let's blank screen with a message to explain the wait
-    draw_set_alpha(1);
-    draw_set_color(c_black);
-    draw_rectangle(0, 0, 800, 600, false);
-    draw_set_color(c_white);
-    draw_set_halign(fa_center);
-    draw_set_valign(fa_middle);
-    draw_text(400, 300, "Pre-rendering planet...");
-    screen_refresh();
-    io_handle();
-    
+{   
     // Create a drawing surface so we can pre-render the planet
     var surface, centreX, centreY;
     surface = surface_create(global.planetCircleRadius * 2, global.planetCircleRadius * 2);
     centreX = global.planetCircleRadius;
     centreY = global.planetCircleRadius;
     
-    // Switch to surface drawing
-    surface_set_target(surface);
-    
     // Iterate over each pixel of surface
-    var angle, radius, mapX, mapY, _x, _y;
+    var startTime, angle, radius, mapX, mapY, _x, _y;
+    startTime = current_time;
     for (_x = 0; _x < global.planetCircleRadius * 2; _x += 1)
     {
+        // Before pre-rendering, let's blank screen with a message to explain the wait
+        draw_set_alpha(1);
+        draw_set_color(c_white);
+        draw_rectangle(0, 0, 800, 600, false);
+        draw_set_color(c_black);
+        draw_set_halign(fa_center);
+        draw_set_valign(fa_middle);
+        var pct, duration, remaining;
+        pct = floor(100 * (_x / (global.planetCircleRadius * 2)));
+        duration = floor((current_time - startTime) / 1000);
+        if (_x)
+            remaining = floor((duration / _x) * (global.planetCircleRadius * 2 - _x));
+        else
+            remaining = "???";
+        draw_text(400, 300, "Pre-rendering planet... " + string(pct) + "% done#" + string(duration) + "s elapsed, approx. " + string(remaining) + "s to go");
+        screen_refresh();
+        io_handle();
+
+        // Switch to surface drawing
+        surface_set_target(surface);
+        
         for (_y = 0; _y < global.planetCircleRadius * 2; _y += 1)
         {
             // Calculate angle/radius of point on planet from x and y
@@ -60,12 +68,12 @@ if (!file_exists(cacheFilename))
                     _y);
             }
         }
+        
+        // Switch back to normal drawing
+        surface_reset_target();
         io_handle();
     }
-    
-    // Switch back to normal drawing
-    surface_reset_target();
-    
+
     // Create a sprite from surface
     global.planetBackground = sprite_create_from_surface(
         surface,
