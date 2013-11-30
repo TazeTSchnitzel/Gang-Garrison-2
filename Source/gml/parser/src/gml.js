@@ -34,6 +34,21 @@
                 name: yytext
             };
         },
+        // makes global identifier structure
+        makeGlobalIdentifier: function (yytext) {
+            return {
+                type: 'global_identifier',
+                name: yytext
+            };
+        },
+        // make statement structure
+        makeStmt: function (op, location) {
+            return {
+                type: 'statement',
+                statement: op,
+                location: location
+            };
+        },
         // make binary operator structure
         makeBinaryOp: function (op, expr1, expr2) {
             return {

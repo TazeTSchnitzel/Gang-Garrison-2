@@ -23,13 +23,7 @@
 "continue"              return 'CONTINUE';
 "exit"                  return 'EXIT';
 "return"                return 'RETURN';
-"object"                return 'OBJECT';
-"script"                return 'SCRIPT';
-"const"                 return 'CONST';
-"parent"                return 'PARENT';
-"create"                return 'CREATE';
-"destroy"               return 'DESTROY';
-"super"                 return 'SUPER';
+"global"                return 'GLOBAL';
 "div"                   return 'DIV';
 "mod"                   return 'MOD';
 "begin"                 return 'BEGIN';
@@ -125,6 +119,11 @@ statements_unwrapped
     ;
 
 statement
+    : statement_unwrapped
+        { $$ = yy.makeStmt($1, @1); }
+    ;
+
+statement_unwrapped
     : assignment ';'
         { $$ = $1; }
     | function_call ';'
@@ -327,7 +326,7 @@ function_call_arguments
 variable
     : identifier
         { $$ = $1; }
-    | expression '.' identifier
+    | expression '.' IDENTIFIER
         { $$ = yy.makeBinaryOp($2, $1, $3); }
     | expression '[' expression ']'
         { $$ = yy.makeIndex($1, [$3]); }
@@ -342,4 +341,6 @@ variable
 identifier
     : IDENTIFIER
         { $$ = yy.makeIdentifier(yytext); }
+    | GLOBAL '.' IDENTIFIER
+        { $$ = yy.makeGlobalIdentifier(yytext); }
     ;
