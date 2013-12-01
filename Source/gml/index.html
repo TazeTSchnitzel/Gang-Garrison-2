@@ -7,5 +7,6 @@
 <script src=./parser/out/gml.js></script>
 <script src=./interpreter/main.js></script>
 <script>
+    window.onerror = alert;
     interpreter.run('var a = 3;\nshow_message(string(a));');
 </script>
