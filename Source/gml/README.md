@@ -10,6 +10,8 @@ This is a GML (Game Maker Language) interpreter intended to run in the browser a
 
 The dialect of GML as understood by this interpreter is mostly based on the help file, except where the actual Game Maker 8.0 runtime's behaviour is different. For example, while semicolons at the ends of statements are said to be required by the GM 8.0 manual, they are not in the dialect of GML understood by this interpreter, as they are not actually required by the Game Maker 8.0 runtime.
 
+It uses Jison for parsing and it's written in TypeScript.
+
 Setup
 ---
 
@@ -19,4 +21,8 @@ Setup
 
 3. Run `npm install -g jison` (prefixing with `sudo` if necessitated by your system) to install Jison globally (also needed to compile parser)
 
-4. Run `build.js` in the `parser` directory to compile the parser.
+4. Run `npm install -g typescript` (prefixing with `sudo` if necessitated by your system) to install TypeScript globally (needed to compile interpeter)
+
+5. Run `build.js` in the `parser` directory to compile the parser.
+
+6. Run `ts main.ts` in the `interpreter` directory to compile the interpreter.

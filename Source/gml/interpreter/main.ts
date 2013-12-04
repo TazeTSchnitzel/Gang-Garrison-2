@@ -1,36 +1,41 @@
-window.interpreter = (function (exports) {
-    'use strict';
-
-    // constructor for scopes
-    function Scope(constants) {
-        // Constants (including resources)
-        this.constants = constants || {};
+module interpreter {
+    declare var parser: any;
+    
+    export class Scope {
+        constants;
         // "global." vars
-        this.globals = {};
+        globals = {};
         // "self" in this scope
-        this.instance = {};
+        instance = {};
         // "var" variables
-        this.locals = {};
+        locals = {};
         // "globalvar" variables (used as a set, globals used for actual lookup)
-        this.localGlobals = {}
+        localGlobals = {};
+
+        constructor(constants) {
+            // Constants (including resources)
+            this.constants = constants || {};
+        }
     }
     
-    // constructor for functions
-    function GMLFunction(name) {
-        this.name = name;
-        return;
+    // functions
+    export class GMLFunction {
+        name: string;
+        constructor(name: string) {
+            this.name = name;
+        }
+        call(scope, args) {
+            console.log("LOL NOT IMPLEMENTED; FUNCTION CALL FOR " + this.name);
+            return 0;
+        }
     }
-    GMLFunction.prototype.call = function (scope, args) {
-        console.log("LOL NOT IMPLEMENTED; FUNCTION CALL FOR " + this.name);
-        return 0;
-    };
 
     // inherits from GMLFunction; non-user-defined function
-    function GMLEngineFunction(name, implementation) {
-        var obj = Object.create(new GMLFunction(name));
-        obj.constructor = GMLEngineFunction;
-        obj.call = implementation;
-        return obj;
+    export class GMLEngineFunction extends GMLFunction {
+        constructor(name: string, implementation: (Scope, Array) => any) {
+            super(name);
+            this.call = implementation;
+        }
     }
 
     // functions
@@ -122,7 +127,7 @@ window.interpreter = (function (exports) {
         }
     }
 
-    exports.run = function (code) {
+    export function run(code) {
         var parsed;
         parsed = parser.parse(code);
 
@@ -146,7 +151,5 @@ window.interpreter = (function (exports) {
                 return 0;
             })
         }));
-    };
-
-    return exports;
-}(window.interpreter || {}));
+    }
+}
