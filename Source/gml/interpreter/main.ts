@@ -6,7 +6,7 @@ module interpreter {
         // "global." vars
         globals = {};
         // "self" in this scope
-        instance = {};
+        instance = null;
         // "var" variables
         locals = {};
         // "globalvar" variables (used as a set, globals used for actual lookup)
@@ -15,6 +15,28 @@ module interpreter {
         constructor(constants) {
             // Constants (including resources)
             this.constants = constants || {};
+        }
+
+        resolveIdentifier(expression) {
+            if (this.constants.hasOwnProperty(expression.name)) {
+                return this.constants[expression.name];
+            } else if (this.localGlobals.hasOwnProperty(expression.name)) {
+                return this.globals[expression.name];
+            } else if (this.locals.hasOwnProperty(expression.name)) {
+                return this.locals[expression.name];
+            } else if (this.instance && this.instance.hasOwnProperty(expression.name)) {
+                return this.instance[expression.name];
+            } else {
+                throw new Error("No such variable in current scope: " + expression.name);
+            }
+        }
+
+        resolveGlobalIdentifier(expression) {
+            if (this.globals.hasOwnProperty(expression.name)) {
+                return this.globals[expression.name];
+            } else {
+                throw new Error("No such global variable in current scope: " + expression.name);
+            }
         }
     }
     
@@ -50,38 +72,16 @@ module interpreter {
         }));
     }
 
-    function resolveIdentifier(expression, scope) {
-        if (scope.constants.hasOwnProperty(expression.name)) {
-            return scope.constants[expression.name];
-        } else if (scope.localGlobals.hasOwnProperty(expression.name)) {
-            return scope.globals[expression.name];
-        } else if (scope.locals.hasOwnProperty(expression.name)) {
-            return scope.locals[expression.name];
-        } else if (scope.instance && scope.instance.hasOwnProperty(expression.name)) {
-            return scope.instance[expression.name];
-        } else {
-            throw new Error("No such variable in current scope: " + expression.name);
-        }
-    }
-
-    function resolveGlobalIdentifier(expression, scope) {
-        if (scope.globals.hasOwnProperty(expression.name)) {
-            return scope.globals[expression.name];
-        } else {
-            throw new Error("No such global variable in current scope: " + expression.name);
-        }
-    }
-
     function evaluate(expression, scope) {
         switch (expression.type) {
             case 'number':
                 return expression.val;
             break;
             case 'identifier':
-                return resolveIdentifier(expression, scope);
+                return scope.resolveIdentifier(expression);
             break;
             case 'global_identifier':
-                return resolveGlobalIdentifier(expression, scope);
+                return scope.resolveGlobalIdentifier(expression);
             break;
             case 'funccall':
                 return functionCall(expression, scope);
