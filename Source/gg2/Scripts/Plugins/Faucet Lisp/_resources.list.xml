@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+  <resource name="lispParse" type="RESOURCE"/>
+  <resource name="lispTokenise" type="RESOURCE"/>
+  <resource name="lispParseTokens" type="RESOURCE"/>
+  <resource name="lispDesugar" type="RESOURCE"/>
+  <resource name="lispUnparse" type="RESOURCE"/>
+  <resource name="lispDestroy" type="RESOURCE"/>
+</resources>
