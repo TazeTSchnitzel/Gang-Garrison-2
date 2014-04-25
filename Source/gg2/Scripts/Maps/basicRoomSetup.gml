@@ -102,4 +102,10 @@ if(instance_exists(GameServer))
     }
 }
 
-initPlanet();
+if (global.planetMode)
+{
+    initPlanet();
+    global.planetActive = true;
+}
+else
+    global.planetActive = false;

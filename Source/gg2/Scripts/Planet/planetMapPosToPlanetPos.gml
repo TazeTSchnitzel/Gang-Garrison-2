@@ -13,6 +13,20 @@ var _x, _y;
 _x = argument0;
 _y = argument1;
 
+if (!global.planetActive)
+{
+    var returnValue;
+    returnValue = ds_list_create();
+    ds_list_add(returnValue, 0);
+    ds_list_add(returnValue, 0);
+    ds_list_add(returnValue, _x);
+    ds_list_add(returnValue, _y);
+    ds_list_add(returnValue, 1);
+    ds_list_add(returnValue, 1);
+    ds_list_add(returnValue, 0);
+    return returnValue;
+}
+
 var list, originX, originY, offsetX;
 list = planetMapOrigin();
 originX = ds_list_find_value(list, 0);

@@ -108,6 +108,7 @@
         global.game_fps = 60;
     else
         global.game_fps = 30;
+    global.planetMode = ini_read_real("Settings", "PlanetMode", 0);
     
     readClasslimitsFromIni();
 
@@ -189,6 +190,7 @@
 
     ini_write_real("Settings", "Resolution", global.resolutionkind);
     ini_write_real("Settings", "Framerate", global.frameratekind);
+    ini_write_real("Settings", "PlanetMode", global.planetMode);
 
     rooms_fix_views();
     global.changed_resolution = false;
