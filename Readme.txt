@@ -414,6 +414,8 @@ Constructor:
   destroyed autogun instantly gives you 50! Health cabinets also give
   you all your Nuts and Bolts back!
 - Autoguns can't shoot straight up, so watch out!
+- Your autogun will default to the direction you aim when you build
+  it, so be careful!
 
 Infiltrator:
 - The enemy can still hear you jump even if you are cloaked!
@@ -423,7 +425,9 @@ Infiltrator:
 
 Rifleman:
 - Stay moving in case an infiltrator is eyeing your back!
-- Scope out if you need to move around!
+- Your scope inhibits movement. Scope out if you need to move around!
+- Pick off enemies at a distance with charged shots, or "railgun"
+  them at close range without scoping for direct combat!
 
 Secret Class:
 - There is no secret class, and you can 'QQ' about it.
@@ -451,7 +455,7 @@ Leiche, Xeyk, pach, Austin "Psychopath" Benz, L, technoviking, AJF, Alexander "W
 NAGN, Orpheon, JaxOf7, Arctic and RebelINS
 
 Artists:
-mrfredman, Fishmatt, BassieEnAdriaan, Timohtep, Elkondo, Waterfall and Skeledude
+mrfredman, Fishmatt, BassieEnAdriaan, Timohtep, Elkondo, Waterfall, Skeledude, ZaSpai, Deuce, and Wareya
 
 Sound & Music:
 Synnah, Scoot, and Elkondo
@@ -485,6 +489,9 @@ are intended as a respectful homage.
 
 This game uses the Faucet Networking extension by MedO, which is available under the terms of the ISC license.
 You can find more information on Faucet Networking at http://gmc.yoyogames.com/index.php?showtopic=498062.
+
+This game uses the Faucet HTTP extension by ajf, which is available under the terms of the ISC license.
+You can find more information on Faucet HTTP at https://github.com/TazeTSchnitzel/Faucet-HTTP-Extension
 
 This game uses the Faucet Forwarding Extension, created by NAGN, which wraps libminiupnp.
 miniupnp is availible under the BSD license: see miniupnp.license for full license.
