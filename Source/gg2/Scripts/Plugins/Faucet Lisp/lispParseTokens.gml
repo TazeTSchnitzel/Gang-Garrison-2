@@ -1,5 +1,5 @@
 // real lispParseTokens(real tokens)
-// Parses a tokenised Faucet Lisp s-expression and returns result as a ds_list
+// Parses a tokenised s-expression and returns a ds_list parse tree
 // Warning! This will empty the token list.
 
 var tokens;
@@ -22,7 +22,7 @@ while (!ds_list_empty(tokens))
     else if (head == ')')
     {
         ds_list_delete(tokens, 0);
-        lispDesugar(list);
+        lispDesugarParseTree(list);
         return list;
     }
     else

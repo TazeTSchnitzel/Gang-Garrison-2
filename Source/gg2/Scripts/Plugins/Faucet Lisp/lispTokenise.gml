@@ -11,7 +11,7 @@ len = string_length(input);
 state = 'outside_token';
 currentToken = '';
 
-for (pos = 1; pos < len; pos += 1)
+for (pos = 1; pos <= len; pos += 1)
 {
     char = string_char_at(input, pos);
     // space, LF, CR and tab

@@ -4,4 +4,4 @@
 var cell;
 cell = argument0;
 
-return ds_list_find_value(cell, 3);
+return ds_list_find_value(cell, 1);

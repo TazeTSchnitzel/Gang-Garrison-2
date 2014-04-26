@@ -1,5 +1,5 @@
-// real lispDestroy(real list)
-// Recursively destroys a Faucet Lisp list
+// real lispDestroyParseTree(real list)
+// Recursively destroys a ds_list parse tree
 
 var list;
 list = argument0;
@@ -9,7 +9,7 @@ while (!ds_list_empty(list))
 {
     head = ds_list_find_value(list, 0);
     if (is_real(head))
-        lispDestroy(head);
+        lispDestroyParseTree(head);
     ds_list_delete(list, 0);
 }
 ds_list_destroy(list);

@@ -5,8 +5,6 @@
   <resource name="lispCons" type="RESOURCE"/>
   <resource name="lispHead" type="RESOURCE"/>
   <resource name="lispTail" type="RESOURCE"/>
-  <resource name="lispSetHead" type="RESOURCE"/>
-  <resource name="lispSetTail" type="RESOURCE"/>
   <resource name="lispDestroyCell" type="RESOURCE"/>
   <resource name="lispAddRef" type="RESOURCE"/>
   <resource name="lispRemoveRef" type="RESOURCE"/>

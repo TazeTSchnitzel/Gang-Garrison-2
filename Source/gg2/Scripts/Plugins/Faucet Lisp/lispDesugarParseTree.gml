@@ -1,5 +1,5 @@
-// real lispDesugar(real list)
-// De-sugars a Faucet Lisp list representing an s-expression in-place non-recursively
+// real lispDesugarParseTree(real list)
+// De-sugars a ds_list parse tree *non-recursively*
 // This replaces the '(...) shortcut with (quote ...)
 
 var list;

@@ -12,5 +12,10 @@ result = lispParseTokens(tokens);
 
 ds_list_destroy(tokens);
 
-show_message(input + "##became:##" + lispUnparse(result));
-lispDestroy(result);
+var list;
+list = lispParseTreeToConsList(result);
+
+show_message(input + "##became:##" + lispUnparseParseTree(list));
+lispDestroyCell(list);
+
+show_message("Un-garbage-collected cells remaining: " + string(ds_map_size(global.lispReferenceCount)));
