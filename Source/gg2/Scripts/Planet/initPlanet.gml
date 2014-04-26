@@ -89,7 +89,7 @@ if (!file_exists(cacheFilename))
     // Clear up
     surface_free(surface);
 
-    // Create cache dir if it doesn't exit
+    // Create cache dir if it doesn't exist
     if (!directory_exists(working_directory + "\PlanetPrerenderCache"))
         directory_create(working_directory + "\PlanetPrerenderCache");
     
