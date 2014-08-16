@@ -1,1 +1,17 @@
 .DS_Store
+/Gang Garrison 2.gmk
+/Gang Garrison 2.gb1
+/Gang Garrison 2.exe
+/gg2.ini
+/background.png
+/controls.gg2
+/gg2b
+/gmksplit.exe
+/gmksplit.jar
+/game_errors.log
+*.orig
+/Maps
+/Plugins
+/Screenshots
+/ServerPluginsDebug
+/ServerPluginsCache

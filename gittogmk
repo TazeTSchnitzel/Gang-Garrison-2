@@ -1,0 +1,3 @@
+#!/bin/sh
+rm "Gang Garrison 2.gmk"
+java -jar gmksplit.jar "Gang Garrison 2" "Gang Garrison 2.gmk"
