@@ -6,6 +6,7 @@
   <resource name="ServerJoinUpdate" type="RESOURCE"/>
   <resource name="serialize" type="RESOURCE"/>
   <resource name="deserialize" type="RESOURCE"/>
+  <resource name="character_init" type="RESOURCE"/>
   <resource name="getCharacterObject" type="RESOURCE"/>
   <resource name="room_goto_fix" type="RESOURCE"/>
   <resource name="Message Builders" type="GROUP"/>
@@ -32,11 +33,8 @@
   <resource name="Physics" type="GROUP"/>
   <resource name="Planet" type="GROUP"/>
   <resource name="Damage API" type="GROUP"/>
+  <resource name="Kill Log" type="GROUP"/>
   <resource name="ds_list_turn" type="RESOURCE"/>
-  <resource name="recordKillInLog" type="RESOURCE"/>
-  <resource name="recordDestructionInLog" type="RESOURCE"/>
-  <resource name="recordEventInLog" type="RESOURCE"/>
-  <resource name="recordDominationInLog" type="RESOURCE"/>
   <resource name="serializeState" type="RESOURCE"/>
   <resource name="deserializeState" type="RESOURCE"/>
   <resource name="setChatBubble" type="RESOURCE"/>
@@ -58,4 +56,6 @@
   <resource name="split" type="RESOURCE"/>
   <resource name="draw_pinched_blackrect" type="RESOURCE"/>
   <resource name="Faucet HTTP" type="GROUP"/>
+  <resource name="move_all_bullets" type="RESOURCE"/>
+  <resource name="move_all_gore" type="RESOURCE"/>
 </resources>
