@@ -1,5 +1,6 @@
-// void initPlanetImmediate()
+// real initPlanetImmediate()
 // Init and render planet immediately (may take minutes, shows loading screen)
+// Returns false if cancelled, otherwise true
 
 // Create a drawing surface so we can pre-render the planet
 var surface, centreX, centreY;
@@ -26,7 +27,7 @@ for (_x = 0; _x < global.planetCircleRadius * 2; _x += 1)
         remaining = floor((duration / _x) * (global.planetCircleRadius * 2 - _x));
     else
         remaining = "???";
-    draw_text(view_wview / 2, view_hview / 2, "Pre-rendering planet... " + string(pct) + "% done#" + string(duration) + "s elapsed, approx. " + string(remaining) + "s to go");
+    draw_text(view_wview / 2, view_hview / 2, "Pre-rendering planet... " + string(pct) + "% done#" + string(duration) + "s elapsed, approx. " + string(remaining) + "s to go##Press ESC to cancel");
     draw_healthbar(view_wview / 2 - 100, view_hview / 2 + 100, view_wview / 2 + 100, view_hview / 2 + 120, pct, c_black, c_white, c_white, 0, true, true);
     screen_refresh();
     io_handle();
@@ -58,6 +59,12 @@ for (_x = 0; _x < global.planetCircleRadius * 2; _x += 1)
     // Switch back to normal drawing
     surface_reset_target();
     io_handle();
+    
+    if (keyboard_check(vk_escape))
+    {
+        surface_free(surface);
+        return false;
+    }
 }
 
 // Create a sprite from surface
@@ -81,3 +88,5 @@ if (!directory_exists(working_directory + "\PlanetPrerenderCache"))
 
 // Cache    
 sprite_save(global.planetBackground, 0, cacheFilename);
+
+return true;

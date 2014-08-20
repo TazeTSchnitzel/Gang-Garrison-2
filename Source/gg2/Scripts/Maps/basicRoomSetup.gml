@@ -113,7 +113,19 @@ if (global.planetMode)
     }
     else
     {
-        if (global.planetDeferred)
+        var deferred;
+        deferred = global.planetDeferred;
+        if (!deferred)
+        {
+            if (initPlanetImmediate())
+            {
+                endPlanetInit();
+                global.planetActive = true;
+                exit;
+            }
+            deferred = true;
+        }
+        if (deferred)
         {
             global.planetActive = false;
             initPlanetDeferred('
@@ -121,12 +133,9 @@ if (global.planetMode)
                 global.planetActive = true;
             ');
         }
-        else
-        {
-            initPlanetImmediate();
-            global.planetActive = true;
-        }
     }
 }
 else
+{
     global.planetActive = false;
+}
