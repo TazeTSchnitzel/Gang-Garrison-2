@@ -182,7 +182,7 @@ else if (player.humiliated)
 else if (!taunting)
 {
     if (intel and player.class != CLASS_QUOTE and !zoomed)
-        draw_sprite_ext(spriteIntel,0,xr,round(y)+equipmentOffset, image_xscale, image_yscale, 0, c_white, image_alpha);
+        draw_sprite_ext_planet(spriteIntel,0,xr,round(y)+equipmentOffset, image_xscale, image_yscale, 0, c_white, image_alpha);
     if (cloak)
     {
         if (!ubered)
@@ -233,18 +233,18 @@ if(point_distance(mouse_x, mouse_y, playerX, playerY)&lt;25) {
     width = name_width_badges(player);
     height = string_height(player.name);
     
-    draw_name_badges(round(xr - width / 2), round(y) - 35 - height, player);
+    draw_name_badges(round(xr - width / 2), round(y) - 35 - height, player, true);
     draw_set_halign(fa_center);
     draw_set_valign(fa_bottom);
     
     if(team == global.myself.team &amp;&amp; global.showTeammateStats)
     {
         if(weapons[0] == Medigun)
-            draw_text_transformed_planet(xr,yr+50, "Superburst: " + string(currentWeapon.uberCharge/20) + "%", 1, 1, 0);
+            draw_text_planet(xr,yr+50, "Superburst: " + string(currentWeapon.uberCharge/20) + "%");
         else if(weapons[0] == Shotgun)
-            draw_text_transformed_planet(xr,yr+50, "Nuts 'N' Bolts: " + string(nutsNBolts), 1, 1, 0);
+            draw_text_planet(xr,yr+50, "Nuts 'N' Bolts: " + string(nutsNBolts));
         else if(weapons[0] == Minegun)
-            draw_text_transformed_planet(xr,yr+50, "Lobbed Mines: " + string(currentWeapon.lobbed), 1, 1, 0);
+            draw_text_planet(xr,yr+50, "Lobbed Mines: " + string(currentWeapon.lobbed));
     }
 }
 

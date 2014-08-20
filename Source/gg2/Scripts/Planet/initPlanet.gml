@@ -30,7 +30,7 @@ if (!file_exists(cacheFilename))
         // Before pre-rendering, let's blank screen with a message to explain the wait
         draw_set_alpha(1);
         draw_set_color(c_white);
-        draw_rectangle(0, 0, 800, 600, false);
+        draw_rectangle(0, 0, view_wview, view_hview, false);
         draw_set_color(c_black);
         draw_set_halign(fa_center);
         draw_set_valign(fa_middle);
@@ -41,7 +41,8 @@ if (!file_exists(cacheFilename))
             remaining = floor((duration / _x) * (global.planetCircleRadius * 2 - _x));
         else
             remaining = "???";
-        draw_text(400, 300, "Pre-rendering planet... " + string(pct) + "% done#" + string(duration) + "s elapsed, approx. " + string(remaining) + "s to go");
+        draw_text(view_wview / 2, view_hview / 2, "Pre-rendering planet... " + string(pct) + "% done#" + string(duration) + "s elapsed, approx. " + string(remaining) + "s to go");
+        draw_healthbar(view_wview / 2 - 100, view_hview / 2 + 100, view_wview / 2 + 100, view_hview / 2 + 120, pct, c_black, c_white, c_white, 0, true, true);
         screen_refresh();
         io_handle();
 
