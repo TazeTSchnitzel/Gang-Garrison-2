@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
-  <resource name="initPlanet" type="RESOURCE"/>
+  <resource name="beginPlanetInit" type="RESOURCE"/>
+  <resource name="initPlanetImmediate" type="RESOURCE"/>
+  <resource name="initPlanetDeferred" type="RESOURCE"/>
+  <resource name="initPlanetFromCache" type="RESOURCE"/>
+  <resource name="endPlanetInit" type="RESOURCE"/>
+  <resource name="planetCacheFilename" type="RESOURCE"/>
   <resource name="drawPlanet" type="RESOURCE"/>
   <resource name="planetMapOrigin" type="RESOURCE"/>
   <resource name="planetMapPosToPlanetPos" type="RESOURCE"/>

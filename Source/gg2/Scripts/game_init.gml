@@ -111,6 +111,7 @@
     else
         global.game_fps = 30;
     global.planetMode = ini_read_real("Settings", "PlanetMode", 0);
+    global.planetDeferred = ini_read_real("Settings", "PlanetDeferred", 1);
     
     readClasslimitsFromIni();
 

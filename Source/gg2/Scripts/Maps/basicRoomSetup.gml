@@ -104,8 +104,29 @@ if(instance_exists(GameServer))
 
 if (global.planetMode)
 {
-    initPlanet();
-    global.planetActive = true;
+    beginPlanetInit();
+    if (file_exists(planetCacheFilename()))
+    {
+        initPlanetFromCache();
+        endPlanetInit();
+        global.planetActive = true;
+    }
+    else
+    {
+        if (global.planetDeferred)
+        {
+            global.planetActive = false;
+            initPlanetDeferred('
+                endPlanetInit();
+                global.planetActive = true;
+            ');
+        }
+        else
+        {
+            initPlanetImmediate();
+            global.planetActive = true;
+        }
+    }
 }
 else
     global.planetActive = false;

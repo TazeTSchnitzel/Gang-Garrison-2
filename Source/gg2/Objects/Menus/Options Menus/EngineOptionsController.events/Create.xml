@@ -102,7 +102,13 @@
         if(room != Options)
             warnoptioneffect = !global.isHost;
     ');
-    
+
+    menu_addedit_boolean("Render planet in background:", "global.planetDeferred", '
+        gg2_write_ini("Settings", "PlanetDeferred", argument0);
+        if(room != Options)
+            warnoptioneffect = !global.isHost;
+    ');
+      
     menu_addedit_select("V Sync:", "global.monitorSync", '
         gg2_write_ini("Settings", "Monitor Sync", argument0);
         if (!instance_exists(GameServer))
