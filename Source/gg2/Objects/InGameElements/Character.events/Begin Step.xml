@@ -414,16 +414,6 @@ if(zone &gt;= 0 and !cloak and cloakAlpha == 1)
     cappingPoint = zone.cp;
 else
     cappingPoint = noone;
-
-// Shift forward slightly if in planet mode (planet rotation)
-if (global.planetActive)
-{
-    if (onground)
-        x += 1;
-    // While in air, planet spins below us
-    else
-        x -= 1;
-}
 </argument>
       </arguments>
     </action>
