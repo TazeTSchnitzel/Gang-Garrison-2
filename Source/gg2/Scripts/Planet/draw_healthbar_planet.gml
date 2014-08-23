@@ -74,7 +74,7 @@ if (_direction == 0)
     amountTopLeftX = _x1;
     amountTopLeftY = _y1;
     amountTopRightX = _x1 + (_x2 - _x1) * (_amount / 100);
-    amountTopRightY = _y2;
+    amountTopRightY = _y1;
     amountBottomLeftX = _x1;
     amountBottomLeftY = _y2;
     amountBottomRightX = _x1 + (_x2 - _x1) * (_amount / 100);
@@ -86,7 +86,7 @@ else if (_direction == 1)
     amountTopLeftX = _x2 - (_x2 - _x1) * (_amount / 100);
     amountTopLeftY = _y1;
     amountTopRightX = _x1;
-    amountTopRightY = _y2;
+    amountTopRightY = _y1;
     amountBottomLeftX = _x2 - (_x2 - _x1) * (_amount / 100);
     amountBottomLeftY = _y2;
     amountBottomRightX = _x2;
@@ -98,7 +98,7 @@ else if (_direction == 2)
     amountTopLeftX = _x1;
     amountTopLeftY = _y1;
     amountTopRightX = _x1;
-    amountTopRightY = _y2;
+    amountTopRightY = _y1;
     amountBottomLeftX = _x1;
     amountBottomLeftY = _y1 + (_y2 - _y1) * (_amount / 100);
     amountBottomRightX = _x2;
