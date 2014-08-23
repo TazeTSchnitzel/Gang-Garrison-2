@@ -102,7 +102,12 @@ if(instance_exists(GameServer))
     }
 }
 
-if (global.planetMode)
+var planet;
+if (global.isHost)
+    planet = global.serverPlanetMode;
+else
+    planet = global.planetMode;
+if (planet)
 {
     beginPlanetInit();
     if (file_exists(planetCacheFilename()))
