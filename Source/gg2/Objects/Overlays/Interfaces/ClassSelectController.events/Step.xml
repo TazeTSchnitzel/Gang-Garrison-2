@@ -70,7 +70,7 @@ else if mouse_x&gt;xoffset+196 &amp;&amp; mouse_x &lt;xoffset+232 &amp;&amp; mou
     text[1]="Weapon: Mine Launcher";
     text[2]="A master of explosives, she";
     text[3]="can stick mines to any surface";
-    text[4]="surface and set them off.";
+    text[4]="and set them off.";
 }
 
 else if mouse_x&gt;xoffset+236 &amp;&amp; mouse_x &lt;xoffset+272 &amp;&amp; mouse_y&lt;yoffset+50{
