@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <constants>
   <constant name="VERSION" value="27400"/>
-  <constant name="GAME_VERSION_STRING" value="&quot;PGG2 v0.1&quot;"/>
+  <constant name="GAME_VERSION_STRING" value="&quot;PGG2 v0.1.1&quot;"/>
   <constant name="GAME_NAME_STRING" value="&quot;Planetary GG2&quot;"/>
   <constant name="GAME_URL_STRING" value="&quot;http://www.ganggarrison.com/forums/index.php?topic=34488.0&quot;"/>
   <constant name="PLUGIN_SOURCE" value="&quot;http://www.ganggarrison.com/plugins/&quot;"/>
