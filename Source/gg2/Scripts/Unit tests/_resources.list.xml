@@ -6,4 +6,5 @@
   <resource name="test_assert_equals" type="RESOURCE"/>
   <resource name="test_assert_map_key_value" type="RESOURCE"/>
   <resource name="ggon" type="GROUP"/>
+  <resource name="GarrisonScript" type="GROUP"/>
 </resources>
